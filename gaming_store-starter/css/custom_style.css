@@ -71,7 +71,7 @@
     display:grid;
     grid-template-columns: 30% 50%;
     color:white;
-    font-size:1.7vw;
+    font: size 18vh;;
 }
 
 .filter-form {
@@ -128,7 +128,7 @@ form.example input[type=text] {
 
 form.example1 input[type=text] {
 	padding: 10px;
-	font-size: 17px;
+	font-size: 17vh;
 	border: 1px solid grey;
 	float: left;
 	width: 40%;
