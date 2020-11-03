@@ -22,7 +22,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //font-awesome icons -->
 <!-- portfolio -->	
 <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="all">
-<!-- //portfolio -->	
+<!-- //portfolio -->
+<!-- custom css -->
+<link rel="stylesheet" href="css/custom_style.css" type="text/css" media="all">	
+<!-- //custom css -->
 <!-- font -->
 <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
@@ -41,42 +44,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
-<style>
-	.slidecontainer {
-	  width: 100%;
-	}
-	
-	.slider {
-	  -webkit-appearance: none;
-	  width: 100%;
-	  height: 25px;
-	  background: #d3d3d3;
-	  outline: none;
-	  opacity: 0.7;
-	  -webkit-transition: .2s;
-	  transition: opacity .2s;
-	}
-	
-	.slider:hover {
-	  opacity: 1;
-	}
-	
-	.slider::-webkit-slider-thumb {
-	  -webkit-appearance: none;
-	  appearance: none;
-	  width: 25px;
-	  height: 25px;
-	  background: #4CAF50;
-	  cursor: pointer;
-	}
-	
-	.slider::-moz-range-thumb {
-	  width: 25px;
-	  height: 25px;
-	  background: #4CAF50;
-	  cursor: pointer;
-	}
-	</style>
 </head>
 <body>
 	<!-- banner -->
@@ -120,37 +87,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 							<!-- /.navbar-collapse -->
 						</nav>
-						<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+						<form class="example index_searchbar" action="/action_page.php" >
 							<input type="text" placeholder="Search Your Game.." name="search2">
 							<button type="submit"><i class="fa fa-search"></i></button> 
-						  </form>
-						  <br><br>
-						  <div style="width:800px; margin:0 auto;" >
-						  <div  class="form-group">
-							<label   class="col-sm-2 control-label"style="color:white;font-size:20px;"  >Category:</label>
-							<input   style="margin:left;max-width:100px"   type="text" class="form-control" placeholder="Drama">
-							<br>
-							<label  class="col-sm-2 control-label"style="color:white;font-size:20px;"  >  Age:</label>
-							<input   style="margin:left;max-width:100px"   type="text" class="form-control" placeholder="12">
-							<br>
-							<label  class="col-sm-2 control-label"style="color:white;font-size:20px;"  >Players:</label>
-							<input   style="margin:left;max-width:100px"   type="text" class="form-control" placeholder="6">
-							
-							<br>
-							
-					
-                 	
-					 		
-							
-							
-							<label for="Duration" class="col-sm-2 control-label"style="color:white;font-size:20px;"  >Duration:</label>
-							
-							<select style="margin:left;max-width:100px"    class="form-control" name="Duration" id="Duration">
-								<option value="20'">20'</option>
-								<option value="30'">30'</option>
-								<option value="45'">45'</option>
-								<option value="60+''">60+'</option>
-							</select>
+						</form>
+						<br><br>
+						<div class = "filter-area">
+							<div  class="form-group container filters-form">
+								<div class="row filters-row">
+									<div class="filter col-sm-6">
+										<label   class="control-label filter-description">Category:</label>
+										<input   type="text" class="form-control filter-input" placeholder="Drama">
+									</div>
+									<div class="filter col-sm-6">
+										<label  class="control-label filter-description">  Age:</label>
+										<input  type="text" class="form-control filter-input" placeholder="12">
+									</div>
+								</div>
+								
+								<div class="row filters-row">
+									<div class="filter col-sm-6">
+										<label   class="control-label filter-description">Players:</label>
+										<input   type="text" class="form-control filter-input" placeholder="6">
+									</div>
+									<div class="filter col-sm-6">
+										<label for="duration" class="control-label filter-description">Duration:</label>
+										<select class="form-control filter-input" name="duration" id="duration">
+											<option value="20'">20'</option>
+											<option value="30'">30'</option>
+											<option value="45'">45'</option>
+											<option value="60+''">60+'</option>
+										</select>
+									</div>
+								</div>
+
+								
+								
 							</div>
 						</div>
 					</div>
