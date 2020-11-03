@@ -58,7 +58,7 @@
 .rating-button {
     padding-left: 10px;
 }
-.rating-button button {
+.rating-commenting-button button {
     /* border: 2px solid rgb(247, 124, 10); */
     background-color: rgb(247, 124, 10);
     border: none;
@@ -71,15 +71,3 @@
     margin: 4px 2px;
     border-radius: 8px;
 }
-.comment-button button{
-    background-color: rgb(247, 124, 10);
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 8px;
-} 
