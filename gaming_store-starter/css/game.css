@@ -1,0 +1,59 @@
+.game-details {
+    margin-top: 30px;
+    
+}
+.section-content {
+    width: 1450px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    background-color: rgb(255, 152, 0, 0.5);
+} 
+.secimage img{
+    margin-left: 20px;
+    margin-top: 20px;
+    height: 500px;
+
+}
+.secdetails {
+    margin-left: 40px;
+    color: rgb(15, 15, 15);
+    text-align: inherit;
+
+}
+.rules ul {
+    columns: 3;
+    padding-top: 10px;
+}
+.rules ul span {
+    font-weight: bold;
+}
+.rules span {
+    font-weight: bold;
+}
+/* .rating-wrapper {
+    float: right;
+    position: relative;
+} */
+.ratings-wrapper {
+    margin-top: 20px;
+}
+.rating {
+    font-size: large;
+}
+.rating .rating-value{
+    margin-left: -0.4cm;
+    font-size: larger; 
+}
+.rating .out-of {
+    font-size: smaller;
+    margin-left: -15px;
+}
+
+.rating-button {
+    padding-left: 10px;
+}
+.rating-button button {
+    border: 2px solid rgb(70, 70, 70);
+    background-color: transparent;
+}
