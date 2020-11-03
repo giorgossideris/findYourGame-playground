@@ -45,24 +45,16 @@
 /* FILTERS CSS */
 
 .filter-area {
-    /* display: grid;
-    grid-template-columns: 100%; */
     width: 80%;
     margin:auto;
     float:none;
 }
 
 .filters-form {
-    /* grid-column: 1 / 2; /*refers to the filterarea grid 
-    display: grid;
-    grid-template-columns: 100%; */
     width: auto;
 }
 
 .filters-row {
-    /* grid-column: 1 / 2; /*refers to the filters-form grid 
-    display: inline-grid;
-    grid-template-columns: 50% 50%; */
     margin: 15px;
 }
 
@@ -71,7 +63,6 @@
     grid-template-columns: 30% 50%;
     color:white;
     font-size:20px;
-    /* grid-column: 1 / 2; */
 }
 
 
@@ -84,5 +75,4 @@
     display: inline-block;
     margin-left: 5px;
     grid-column-start: 2;
-    /* max-width: 50%; */
 }
