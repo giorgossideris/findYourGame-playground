@@ -74,6 +74,9 @@
     font-size:1.7vw;
 }
 
+.filter-form {
+    width: auto;   
+}
 
 .filter-description {
     display: inline;
