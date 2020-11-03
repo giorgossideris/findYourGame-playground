@@ -59,7 +59,7 @@
 }
 
 .filter {
-    display:inline-grid;
+    display:grid;
     grid-template-columns: 30% 50%;
     color:white;
     font-size:20px;
@@ -72,7 +72,7 @@
 }
 
 .filter-input {
-    display: inline-block;
+    display: inline;
     margin-left: 5px;
     grid-column-start: 2;
 }
