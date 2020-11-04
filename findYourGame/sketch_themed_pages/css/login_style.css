@@ -1,0 +1,115 @@
+* {
+    font-family: 'Turret Road', cursive;
+}
+
+.red-background {
+    background-color: #e32b2e;
+}
+
+.red {
+    color: #e32b2e;
+}
+
+.blue-background {
+background-color: #08148c;
+}
+
+.blue {
+    color: #08148c;
+}
+
+.green-background {
+    background-color: #0b8e21;
+}
+
+.green {
+    color: #0b8e21;
+}
+
+.purple-background {
+    background-color: #46197b;
+}
+
+.purple {
+    color: #46197b;
+}
+
+.navbar-brand > img{
+    max-height: 40px;
+}
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    width: 150px;
+    text-align: center;
+}
+
+.login-area {
+    background: linear-gradient(#8b47bd,#1630a3);
+    width: 100%;
+    margin:0px;
+    max-width: 100%;
+    padding: 50px 0px;
+}
+
+h1{
+    margin-bottom: 50px;
+    font-size: 12vh;
+    color:yellow;
+}
+.login-box {
+    padding: 0px;
+    background-color: white;
+    max-height: 400px;
+}
+ 
+.login-image {
+    max-height:400px;
+    width:auto;
+
+}
+
+img{
+    width:auto;
+    height: 30vw;
+    max-height: 400px;
+}
+
+.login-fields {
+    background-color: whitesmoke;
+    padding-top: 10%;
+    max-height: 400px;
+}
+
+.login-form-group{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+@media screen and (max-width: 1270px) {
+    .login-field-description{
+      font-size: 1.9vw;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1271px) {
+    .login-field-description{
+      font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 3.5vw;
+    }
+  }
+
+.login-field-description {
+    display: flex;
+    margin-top: auto;
+    vertical-align: text-bottom;
+}
+
+
+
