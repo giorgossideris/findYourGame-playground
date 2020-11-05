@@ -1,0 +1,64 @@
+.text-white {
+    color: white;
+}
+
+.rounded-corners {
+    border-radius: 20px;
+}
+
+.flexbox {
+    display:flex;
+    justify-content: center;
+}
+
+.box{
+    margin:25px;
+    width:75%;
+    border: solid white;
+    border-color: white;
+    float:left; 
+    border-width: 3px 4px 3px 5px;
+    border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
+    transform: rotate(2deg);
+}
+
+.straighten {
+    transform: rotate(-2deg);
+}
+.login-title {
+    text-align: center;
+    font-size: 10vh;
+    margin: 10vh
+}
+
+.login-form-group {
+    display: grid;
+    grid-template-columns: repeat(20, 5%);
+    text-align: center;
+}
+
+.login-field-description {
+    text-align: center !important;
+    grid-column: 7 / 9;
+}
+
+.login-input {
+    width: 100%;
+    grid-column: 10 / 16;
+}
+
+.login-button {
+    text-align: center;
+    background-color: transparent;
+    grid-column: 9 / 13;
+    border-color: white;
+}
+
+.login-button:hover {
+    transform: scale(1.01) perspective(1px);
+}
+
+.login-button-area {
+    margin: 10vh;
+}
+
