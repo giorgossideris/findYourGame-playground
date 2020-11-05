@@ -2,7 +2,7 @@ package findYourGameJavaOnly;
 
 import java.util.TreeSet; // TreeSet is a sorted Set that doesn't allows duplicates
 
-public class GameCategory {
+public class GameCategory implements Comparable<GameCategory>{
 
 	private String categoryName;
 	public static TreeSet<GameCategory> categories = new TreeSet<GameCategory>();
@@ -40,5 +40,10 @@ public class GameCategory {
 			}
 		}
 		return null;
+	}
+	
+	@Override
+	public int compareTo(GameCategory gameCategory) {
+		return this.getCategoryName().compareTo(gameCategory.getCategoryName());
 	}
 }

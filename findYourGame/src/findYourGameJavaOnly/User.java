@@ -3,76 +3,134 @@ package findYourGameJavaOnly;
 import java.util.Scanner;
 
 public abstract class User {
+    public abstract boolean viewBasicMenu();
 
-	public void viewBasicMenu() {
-		printBasicMenu();
-		int choice = takeChoice();
-		executeChoice(choice);
-	}
-	
-	protected abstract void printBasicMenu();
-	
-	protected abstract void executeChoice(int choice);
-	
-	protected abstract void accessGameOptions(Game gameToAccess);
-	
-	protected void doOptionShowAllGames() { //refers to the option of the basic menu "Show all games."
-		boolean keepNavigating;
-		do {
-			keepNavigating = navigateInGames(Game.allGames);
-		} while(keepNavigating);
-	}
-	
-	protected boolean navigateInGames(MapOfGames games) {
-		games.printAll();
-		Game chosenGame = games.chooseGame();
-		if (chosenGame != null) {
-			accessGameOptions(chosenGame);
-			return true;
-		} else {
-			return false;
-		}
-	}
-	protected void doOptionSearchForAGame() { //refers to the option ofthe basic menu "Search for a game."
-		MapOfGames games = Game.searchGame(); //TO BE MADE
-		boolean keepNavigating;
-		do {
-			keepNavigating = navigateInGames(games);
-		} while(keepNavigating);
-	}
-	
-	protected static int takeChoice() {
-		Scanner sc = new Scanner(System.in);
-		while (true) {
-			String choice = sc.nextLine();
-			int checked = checkChoice(4, choice); // 4 in parameters because of 4 choices
-			if (checked != -1) {
-				return checked;
-			}
-		}
-	}
-	
-	protected static int checkChoice(int numberOfChoices, String choice) { // returns the choice if it is valid, else -1
-		try {
-			int intChoice = Integer.parseInt(choice);
-			if (intChoice >= 1 && intChoice <= numberOfChoices) {
-				return intChoice;
-			}
-			return -1;
-		} catch (NumberFormatException n) {
-			return -1;
-		}
-	}
-	
-	public static String readInput(String requestMessage) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println(requestMessage);
-		String input = sc.nextLine();
-		return input;
-	}
-	
-	protected boolean isUsernameUsed(String username) {
-		return  RegisteredUser.registeredUsers.containsKey(username);
-	}
-	
+    protected abstract void printBasicMenu();
+
+    protected abstract boolean executeBasicMenuChoice(int choice);
+
+    protected abstract void accessGameOptions(Game game);
+
+    protected void navigateInGames(MapOfGames mapOfGames) {
+        mapOfGames.printAll();
+        if (mapOfGames.games.isEmpty()) {
+        	return; //bread the function if the mapOfGames is empty
+        }
+        boolean returnInBasicMenu = false;
+        Game chosenGame;
+        do {
+        	chosenGame = mapOfGames.chooseGame();
+            if (chosenGame != null) {
+                this.accessGameOptions(chosenGame);
+            }else {
+            	returnInBasicMenu = true;
+            }
+        } while (!returnInBasicMenu);
+    }
+
+    protected static int takeChoice(int numberOfChoices) {
+        Scanner sc = new Scanner(System.in);
+        String strChoice;
+        int checkedChoice;
+        boolean validInputInserted = false;
+        do {
+        	strChoice = sc.nextLine();
+        	checkedChoice = User.checkInput(1, numberOfChoices + 1, strChoice);
+        	if (checkedChoice != -1) {
+        		validInputInserted = true;
+        	} else {
+        		System.out.println("Invalid input. Try again.");
+        	}
+        } while (!validInputInserted);
+        return checkedChoice;
+    }
+
+    protected static int checkInput(int lowEnd, int highEnd, String strInput) { // returns true if lowEnd <= intInput < highEnd else false
+        try {
+            int intInput = Integer.parseInt(strInput);
+            if (intInput >= lowEnd && intInput < highEnd) {
+                return intInput;
+            }
+            return -1;
+        }
+        catch (NumberFormatException numberFormatException) {
+            return -1;
+        }
+    }
+
+    public static String readInput(String message) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println(message);
+        String input = sc.nextLine();
+        return input;
+    }
+
+    protected boolean isUsernameUsed(String username) {
+        return RegisteredUser.registeredUsers.containsKey(username);
+    }
+
+    protected MapOfGames doSearch() {
+        System.out.println("Search");
+        String searchedName = this.readSearchedName();
+        int searchedMinAge = this.readSearchedMinAge();
+        int searchedPlayersNumber = this.readSearchedPlayersNumber();
+        MapOfGames searchResult = this.searchGame(searchedName, searchedMinAge, searchedPlayersNumber);
+        return searchResult;
+    }
+
+    private String readSearchedName() {
+        return User.readInput("What is the name of the game you want to search? \nPress enter to move on");
+    }
+
+    private int readSearchedMinAge() {
+        boolean validInputInserted = false;
+        int intMinAge, searchedMinAge = 0;
+        String strMinAge;
+        do {
+            strMinAge = User.readInput("What is the minimum age you want to search? \nPress enter to move on");
+            if (strMinAge.equals("")) {
+                searchedMinAge = -1;
+                validInputInserted = true;
+            } else {
+            	intMinAge = User.checkInput(0, 151, strMinAge);
+            	if (intMinAge != -1) {
+            		searchedMinAge = intMinAge;
+            		validInputInserted = true;
+            	} else {
+            		System.out.println("Invalid input, try again.");
+            	}
+            }
+        } while (!validInputInserted);
+        return searchedMinAge;
+    }
+
+    private int readSearchedPlayersNumber() {
+        boolean validInputInserted = false;
+        int intPlayersNumber, searchedPlayersNumber = 0;
+        String strPlayersNumber;
+        do {
+            strPlayersNumber = User.readInput("How many gamers will play? \nPress enter to move on");
+            if (strPlayersNumber.equals("")) {
+                searchedPlayersNumber = -1;
+                validInputInserted = true;
+            } else {
+            	intPlayersNumber = User.checkInput(0, 101, strPlayersNumber);
+            	if (intPlayersNumber != -1) {
+            		searchedPlayersNumber = intPlayersNumber;
+            		validInputInserted = true;
+            	} else {
+            		System.out.println("Invalid input, try again.");
+            	}	
+            }
+        } while (!validInputInserted);
+        return searchedPlayersNumber;
+    }
+
+    private MapOfGames searchGame(String gameName, int minAge, int playersNumber) {
+        MapOfGames searchResult = new MapOfGames();
+        Game.allGames.getGames().values().stream()
+        								 .filter(game -> game.isGameSearched(gameName, minAge, playersNumber))
+        								 .forEach(game -> searchResult.put(game.getName(), game));
+        return searchResult;
+    }
 }

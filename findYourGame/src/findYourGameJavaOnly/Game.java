@@ -1,36 +1,34 @@
 package findYourGameJavaOnly;
 
-import java.util.Map;
-import java.util.HashMap;
 import java.util.ArrayList;
 
 public class Game {
 	
-	private int lowerAge, minPlayers, maxPlayers;
+	private int minAge, minPlayers, maxPlayers;
 	private Rating totalRating = new Rating(); //MAY HAVE TO INITIALIZE INSIDE CONSTRUCTOR
 	private String name, description;
 	private GameCategory category;
 	private ArrayList<Comment> comments = new ArrayList<>();
 	public static MapOfGames allGames = new MapOfGames();
 	
-	public Game(String name, GameCategory category, int lowerAge,
+	public Game(String name, GameCategory category, int minAge,
 			int minPlayers, int maxPlayers, String description) {
 		this.name = name;
 		this.category = category;
-		this.lowerAge = lowerAge;
+		this.minAge = minAge;
 		this.minPlayers = minPlayers;
 		this.maxPlayers = maxPlayers;
 		this.description = description;
 		allGames.put(this.name, this);
 	}
 
-	public int getLowerAge() {
-		return lowerAge;
+	public int getMinAge() {
+		return minAge;
 	}
 
 
-	public void setLowerAge(int lowerAge) {
-		this.lowerAge = lowerAge;
+	public void setMinAge(int minAge) {
+		this.minAge = minAge;
 	}
 
 
@@ -83,14 +81,25 @@ public class Game {
 		this.category = category;
 	}
 
+	public Rating getTotalRating() {
+	    return this.totalRating;
+	}
 
-	public static MapOfGames searchGame() { //HAVE TO STUDY STREAMS FOR THIS ONE
-		
+	public void setTotalRating(Rating totalRating) {
+	    this.totalRating = totalRating;
+	}
+
+	public ArrayList<Comment> getComments() {
+	    return this.comments;
+	}
+
+	public void setComments(ArrayList<Comment> comments) {
+	    this.comments = comments;
 	}
 	
-	public void commentGame(RegisteredUser userWhoWrote, String content) {
-		Comment newComment = new Comment(userWhoWrote, content);
-		comments.add(newComment);
+	public void commentGame(String username, String content) {
+		Comment newComment = new Comment(username, content);
+		this.comments.add(newComment);
 	}
 	
 	public void rateGame(int newRating) {
@@ -105,4 +114,12 @@ public class Game {
 		System.out.println("Name:" + this.getName());
 		System.out.println("REST DETAILS");
 	}
+	
+
+    public boolean isGameSearched(String searchedName, int searchedMinAge, int searchedPlayersNumber) {
+        boolean isMinAgeOk = (searchedMinAge == -1 || searchedMinAge >= this.minAge);
+        boolean isPlayersNumberOk = (searchedPlayersNumber == -1 || searchedPlayersNumber >= this.minPlayers && searchedPlayersNumber <= this.maxPlayers);
+        return (this.name.contains(searchedName) && isMinAgeOk && isPlayersNumberOk);
+    }
 }
+

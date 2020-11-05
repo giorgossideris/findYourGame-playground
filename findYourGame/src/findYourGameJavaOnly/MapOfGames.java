@@ -18,24 +18,39 @@ public class MapOfGames {
 		this.games = games;
 	}
 	
+	 public Map<String, Game> getGames() {
+	    return this.games;
+	 }
+	
 	public void put(String gameName, Game game) {
-		this.put(gameName, game);
+		this.games.put(gameName, game);
 	}
 	
 	public void printAll() {
-		for (Game game : this.games.values())  
-            System.out.println(game.getName());
+		if (this.games.isEmpty()) {
+	        System.out.println("No games found");
+	    } else {
+	        for (Game game : this.games.values()) {
+	        	System.out.println(game.getName());
+	        }
+	    }
 	}
 	
 	public Game chooseGame() {
-		while (true) {
-			String gameName = User.readInput("Enter the name of the game /n"
+		String gameName;
+		boolean validInputInserted = false;
+		Game chosenGame = null;
+		do {
+			gameName = User.readInput("Enter the name of the game \n"
 					+ "or enter to go back to basic menu:");
 			if (gameName.equals("")) {
-				return null;
+				//chosenGame equals null at this moment
+				validInputInserted = true;
 			} else if (this.games.containsKey(gameName)) {
-				return this.games.get(gameName);
+				chosenGame = this.games.get(gameName);
+				validInputInserted = true;
 			}
-		}
+		} while(!validInputInserted);
+		return chosenGame;
 	}
 }

@@ -2,20 +2,20 @@ package findYourGameJavaOnly;
 
 public class Comment {
 
-	private RegisteredUser userWhoWrote;
+	private String usernameWhoWrote;
 	private String content;
 	
-	public Comment(RegisteredUser userWhoWrote, String content) {
-		this.userWhoWrote = userWhoWrote;
+	public Comment(String usernameWhoWrote, String content) {
+		this.usernameWhoWrote = usernameWhoWrote;
 		this.content = content;
 	}
 
-	public RegisteredUser getUserWhoWrote() {
-		return userWhoWrote;
+	public String getUserWhoWrote() {
+		return usernameWhoWrote;
 	}
 
-	public void setUserWhoWrote(RegisteredUser userWhoWrote) {
-		this.userWhoWrote = userWhoWrote;
+	public void setUserWhoWrote(String usernameWhoWrote) {
+		this.usernameWhoWrote = usernameWhoWrote;
 	}
 
 	public String getContent() {
