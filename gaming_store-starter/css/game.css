@@ -1,3 +1,46 @@
+* {
+    font-family: 'Turret Road', cursive;
+}
+.red-background {
+    background-color: #e32b2e;
+}
+
+.red {
+    color: #e32b2e;
+}
+
+.blue-background {
+    background-color: #08148c;
+}
+
+.blue {
+    color: #08148c;
+}
+
+.green-background {
+    background-color: #0b8e21;
+}
+
+.green {
+    color: #0b8e21;
+}
+
+.purple-background {
+    background-color: #46197b;
+}
+
+.purple {
+    color: #46197b;
+}
+
+.navbar-brand > img{
+    max-height: 40px;
+}
+.nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    width: 150px;
+    text-align: center;
+}
 .game-details {
     margin-top: 30px;
     
@@ -9,8 +52,9 @@
 .title .left {
     font-size: xx-large;
     font-weight: bold;
-    border-right: outset;
-    padding-right: 20px;
+}
+.left img {
+    width: 70px;
 }
 
 .section-content {
@@ -20,6 +64,7 @@
     position: relative;
     background-color: rgba(252, 252, 252, 0.3);
 } 
+
 
 .secimage img{
     margin-left: 20px;
@@ -42,7 +87,7 @@
     font-weight: bold;
 }
 .two-col li {
-    border-radius: 15px 50px 30px;
+    border-radius: 0px 20px;
     padding: 5px 15px;
     width: 300px;
     height: 40px;
@@ -51,7 +96,7 @@
 }
 
 .right-rating {
-    padding-left: 20px;
+    padding: 20px 0px 20px 100px;
 }
 .rating {
     font-size: large;
@@ -62,7 +107,6 @@
 }
 .rating .out-of {
     font-size: smaller;
-
 }
 
 .rating-button {
@@ -83,5 +127,4 @@
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    border-radius: 8px;
 }
