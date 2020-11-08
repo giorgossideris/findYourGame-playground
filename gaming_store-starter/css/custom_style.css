@@ -112,12 +112,16 @@ p.ac-footer {
    text-align: center;
 }
 /*KARDOULA */
+.stars{
+    display: flex;
+    justify-content: center;
+}
+
 /*fixed stars on rating */
 
 .checked {
     color: #c59b08;
-    margin: auto;
-    
+  
   }
   /*fixed stars on rating */
 
