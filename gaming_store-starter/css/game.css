@@ -1,9 +1,8 @@
 * {
     font-family: 'Turret Road', cursive;
 }
-#container {
-    background:url(../images/1.jpg) no-repeat 0px 0px;
-    background-size:cover;
+#allbody {
+
     background: url(../images/dott.png)repeat 0px 0px; 
     background-size: 2px;
     -webkit-background-size: 2px;
@@ -13,7 +12,19 @@
     padding: 3em 0;
     padding-bottom: 0em;
 }
+.banner {
+    background: none;
 /* general layout */
+}
+.agileinfo-dot {
+    background: none;
+}
+.testimonial{
+    background: none;
+}
+.testimonial-dot{
+    background: none
+}
 .game-details {
     padding-top: 30px;
     /* background:url(../images/1.jpg) no-repeat 0px 0px;
