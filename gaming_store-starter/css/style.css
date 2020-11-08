@@ -13,21 +13,24 @@ body a{
 	  font-size: 100%;
 	  font-family: 'Roboto', sans-serif;
   }
-  body{
-	  background:#FFFFFF;
-  }
+body {
+	background: url(../images/1.jpg) no-repeat 0px 0px;
+	background-size: cover;
+
+}
   .banner{
 	  background: url(../images/1.jpg) no-repeat 0px 0px;
 	  background-size: cover;
   }
   .agileinfo-dot{
-	  background: url(../images/dott.png)repeat 0px 0px;
+	  background: url(../images/dott.png)repeat 0px 0px; 
 	  background-size: 2px;
 	  -webkit-background-size: 2px;
 	  -moz-background-size: 2px;
 	  -o-background-size: 2px;
 	  -ms-background-size: 2px;
 	  padding: 3em 0;
+	  padding-bottom: 0em;
   }
   .jarallax {
 	  position: relative;
@@ -688,6 +691,7 @@ body a{
 	  background:url(../images/1.jpg) no-repeat 0px 0px;
 	  background-size:cover;
   }
+  
   .testimonial-dot{
 	  background: url(../images/dott.png)repeat 0px 0px;
 	  background-size: 2px;
