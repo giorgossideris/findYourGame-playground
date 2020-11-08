@@ -112,7 +112,7 @@ body {
 	  color: #ffffff;
 	  border: solid 2px #ffffff;
 	  background: none;
-	  border-radius: 20px;
+	  border-radius: 10px;
   }
   .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
 	  color: #ffffff;
@@ -126,7 +126,7 @@ body {
 	  color: #ffffff;
 	  border: solid 2px #ffffff;
 	  background: none;
-	  border-radius: 0px;
+	  border-radius: 10px;
   }
   /*-- //header --*/
   /*--slider--*/
@@ -480,11 +480,11 @@ body {
 	  font-size: .9em;
 	  font-weight: 600;
 	  margin: 0 0.4em;
-	  border-radius: 30px;
-	  -webkit-border-radius: 30px;
-	  -moz-border-radius: 30px;
-	  -o-border-radius: 30px;
-	  -ms-border-radius: 30px;
+	  border-radius: 10px;
+	  -webkit-border-radius: 10px;
+	  -moz-border-radius: 10px;
+	  -o-border-radius: 10px;
+	  -ms-border-radius: 10px;
   }
   .simplefilter li {
 	  border: 2px solid #212121;
@@ -493,11 +493,11 @@ body {
 	  border: 2px solid #ff9800;
 	  color: #ffffff;
 	  background: #ff9800;
-	  border-radius: 30px;
-	  -webkit-border-radius: 30px;
-	  -moz-border-radius: 30px;
-	  -o-border-radius: 30px;
-	  -ms-border-radius: 30px;
+	  border-radius: 10px;
+	  -webkit-border-radius: 10px;
+	  -moz-border-radius: 10px;
+	  -o-border-radius: 10px;
+	  -ms-border-radius: 10px;
   }
   select {
 	  padding: 1rem 1rem;
@@ -974,7 +974,7 @@ body {
 	  padding: 0.8em;
 	  width: 60%;
 	  border: none;
-	  border-radius: 0;
+	  border-radius: 10px;
 	  background: #f0f0f0;
 	  color: #aaa;
 	  -webkit-appearance: none; /* for box shadows to show on iOS */

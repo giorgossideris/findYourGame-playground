@@ -2,7 +2,6 @@
     font-family: 'Turret Road', cursive;
 }
 #container {
-    background:url(../images/1.jpg) no-repeat 0px 0px;
     background-size:cover;
     background: url(../images/dott.png)repeat 0px 0px; 
     background-size: 2px;

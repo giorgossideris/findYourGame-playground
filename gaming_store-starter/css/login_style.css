@@ -1,9 +1,14 @@
+* {
+    font-family: 'Turret Road', cursive !important;
+}
+
+
 .text-white {
     color: white;
 }
 
 .rounded-corners {
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .flexbox {
@@ -14,7 +19,7 @@
 .box{
     margin:25px;
     width:75%;
-    border: solid white;
+    border: double white;
     border-color: white;
     float:left; 
     border-width: 3px 4px 3px 5px;
@@ -27,10 +32,13 @@
 }
 .login-title {
     text-align: center;
-    font-size: 10vh;
-    margin: 10vh
+    font-size: 70px;
+    margin: 7vh
 }
 
+.login-form {
+    font-size: 20px;
+}
 .login-form-group {
     display: grid;
     grid-template-columns: repeat(20, 5%);
