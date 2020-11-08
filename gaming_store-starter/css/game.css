@@ -1,10 +1,18 @@
 * {
     font-family: 'Turret Road', cursive;
 }
-/* body {
+#container {
     background:url(../images/1.jpg) no-repeat 0px 0px;
     background-size:cover;
-} */
+    background: url(../images/dott.png)repeat 0px 0px; 
+    background-size: 2px;
+    -webkit-background-size: 2px;
+    -moz-background-size: 2px;
+    -o-background-size: 2px;
+    -ms-background-size: 2px;
+    padding: 3em 0;
+    padding-bottom: 0em;
+}
 /* general layout */
 .game-details {
     padding-top: 30px;
@@ -146,18 +154,23 @@
     margin: 4px 2px;
     grid-column-start: 3;
 }
+
+.rate-area {
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
 /* Comment area css */
 .comment-area {
     margin-top: 50px;
 }
-.comments-head {
+.comments-ratings-head {
     background-color: #CAD2BFC9;
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 5px;
 }
 
-.comments-title {
+.comments-ratings-title {
     display: block;
     color: black;
     font-weight: bold;
