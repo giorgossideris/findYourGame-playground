@@ -1,0 +1,109 @@
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("return-to-top").style.display = "block";
+    } else {
+        document.getElementById("return-to-top").style.display = "none";
+    }
+}
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+var postURL = function(url) {
+    var form = document.createElement("FORM");
+    form.method = "POST";
+    form.enctype = "application/x-www-form-urlencoded";
+    form.style.display = "none";
+    document.body.appendChild(form);
+    form.action = url.replace(/\?(.*)/, function(_, urlArgs) {
+        urlArgs.replace(/\+/g, " ").replace(/([^&=]+)=([^&=]*)/g, function(input, key, value) {
+            input = document.createElement("INPUT");
+            input.type = "hidden";
+            input.name = decodeURIComponent(key);
+            input.value = decodeURIComponent(value);
+            form.appendChild(input);
+        });
+        return "";
+    });
+    form.submit();
+    return false;
+};
+
+function shareFB(uid) {
+    window.open('https://www.facebook.com/sharer.php?u=https://www.yomamajokes.xyz/joke/'+uid, 'Share', 'scrollbars=yes,resizable=yes,toolbar=no,menubar=no,scrollbars=no,location=no,directories=no,width=500, height=400, top=300, left=300' );
+}
+
+function shareMail(uid) {
+}
+
+function shareTwitter(uid) {
+    var description = $('#joke' + uid).text();
+    window.open('http://twitter.com/share?text='+encodeURIComponent(description.substring(0,115))+'&url=https://www.yomamajokes.xyz&hastags=yomama,jokes', 'Share', 'scrollbars=yes,resizable=yes,toolbar=no,menubar=no,scrollbars=no,location=no,directories=no,width=500, height=400, top=300, left=300' );
+}
+
+function listView() {
+    document.cookie='modeview=0; path=/; max-age=31536000';
+    $('.list-grid-container').removeClass('compact').addClass('show-table');
+    $('.listView').addClass('active');
+    $('.gridView').removeClass('active');
+    $('.compactView').removeClass('active');
+}
+function gridView() {
+    document.cookie='modeview=1; path=/; max-age=31536000';
+    $('.list-grid-container').removeClass('show-table').removeClass('compact');
+    $('.listView').removeClass('active');
+    $('.gridView').addClass('active');
+    $('.compactView').removeClass('active');
+}
+function compactView() {
+    document.cookie='modeview=2; path=/; max-age=31536000';
+    $('.list-grid-container').removeClass('show-table').addClass('compact');
+    $('.listView').removeClass('active');
+    $('.gridView').removeClass('active');
+    $('.compactView').addClass('active');
+}
+
+$(document).ready(function () {
+    window.onscroll = function() {scrollFunction()};
+
+    $('[data-toggle="popover"]').popover({
+        html: true,
+        trigger: 'focus',
+        container: 'body',
+        placement: function (context, element) {
+            /*
+             var position = $(element).position();
+             console.log(position.top - $(window).scrollTop());
+             if (position.top - $(window).scrollTop() < 110){
+             return "bottom";
+             }*/
+            return "right";
+        },
+        template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>',
+        content: function() {
+            var popup = '<div>' + $(this).parent().parent().children().eq(3).html() + '</div>';
+            popup += '<div>' + $(this).parent().parent().children().eq(4).html() + '</div>';
+            popup += '<div>' + $(this).parent().parent().children().eq(5).html() + '</div>';
+            popup += '<div>' + $(this).parent().parent().children().eq(6).html() + '</div>';
+            popup += '<div>' + $(this).parent().parent().children().eq(7).html() + '</div>';
+            return popup;
+        }
+    });
+
+    // toggle sidebar when button clicked
+    $('.sidebar-toggle').on('click', function () {
+        $('.sidebar').toggleClass('toggled');
+    });
+
+    // auto-expand submenu if an item is active
+    var active = $('.sidebar .active');
+
+    if (active.length && active.parent('.collapse').length) {
+        var parent = active.parent('.collapse');
+
+        parent.prev('a').attr('aria-expanded', true);
+        parent.addClass('show');
+    }
+});
