@@ -1,8 +1,10 @@
-* {
-    font-family: 'Turret Road', cursive !important;
+*, .agileits-logo h1 a, .footer-title h3 {
+    font-family: 'Turret Road', cursive;
 }
 
-
+.correct-font {
+    font-family: 'Turret Road', cursive;
+}
 .text-white {
     color: white;
 }
