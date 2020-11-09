@@ -18,20 +18,19 @@
     justify-content: center;
 }
 
-.box{
-    margin:25px;
-    width:75%;
-    border: double white;
-    border-color: white;
-    float:left; 
-    border-width: 3px 4px 3px 5px;
-    border-radius:95% 4% 92% 5%/4% 95% 6% 95%;
-    transform: rotate(2deg);
+.box {
+    margin: 25px;
+    padding:0px;
+    width: 75%;
+    border: solid;
+    border-image: 
+    linear-gradient(
+      to right, 
+      orangered, 
+      orange
+    ) 1 0%;
 }
 
-.straighten {
-    transform: rotate(-2deg);
-}
 .login-title {
     text-align: center;
     font-size: 70px;
@@ -61,7 +60,9 @@
     text-align: center;
     background-color: transparent;
     grid-column: 9 / 13;
-    border-color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color:#eae6d5;
 }
 
 .login-button:hover {
