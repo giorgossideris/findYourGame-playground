@@ -2,6 +2,7 @@
 Author: W3layout
 Author URL: http://w3layouts.com
 --*/
+
 body a{
 	transition: 0.5s all;
 	-webkit-transition: 0.5s all;
@@ -13,24 +14,21 @@ body a{
 	  font-size: 100%;
 	  font-family: 'Roboto', sans-serif;
   }
-body {
-	background: url(../images/1.jpg) no-repeat 0px 0px;
-	background-size: cover;
-
-}
+  body{
+	  background:#FFFFFF;
+  }
   .banner{
 	  background: url(../images/1.jpg) no-repeat 0px 0px;
 	  background-size: cover;
   }
   .agileinfo-dot{
-	  background: url(../images/dott.png)repeat 0px 0px; 
+	  background: url(../images/dott.png)repeat 0px 0px;
 	  background-size: 2px;
 	  -webkit-background-size: 2px;
 	  -moz-background-size: 2px;
 	  -o-background-size: 2px;
 	  -ms-background-size: 2px;
 	  padding: 3em 0;
-	  padding-bottom: 0em;
   }
   .jarallax {
 	  position: relative;
@@ -40,6 +38,68 @@ body {
   }
   /*-- banner --*/
   /*-- header --*/
+  form.example input[type=text] {
+	  padding: 10px;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  float: left;
+	  width: 80%;
+	  background: #f1f1f1;
+	}
+  
+  
+	/* Style the submit button */
+	form.example button {
+	  float: left;
+	  width: 20%;
+	  padding: 10px;
+	  background: #FF9800;
+	  color: white;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  border-left: none; /* Prevent double borders */
+	  cursor: pointer;
+	}
+  
+	form.example button:hover {
+	  background: #FF9800;
+	}
+  
+	/* Clear floats */
+	form.example::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+  
+  /*-- form.example1 --*/
+  
+  form.example1 input[type=text] {
+	  padding: 10px;
+	  font-size: 17px;
+	  border: 1px solid grey;
+	  float: left;
+	  width: 40%;
+	  background: #f1f1f1;
+	  height: 30px;
+	}
+  
+  
+	/* Clear floats */
+  
+	.inline-block-child {
+	  display: inline-block;
+	}
+  
+  
+  .agileits-logo1{
+	  text-align:center;
+	  margin: auto;
+  
+	  padding: 10px;
+	  width: 300px;
+	  height: 150px
+  }
   .agileits-logo {
 	  text-align:center;
   }
@@ -60,7 +120,7 @@ body {
 	  text-transform: capitalize;
 	  letter-spacing: 1px;
 	  font-weight: 300;
-	  color: #FFFFFF;
+	  color: #ffffff;
   }
   .navbar-default {
 	  background: none;
@@ -691,7 +751,6 @@ body {
 	  background:url(../images/1.jpg) no-repeat 0px 0px;
 	  background-size:cover;
   }
-  
   .testimonial-dot{
 	  background: url(../images/dott.png)repeat 0px 0px;
 	  background-size: 2px;
@@ -1719,4 +1778,4 @@ body {
 		  margin: 1em 0 0 0;
 	  }
   }
-  /*-- //responsive --*/
+  /*-- //responsive --*/ 
