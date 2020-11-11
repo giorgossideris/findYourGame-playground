@@ -1,6 +1,41 @@
+.container1 {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container1 {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container1 {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container1 {
+      width: 1170px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
 *, .agileits-logo h1 a, .agileits-title h2,
  .agileits-title h3, .footer-title h3 {
     font-family: 'Turret Road', cursive;
+}
+.hot_games_back{
+    background-color: rgb(196, 193, 193);
 }
 
 #rcorners2 {
@@ -27,26 +62,27 @@
     grid-column:1/2;
     border: 2px black;
     border-right-style: groove;
-    width:100%;
-    height: auto;
+    width:20vh;
+    height: 20vh;
 
    
 }
 
 .game-info {
     display:grid;
-    grid-template-rows:30% 70%;
-    grid-template-columns: 20% 80%;
-    grid-column: 2/3;
+  
+    grid-template-columns: 50% 50%;
     border: 2px black;
     border-right-style: groove;
     align-items: center;
+    text-align: center;
     
 }
 
+
 .game-name {
-    grid-row: 1/2;
-    grid-column: 2/3;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 .game-details{
     grid-row: 2/3;
