@@ -1,6 +1,10 @@
 * {
     font-family: 'Turret Road', cursive;
 }
+body {
+    background: url(../images/1.jpg) no-repeat 0px 0px;
+    background-size: cover;  
+}
 #allbody {
 
     background: url(../images/dott.png)repeat 0px 0px; 
@@ -11,10 +15,6 @@
     -ms-background-size: 2px;
     padding: 3em 0;
     padding-bottom: 0em;
-}
-body{
-    background:url(../images/1.jpg) no repeat 0px 0px!important;
-    background-size: cover!important;
 }
 .banner {
     background: none;
@@ -38,7 +38,7 @@ body{
 .title {
     margin: 20px 0px;
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 40% 20% 40%;
 }
 .title .left {
     font-size: xx-large;
@@ -72,6 +72,14 @@ body{
     color: rgb(15, 15, 15);
     text-align: inherit;
 
+}
+/* add to favorites */
+.ac-footer {
+    grid-column-start: 2;
+}
+.heart {
+    text-align: left;
+    margin-bottom: 0;
 }
 /* categories customization */
 .categories {
