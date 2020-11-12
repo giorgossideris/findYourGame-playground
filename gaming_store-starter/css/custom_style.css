@@ -48,49 +48,72 @@
 
 .game-layout {
     display: grid;
-    grid-template-columns:20% 60% 20%;
-    border: 2px black;
-    /* padding: 20px;  */
-    border-style: groove;
+    grid-template-columns:200px 2fr 1fr;
+    grid-template-rows: 50px 150px auto;
+    border: 2px solid black;
     margin-bottom: 25px;
     width: 60%;
+    padding:0px;
     margin: auto;
-    background-color:rgba(133, 138, 150, 0.315);
+    background: linear-gradient(to bottom, rgba(2,0,36,1) 0%, rgba(205,205,197,1) 0%, rgba(176,172,167,1) 100%);
 }
 
 .game-photo {
     grid-column:1/2;
-    border: 2px black;
-    border-right-style: groove;
-    width:20vh;
-    height: 20vh;
+    border-right: 2px groove black;
+    border-bottom: 2px groove black;
+    width:200px;
+    height: 200px;
 
    
 }
 
-.game-info {
-    display:grid;
-  
-    grid-template-columns: 50% 50%;
-    border: 2px black;
-    border-right-style: groove;
-    align-items: center;
-    text-align: center;
-    
-}
-
-
 .game-name {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    border-bottom: 2px groove black;
+    padding-top:13px;
+    font-weight: bold;
+    font-size: 120%;
+    margin:0px;
+    text-align: center;
 }
-.game-details{
-    grid-row: 2/3;
+
+.game-info {
     grid-column: 2/3;
+    grid-row: 2/3;
+    border-right: 2px groove black;
+    border-bottom: 2px groove black;
+    padding-left: 20%;
+    padding-top: 20px;
 }
 
 .game-rating {
     grid-column: 3/4;
+    grid-row: 2/3;
+    border-bottom: 2px groove black;
+}
+
+.game-comments {
+    height: auto;
+    grid-row: 3/4;
+    grid-column: 1/4;
+    text-align: left;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.banner_text {
+    display: flex;
+    justify-content: center;
+}
+
+.agileits-title p{
+    width:auto;
+    margin:10px 3vw 10px;
+    padding: 0px;
+    line-height: 1.1;
+    color: orangered;
 }
 
 
@@ -134,7 +157,7 @@
 
 /*KARDOULA*/
 .ac-footer .ac-icon{left:0;right:100;width:20px;height:30px;margin: auto;}
-.ac-footer .ac-icon-love-dark{background:url("../images/black-heart.svg") no-repeat center center/contain}
+.ac-footer .ac-icon-love-dark{background:url("../images/black-heart.svg") no-repeat center center/contain; margin: 1vw auto 2vw auto;}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(251,54,110,0.4)}70%{box-shadow:0 0 0 30px rgba(251,54,110,0)}100%{box-shadow:0 0 0 0 rgba(251,54,110,0)}}
 @keyframes pulseHeart{0%{transform:scale(1.3)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
 .ac-icon-love-dark{display:block;position:relative}.ac-icon-love-dark:before{content:'';display:block;width:8px;height:8px;position:absolute;top:45%;bottom:0;left:50%;transform:translate(-50%, -50%);right:0;z-index:-1;border-radius:100%}
@@ -149,7 +172,7 @@ p.ac-footer {
   }
 
 .heart{
-   color:red !important;
+   color:orangered !important;
    text-align: center;
 }
 /*KARDOULA */
