@@ -31,6 +31,14 @@
 		<!-- //font -->
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
 	</head>
 
 
@@ -113,7 +121,7 @@
 									<button class="hover-button">
 
 									<i class="far fa-star"></i>
-									<span class="star-rating-text"><a href="#rate">Rate it!</a></span>
+									<span class="star-rating-text"><a href="#rate" class="scroll">Rate it!</a></span>
 									
 									</button>
 								</span>
