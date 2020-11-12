@@ -17,6 +17,7 @@ body a{
   body{
 	  background:#FFFFFF;
   }
+ 
   .banner{
 	  background: url(../images/1.jpg) no-repeat 0px 0px;
 	  background-size: cover;
@@ -750,6 +751,7 @@ body a{
   }
   /*-- //model --*/
   /*-- testimonial --*/
+
   .testimonial{
 	  background:url(../images/1.jpg) no-repeat 0px 0px;
 	  background-size:cover;

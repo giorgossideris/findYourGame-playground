@@ -19,11 +19,12 @@
       width: 1170px;
     }
   }
-
-
-
-
-
+.hot-games-back{
+    background-color: rgb(223, 224, 221);
+}
+.br-back{
+    background-color:#FF9800 ;
+}
 
 
 
@@ -34,9 +35,7 @@
  .agileits-title h3, .footer-title h3 {
     font-family: 'Turret Road', cursive;
 }
-.hot_games_back{
-    background-color: rgb(196, 193, 193);
-}
+
 
 #rcorners2 {
    
@@ -50,18 +49,18 @@
     display: grid;
     grid-template-columns:200px 2fr 1fr;
     grid-template-rows: 50px 150px auto;
-    border: 2px solid black;
+    border: 2px solid grey;
     margin-bottom: 25px;
     width: 60%;
     padding:0px;
     margin: auto;
-    background: linear-gradient(to bottom, rgba(2,0,36,1) 0%, rgba(205,205,197,1) 0%, rgba(176,172,167,1) 100%);
+    background: white
 }
 
 .game-photo {
     grid-column:1/2;
-    border-right: 2px groove black;
-    border-bottom: 2px groove black;
+    border-right: 2px solid grey;
+    border-bottom: 2px solid grey;
     width:200px;
     height: 200px;
 
@@ -71,7 +70,7 @@
 .game-name {
     grid-column: 2/4;
     grid-row: 1/2;
-    border-bottom: 2px groove black;
+    border-bottom: 2px solid grey;
     padding-top:13px;
     font-weight: bold;
     font-size: 120%;
@@ -82,8 +81,8 @@
 .game-info {
     grid-column: 2/3;
     grid-row: 2/3;
-    border-right: 2px groove black;
-    border-bottom: 2px groove black;
+    border-right: 2px solid grey;
+    border-bottom: 2px solid grey;
     padding-left: 20%;
     padding-top: 20px;
 }
@@ -91,9 +90,17 @@
 .game-rating {
     grid-column: 3/4;
     grid-row: 2/3;
-    border-bottom: 2px groove black;
+    border-bottom: 2px solid grey;
 }
-
+.testimonial1{
+	background:url(../images/chess1.jpg) no-repeat 0px 0px;
+	background-size:cover;
+}
+.banner1{
+	background: url(../images/chess1.jpg) no-repeat 0px 0px;
+	background-size: cover;
+	
+  }
 .game-comments {
     height: auto;
     grid-row: 3/4;
