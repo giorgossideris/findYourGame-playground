@@ -41,19 +41,18 @@
     font-size: 20px;
 }
 .login-form-group {
-    display: grid;
-    grid-template-columns: repeat(20, 5%);
+    display: flex;
+    justify-content: center;
     text-align: center;
 }
 
 .login-field-description {
     text-align: center !important;
-    grid-column: 7 / 9;
+    margin-right: 3vw;
 }
 
 .login-input {
-    width: 100%;
-    grid-column: 10 / 16;
+    width: 40%;
 }
 
 .login-button {
