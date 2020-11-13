@@ -31,6 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //font -->
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -71,12 +72,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 								<nav>
 									<ul class="nav navbar-nav">
-										<li class="active"><a href="index.html">Home</a></li>
+										<li class="active"><a href="index.html">Home <i class="fa fa-home"></i></a></li>
 										
 										<li><a href="#gallery" class="scroll">Hot Games️ 	&#127798;</a></li>
-								<li><a href="#blog" class="scroll">Our Suggestions</a></li>
+										<li><a href="#blog" class="scroll">Our Suggestions <i class="fas fa-chess"></i></a></li>
 
-										<li><a href="#team" class="scroll">Team</a></li>
+										<li><a href="#team" class="scroll">Team <i class="fa fa-group"></i></a></li>
 								<!--		<li><a href="#blog" class="scroll">Blog</a></li>-->
 									<!--	<li><a href="#mail" class="scroll">Mail Us</a></li>-->
 									</ul>
@@ -188,10 +189,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<!-- //about --> 
 		<!-- portfolio -->
+
 		<div class="agileits-title" id="gallery"> 
 			<h3>Hot Games</h3> 
 			<br>
-
+																						<!-- HOT GAME NUMBER 1-->
 			<div class="game-layout">
 				
 				<img class="game-photo" src="images/ts2.jpg" alt="Photo of the game">
@@ -210,7 +212,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="game-rating">
 					<section class="ac-footer">
-						<p class="heart">Add to favorite </p>
+						<div class="person_who_made_a_comment_color">
+							<p class="heart">Add to favorite </p>
+						</div>
 							<div class="ac-footer-container ac-footer-brand">
 								<span class="ac-icon ac-icon-love-dark"></span> 
 							</div>
@@ -230,7 +234,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="banner_text">
 
 								<h4>An awesome game for kids and adults!</h4>
-								<p>by Deathwariorr</p>
+								<div class="person_who_made_a_comment_color">	
+									<p>by Deathwariorr</p>
+								</div>
 							</div>
 
 						</li>
@@ -238,7 +244,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="banner_text">
 
 								<h4>I can't get enough of this game!</h4>
-								<p>by nickiller66</p>
+								<div class="person_who_made_a_comment_color">
+									<p>by nickiller66</p>
+								</div>
 							</div>
 						</li>
 					</ul>
@@ -249,6 +257,96 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						$(function () {
 							// Slideshow 4
 							$("#slider4").responsiveSlides({
+							auto: true,
+							pager:true,
+							nav:true,
+							speed: 50,
+							namespace: "callbacks",
+							before: function () {
+								$('.events').append("<li>before event fired.</li>");
+							},
+							after: function () {
+								$('.events').append("<li>after event fired.</li>");
+							}
+							});
+					
+						});
+					</script>
+				</div>
+				
+				
+								
+							
+						
+				
+			</div>
+
+			<br>
+																									<!-- HOT GAME NUMBER 2-->
+
+			<div class="game-layout">
+				
+				<img class="game-photo" src="images/ts1.jpg" alt="Photo of the game">
+
+				<h4 class="game-name">Risk </h4> 
+
+				<div class="game-info">
+					
+					<ul class="game-details">
+						<li>Players: 2-6</li>
+						<li>Age: 10+</li>
+						<li>Category: Strategy</li>
+						<li>Duration: 60'+</li>
+						
+					</ul>
+				</div>
+				<div class="game-rating">
+					<section class="ac-footer">
+						<div class="person_who_made_a_comment_color">
+							<p class="heart">Add to favorite </p>
+						</div>
+							<div class="ac-footer-container ac-footer-brand">
+								<span class="ac-icon ac-icon-love-dark"></span> 
+							</div>
+							
+					</section>	
+					<div class="stars">
+						<span class="fa fa-star checked" ></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+						<span class="fa fa-star"></span>
+					</div>
+				</div>
+				<div class=game-comments>
+					<ul class="rslides callbacks callbacks1" id="slider5">
+						<li>
+							<div class="banner_text">
+
+								<h4>Got it for my birthday, GREAT!</h4>
+								<div class="person_who_made_a_comment_color">	
+									<p>by KatKat2</p>
+								</div>
+							</div>
+
+						</li>
+						<li>
+							<div class="banner_text">
+
+								<h4>I love strategic games, this is the one</h4>
+								<div class="person_who_made_a_comment_color">
+									<p>by roarroar33</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="clearfix"> </div>
+					<script src="js/responsiveslides.min.js"></script>
+					<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+							// Slideshow 4
+							$("#slider5").responsiveSlides({
 							auto: true,
 							pager:true,
 							nav:true,
@@ -273,25 +371,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 			</div>
 			<br>
+																									<!-- HOT GAME NUMBER 3-->
+
 			<div class="game-layout">
 				
-				<img class="game-photo" src="images/ts2.jpg" alt="Photo of the game">
+				<img class="game-photo" src="images/scotland_yard.jpeg" alt="Photo of the game">
 
-				<h4 class="game-name">Monopoly: Cheaters Edition </h4> 
+				<h4 class="game-name">Scotland Yard </h4> 
 
 				<div class="game-info">
 					
 					<ul class="game-details">
-						<li>Players: 2-8</li>
-						<li>Age: 3+</li>
-						<li>Category: Family</li>
+						<li>Players: 3-6</li>
+						<li>Age: 10+</li>
+						<li>Category: Bluffing</li>
 						<li>Duration: 45'+</li>
 						
 					</ul>
 				</div>
 				<div class="game-rating">
 					<section class="ac-footer">
-						<p class="heart">Add to favorite </p>
+						<div class="person_who_made_a_comment_color">
+							<p class="heart">Add to favorite </p>
+						</div>
 							<div class="ac-footer-container ac-footer-brand">
 								<span class="ac-icon ac-icon-love-dark"></span> 
 							</div>
@@ -306,30 +408,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class=game-comments>
-					<ul class="rslides callbacks callbacks1" id="slider4">
+					<ul class="rslides callbacks callbacks1" id="slider6">
 						<li>
 							<div class="banner_text">
 
-								<h4>An awesome game for kids and adults!</h4>
-								<p>by Deathwariorr</p>
+								<h4>None could call my bluffs &#128521  </h4>
+								<div class="person_who_made_a_comment_color">	
+									<p>by WhoAmI</p>
+								</div>
 							</div>
 
 						</li>
 						<li>
 							<div class="banner_text">
 
-								<h4>I can't get enough of this game!</h4>
-								<p>by nickiller66</p>
+								<h4>TRASH</h4>
+								<div class="person_who_made_a_comment_color">
+									<p>by MrBin</p>
+								</div>
 							</div>
 						</li>
 					</ul>
-					<div class="clearfix"> </div>
 					<script src="js/responsiveslides.min.js"></script>
 					<script>
 						// You can also use "$(window).load(function() {"
 						$(function () {
 							// Slideshow 4
-							$("#slider4").responsiveSlides({
+							$("#slider6").responsiveSlides({
 							auto: true,
 							pager:true,
 							nav:true,
@@ -351,92 +456,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								
 							
 						
-				
-			</div>
-			<br><div class="game-layout">
-				
-				<img class="game-photo" src="images/ts2.jpg" alt="Photo of the game">
-
-				<h4 class="game-name">Monopoly: Cheaters Edition </h4> 
-
-				<div class="game-info">
-					
-					<ul class="game-details">
-						<li>Players: 2-8</li>
-						<li>Age: 3+</li>
-						<li>Category: Family</li>
-						<li>Duration: 45'+</li>
-						
-					</ul>
-				</div>
-				<div class="game-rating">
-					<section class="ac-footer">
-						<p class="heart">Add to favorite </p>
-							<div class="ac-footer-container ac-footer-brand">
-								<span class="ac-icon ac-icon-love-dark"></span> 
-							</div>
-							
-					</section>	
-					<div class="stars">
-						<span class="fa fa-star checked" ></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star"></span>
-					</div>
-				</div>
-				<div class=game-comments>
-					<ul class="rslides callbacks callbacks1" id="slider4">
-						<li>
-							<div class="banner_text">
-
-								<h4>An awesome game for kids and adults!</h4>
-								<p>by Deathwariorr</p>
-							</div>
-
-						</li>
-						<li>
-							<div class="banner_text">
-
-								<h4>I can't get enough of this game!</h4>
-								<p>by nickiller66</p>
-							</div>
-						</li>
-					</ul>
-					<div class="clearfix"> </div>
-					<script src="js/responsiveslides.min.js"></script>
-					<script>
-						// You can also use "$(window).load(function() {"
-						$(function () {
-							// Slideshow 4
-							$("#slider4").responsiveSlides({
-							auto: true,
-							pager:true,
-							nav:true,
-							speed: 50,
-							namespace: "callbacks",
-							before: function () {
-								$('.events').append("<li>before event fired.</li>");
-							},
-							after: function () {
-								$('.events').append("<li>after event fired.</li>");
-							}
-							});
-					
-						});
-					</script>
-				</div>
-				
-				
-								
-							
-				
 				
 			</div>
 			<br>
+
 		</div>
 	</div>
-
+	<div class="br-back"><br></div>
 
 <!--
 	<div class="portfolio" id="gallery">
@@ -675,6 +701,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+	
+	<div class="br-back"><br></div>
 	<!-- //testimonial -->
 	<!-- team -->
 	<div class="team" id="team">
@@ -743,183 +771,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
-	<!-- //team -->
-	
-	<!-- blog -->
-	<!--
-	<div id="blog" class="blog">
-		<div class="container"> 
-			<div class="agileits-title">
-				<h3>Our Blog</h3>
-			</div> 
-			<div class="wthree-blog-grids">
-				<div class="col-md-6 w3-agileits-blog-grid">
-					<div class="col-sm-4 col-xs-3 blog-left">
-						<h4>24/01</h4>
-						<ul>
-							<li>Posted : <a href="#">Admin</a></li>
-							<li>Likes : 31<li>
-							<li>Comments : (4)</li>
-						</ul>
-					</div>
-					<div class="col-sm-8 col-xs-9 blog-right">
-						<a href="#" data-toggle="modal" data-target="#myModal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque imperdiet luctus gravida.</a>
-						<p>Sed ut feugiat felis. Morbi tempor ut nibh id consectetur. Morbi turpis arcu, interdum at feugiat non, iaculis id dui. Cras vestibulum dapibus volutpat. Fusce id molestie mauris, nec pulvinar nibh. </p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-md-6 w3-agileits-blog-grid">
-					<div class="col-sm-4 col-xs-3 blog-left">
-						<h4>09/12</h4>
-						<ul>
-							<li>Posted : <a href="#">Admin</a></li>
-							<li>Likes : 80<li>
-							<li>Comments : (8)</li>
-						</ul>
-					</div>
-					<div class="col-sm-8 col-xs-9 blog-right">
-						<a href="#" data-toggle="modal" data-target="#myModal">Etiam ut nibh quis magna placerat euismod ac id eros. Cras eleifend nulla vel eros blandit.</a>
-						<p>Duis sodales eleifend laoreet. Vestibulum luctus venenatis massa, in vulputate mi porta ac. Maecenas sollicitudin eros lectus, a rutrum nisi vulputate quis. Proin tempus, lectus vitae gravida</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	-->
-	<!-- //blog -->
-	<!-- mail -->
-	<!--
-	<div class="mail" id="mail">
-		<div class="container">
-			<div class="agileits-title">
-				<h3>Mail Us</h3>
-			</div> 
-			<div class="w3_mail_grids">
-				<form action="https://sendmail.w3layouts.com/submitForm" method="post">
-					<span class="input input--jiro">
-						<input class="input__field input__field--jiro" type="text" id="input-10" name="w3lName" placeholder="Your Name" required=""/>
-						<label class="input__label input__label--jiro" for="input-10">
-							<span class="input__label-content input__label-content--jiro">Your Name</span>
-						</label>
-					</span>
-					<span class="input input--jiro">
-						<input class="input__field input__field--jiro" type="email" id="input-11" name="w3lSender" placeholder="Your Email Address" required=""/>
-						<label class="input__label input__label--jiro" for="input-11">
-							<span class="input__label-content input__label-content--jiro">Your Email</span>
-						</label>
-					</span>
-					<span class="input input--jiro">
-						<input class="input__field input__field--jiro" type="text" id="input-12" name="w3lSubject" placeholder="Subject" required=""/>
-						<label class="input__label input__label--jiro" for="input-12">
-							<span class="input__label-content input__label-content--jiro">Subject</span>
-						</label>
-					</span>
-					<textarea name="w3lMessage" placeholder="Message..." required=""></textarea>
-					<input type="submit" value="Submit">
-				</form>
-			</div>
-		</div>
-	</div>
-	<script src="js/classie.js"></script>
-	<script>
-			(function() {
-				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-				if (!String.prototype.trim) {
-					(function() {
-						// Make sure we trim BOM and NBSP
-						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-						String.prototype.trim = function() {
-							return this.replace(rtrim, '');
-						};
-					})();
-				}
+	<div class="br-back"><br></div>
 
-				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
-					// in case the input is already filled..
-					if( inputEl.value.trim() !== '' ) {
-						classie.add( inputEl.parentNode, 'input--filled' );
-					}
 
-					// events:
-					inputEl.addEventListener( 'focus', onInputFocus );
-					inputEl.addEventListener( 'blur', onInputBlur );
-				} );
-
-				function onInputFocus( ev ) {
-					classie.add( ev.target.parentNode, 'input--filled' );
-				}
-
-				function onInputBlur( ev ) {
-					if( ev.target.value.trim() === '' ) {
-						classie.remove( ev.target.parentNode, 'input--filled' );
-					}
-				}
-			})();
-		</script>
-		-->
-	<!-- //mail -->
-	<!-- contact -->
-	<!--
-	<div id="contact" class="contact">
-		<div class="contact-row agileits-w3layouts">  
-			<div class="col-md-5 contact-w3lsleft map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.948805392833!2d-73.99619098458929!3d40.71914347933105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1479793484055"></iframe>
-			</div>
-			<div class="col-md-7 contact-w3lsright">
-				<h6>Sed interdum interdum accumsan nec purus ac orci finibus facilisis sapien Sed interdum . </h6>
-				<div class="col-xs-6 address-row">
-					<div class="col-xs-2 address-left">
-						<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-					</div>
-					<div class="col-xs-10 address-right">
-						<h5>Visit Us</h5>
-						<p>76, Patission Street <br>104 34, Athens </p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-xs-6 address-row w3-agileits">
-					<div class="col-xs-2 address-left">
-						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-					</div>
-					<div class="col-xs-10 address-right">
-						<h5>Mail Us</h5>
-						<p><a href="mailto:info@example.com"> t8180004@aueb.gr </a></p>
-						<p><a href="mailto:info@example.com"> t8180116@aueb.gr</a></p>
-						<p><a href="mailto:info@example.com"> t8180152@aueb.gr</a></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="col-xs-6 address-row">
-					<div class="col-xs-2 address-left">
-						<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-					</div>
-					<div class="col-xs-10 address-right">
-						<h5>Call Us</h5>
-						<p>+01 222 333 4444<br></p>
-						<p>+01 222 333 5555</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div> 
-				<div class="col-xs-6 address-row">
-					<div class="col-xs-2 address-left">
-						<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-					</div>
-					<div class="col-xs-10 address-right">
-						<h5>Working Hours</h5>
-						<p>Mon - Fri : 8:00 am to 10:30 pm<br>
-						Sat - Sun : 9:00 am to 11:30 pm</p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="clearfix"> </div>	
-			</div>
-			<div class="clearfix"> </div>
-		</div>	
-	</div>
-	-->
-	<!-- //contact -->  
+ 
 	<!-- footer -->
 	<div class="footer">
 		<div class="container">
@@ -928,14 +783,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="footer-title">
 						<h3>About Us</h3>
 					</div> 
-					<p>The team consists of 3 students, Nikos, Giorgos and Konstantina and was created for the purposes of the course: 'Information Systems Implementation and Architecture'. </p>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
 				</div>
 				<div class="col-md-4 amet-sed amet-medium">
 					<div class="footer-title">
-						<h3>Twitter Feed</h3>
+						<h3>Subscribe</h3>
 					</div> 
-					<p><a href="#">https://www.facebook.com/</a> Never miss a new game by hitting the like button in our Facebook page</p>
-					<p><a href="#">https://twitter.com/</a>Follow us on Twitter and participate in competitions to win games! </p>
+					<div class="support">
+						<form action="#" method="post">
+							<input type="email" placeholder="Enter email...." required="" class="footer-email"> 
+							<input type="submit" value="Subscribe" class="botton">
+						</form> 
+					</div>
 				</div>
 				<div class="col-md-4 amet-sed ">
 					<div class="footer-title">
@@ -948,12 +807,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="#"><i class="fa fa-rss"></i></a></li>
 							<li><a href="#"><i class="fa fa-vk"></i></a></li>
 						</ul>
-					</div>
-					<div class="support">
-						<form action="#" method="post">
-							<input type="email" placeholder="Enter email...." required=""> 
-							<input type="submit" value="Subscribe" class="botton">
-						</form> 
 					</div>
 				</div>
 				<div class="clearfix"> </div>

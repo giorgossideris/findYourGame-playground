@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 .container1 {
     padding-right: 15px;
     padding-left: 15px;
@@ -20,10 +27,13 @@
     }
   }
 .hot-games-back{
-    background-color: rgb(223, 224, 221);
+    background: rgb(207,202,200);
+    background: linear-gradient(180deg, rgba(207,202,200,1) 27%, rgba(223,156,57,0.36658932714617165) 78%);
 }
 .br-back{
     background-color:#FF9800 ;
+    line-height:15px;
+    content: " ";
 }
 
 
@@ -49,7 +59,7 @@
     display: grid;
     grid-template-columns:200px 2fr 1fr;
     grid-template-rows: 50px 150px auto;
-    border: 2px solid grey;
+    border: 2px solid rgb(180, 176, 176);
     margin-bottom: 25px;
     width: 60%;
     padding:0px;
@@ -59,8 +69,8 @@
 
 .game-photo {
     grid-column:1/2;
-    border-right: 2px solid grey;
-    border-bottom: 2px solid grey;
+    border-right: 2px solid rgb(180, 176, 176);
+    border-bottom: 2px solid rgb(180, 176, 176);
     width:200px;
     height: 200px;
 
@@ -70,10 +80,10 @@
 .game-name {
     grid-column: 2/4;
     grid-row: 1/2;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid rgb(180, 176, 176);
     padding-top:13px;
     font-weight: bold;
-    font-size: 120%;
+    font-size: 140%;
     margin:0px;
     text-align: center;
 }
@@ -81,23 +91,24 @@
 .game-info {
     grid-column: 2/3;
     grid-row: 2/3;
-    border-right: 2px solid grey;
-    border-bottom: 2px solid grey;
+    border-right: 2px solid rgb(180, 176, 176);
+    border-bottom: 2px solid rgb(180, 176, 176);
     padding-left: 3vw;
     padding-top: 20px;
+    font-size: 2vh;
 }
 
 .game-rating {
     grid-column: 3/4;
     grid-row: 2/3;
-    border-bottom: 2px solid grey;
+    border-bottom: 2px solid rgb(180, 176, 176);
 }
 .testimonial1{
-	background:url(../images/chess1.jpg) no-repeat 0px 0px;
+	background:url(../images/scrabble1.jpg) no-repeat 0px 0px;
 	background-size:cover;
 }
 .banner1{
-	background: url(../images/chess1.jpg) no-repeat 0px 0px;
+	background: url(../images/monopoly1.jpg) no-repeat 0px 0px;
 	background-size: cover;
 	
   }
@@ -109,7 +120,9 @@
     padding-left: 10px;
     padding-right: 10px;
 }
-
+.person_who_made_a_comment_color p{ 
+    color:#ff7300!important;
+}
 .banner_text {
     display: flex;
     justify-content: center;
