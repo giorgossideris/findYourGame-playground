@@ -5,6 +5,7 @@
 .correct-font {
     font-family: 'Turret Road', cursive;
 }
+
 .text-white {
     color: white;
 }
@@ -13,13 +14,40 @@
     border-radius: 10px;
 }
 
+.basic-buttons {
+    display:flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+}
+
+ .basic-button { /*basic buttons are the buttons at the top of the page (Home, Login, Signup) */
+    text-align: center;
+    background-color: white;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color:white;
+    font-size: 30px;
+    color: orange;
+}
+
+.agileinfo-dot{
+    padding-top: 40px;
+}
+
+.navbar-nav{
+    margin:0px;
+}
+
+.navbar-nav li::after { /* ONLY FOR LOGIN PAGE */
+    position: relative;
+}
 .flexbox {
     display:flex;
     justify-content: center;
 }
 
 .box {
-    margin: 25px;
+    margin: 25px 25px 7vw 25px;
     padding:0px;
     width: 75%;
     border: solid;
@@ -34,7 +62,7 @@
 .login-title {
     text-align: center;
     font-size: 70px;
-    margin: 7vh
+    margin: 9vh
 }
 
 .login-form {
@@ -48,10 +76,14 @@
 
 .login-field-description {
     text-align: center !important;
+    line-height: 50%;
     margin-right: 3vw;
+    font-size: 25px;
+    width: 116px;
 }
 
 .login-input {
+    margin-bottom: 20px;
     width: 40%;
 }
 
@@ -62,6 +94,7 @@
     border: 2px solid;
     border-radius: 10px;
     border-color:#eae6d5;
+    font-size: 26px;
 }
 
 .login-button:hover {
@@ -69,7 +102,17 @@
 }
 
 .login-button-area {
-    margin: 10vh;
+    margin: 2vh 0px 3vh 0px;
+}
+
+.signup-message {
+    color: white;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.signup-message p a{
+    color:orange;
 }
 
 /* FOOTER CSS */
