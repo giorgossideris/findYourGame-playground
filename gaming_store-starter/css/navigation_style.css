@@ -1,0 +1,39 @@
+.navigation-area {
+    display:grid;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 100%;
+}
+
+.filter-area { 
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+    padding: 50px 10px 0px 0px;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.filter-description {
+    text-align: center;
+    color:whitesmoke;
+}
+
+.filter-input {
+    text-align: center;
+}
+
+.games-to-navigate-area {
+    grid-column: 2/3;
+}
+
+.game-layout {
+    width: 80%;
+}
