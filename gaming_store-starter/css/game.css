@@ -16,12 +16,50 @@ body {
     padding: 3em 0;
     padding-bottom: 0em;
 }
+/* banner layout */
 .banner {
     background: none;
-/* general layout */
+    margin-top: 2em;
+    margin-bottom: 4em;
 }
-.agileinfo-dot {
-    background: none;
+
+.header-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.header-top-info{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: right;
+    font-size: larger;
+}
+.sign-in{
+    grid-column-start: 3;
+    align-self: center;
+    justify-self: end;
+}
+.nav.navbar-nav {
+    margin-top: 0.4em;
+}
+
+.signing-button {
+    background-color: #FF9800;;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    
+
+}
+.signing-button a {
+    color: white;
+}
+.navbar-nav li.inactive::after {
+    background: none; 
+    width: 0px;
 }
 .testimonial{
     background: none;
@@ -35,31 +73,13 @@ body {
     background-size:cover;
      */
 }
-.title {
-    margin: 20px 0px;
-    display: grid;
-    grid-template-columns: 40% 20% 40%;
-}
-.title .left {
-    font-size: xx-large;
-    font-weight: bold;
-}
-.left img {
-    width: 70px;
-}
 
+/* game view css */
 .section-content {
-    width: 1450px;
     margin: auto;
     display: flex;
     position: relative;
-    /* background: url(../images/dott.png)repeat 0px 0px;
-    background-size: 2px;
-    -webkit-background-size: 2px;
-    -moz-background-size: 2px;
-    -o-background-size: 2px;
-    -ms-background-size: 2px; */
-    background-color: rgba(252, 252, 252, 0.3);
+    background-color: rgba(252, 252, 252, 0.4);
 } 
 .secimage img{
     margin-left: 20px;
@@ -68,60 +88,51 @@ body {
 }
 
 .secdetails {
-    margin: 0px 40px;
+    padding: 0px 40px;
     color: rgb(15, 15, 15);
     text-align: inherit;
 
 }
+.game-title{
+
+    background-color: rgba(207,202,200,1);
+    display: flex;
+    margin-top: 20px;
+}
+.game-title h2{
+    color: #FF9800;
+    font-weight: bold;
+    margin:0px;
+    padding-top: 20px;
+    padding-left: 10px;
+
+}
+.title {
+    margin: 20px 10px;
+    margin-top: 10px;
+
+}
+
 /* add to favorites */
 .ac-footer {
-    grid-column-start: 2;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 .heart {
     text-align: left;
     margin-bottom: 0;
 }
-/* categories customization */
-.categories {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding: 0px 20px;
-}
-.rules span {
-    font-weight: bold;
-}
-.categories li {
-    border-radius: 0px 20px;
-    padding: 5px 15px;
-    width: 300px;
-    height: 40px;
-    margin-bottom: 10px;
-    border: 3px solid #CAD2BF;
-}
-.left-up {
-    grid-area: 1 / 1 / 2/ 2;
-}
-.right-up {
-    grid-area: 1 / 2 / 3/ 3;
-}
-.left-down {
-    grid-area: 2 / 1 / 3/ 2;
-}
-.right-down {
-    grid-area: 2 / 2 / 3/ 3;
-
-}
-/* right top area */
 .rating {
     font-size: large;
-    text-align: center;
+    justify-self: end;
+
 }
 .rating .rating-value{
     font-size: larger; 
 }
 .rating .out-of {
     font-size: smaller;
+    margin-right: 20px;
 }
 
 .rating-commenting-button button {
@@ -147,13 +158,48 @@ body {
     color: darkorange;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+/* categories customization */
+.categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+.rules span {
+    font-weight: bold;
+}
+.categories li {
+    border-radius: 0px 20px;
+    padding: 5px 15px;
+    width: 300px;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 3px solid #B6B6B6BD;
+}
+.left-up {
+    grid-area: 1 / 1 / 2/ 2;
+}
+.right-up {
+    grid-area: 1 / 2 / 3/ 3;
+}
+.left-down {
+    grid-area: 2 / 1 / 3/ 2;
+}
+.right-down {
+    grid-area: 2 / 2 / 3/ 3;
+
+}
+/* right top area */
+
 .desc-heading {
     font-size: x-large;
     margin-bottom: 15px;
     color: white;
 }
 .game-description p{
-    background-color: #CAD2BF;
+    background-color: #B6B6B6BD;
     padding: 10px;
 
 }
