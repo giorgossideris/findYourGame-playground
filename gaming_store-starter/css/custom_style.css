@@ -104,10 +104,6 @@
     font-size: 17px;
 }
 
-.game-info li {
-    list-style-image: <img src="/open-iconic/svg/expand-left.svg">;
-}
-
 .game-rating {
     grid-column: 3/4;
     grid-row: 2/3;
