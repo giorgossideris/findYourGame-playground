@@ -91,28 +91,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
                 <div class="filter">
                     <label   class="control-label filter-description">Category:</label>
-                    <select class="form-control filter-input rounded-corners" name="duration" id="duration">
-                        <option value="1">Action</option>
-                        <option value="2">Adventure</option>
-                        <option value="3">Card games</option>
-                        <option value="4">Memory</option>
-                        <option value="5">Family</option>
-                    </select>
+                        <div class="options-area">
+                            <div class="option">
+                                <input type="checkbox" name="action" value="action">
+                                <label for="action">Action</label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="adventure" value="adventure">
+                                <label for="adventure">Adventure</label>  
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="card_games" value="card_games">
+                                <label for="card_games">Card games</label>        
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="memory" value="memory">
+                                <label for="memory">Memory</label>  
+                            </div>
+                            <div class="option">      
+                                <input type="checkbox" name="family" value="family">
+                                <label for="family">Family</label>
+                            </div>
+                        </div>
                 </div>
                 <div class="filter">
                     <label for="duration" class="control-label filter-description">Duration:</label>
-                    <select class="form-control filter-input rounded-corners" name="duration" id="duration">
-                        <option value="20'">20'</option>
-                        <option value="30'">30'</option>
-                        <option value="45'">45'</option>
-                        <option value="60+''">60+'</option>
-                    </select>
+                    <div class="options-area">
+                        <div class="option">
+                            <input type="checkbox" name="mins_20" value="mins_20">
+                            <label for="mins_20">20'</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="mins_30" value="mins_30">
+                            <label for="mins_30">30'</label>  
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="mins_45" value="mins_45">
+                            <label for="mins_45">45'</label>        
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" name="mins_60_plus" value="mins_60_plus">
+                            <label for="mins_60_plus">60'+</label>  
+                        </div>
+                    </div>
                 </div>				
             </div>
-        </div>
+            <button type="button" class="apply-filters-button">Apply filters</button> 
+        </div>   
         <div class="games-to-navigate-area"> 	
-            <br>
-            <br>
+            <div class="results-header">
+                <h2>Your Search Results  </h2>
+                <p>(3 items)</p>
+                <label for="sorting">Sort by:</label>
+
+                <select name="sorting">
+                  <option value="default">Default</option>
+                  <option value="popularity">Popularity</option>
+                  <option value="rating">Rating</option>
+                </select> 
+            </div>
+            <hr>
             <div class="agileits-title" id="gallery"> 
                 <br>
                                                                                             <!-- HOT GAME NUMBER 1-->
@@ -124,12 +162,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     
                     <div class="game-info">
                         
-                        <ul class="game-details">
-                            <li>Players: 2-8</li>
-                            <li>Age: 3+</li>
-                            <li>Category: Family</li>
-                            <li>Duration: 45'+</li>
-                            
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: 2-8</li>
+                            <li><i class="fa-li fa fa-child fa-xs"></i>Age: 3+</li>
+                            <li><i class="fa-li fa fa-quote-right fa-xs"></i>Category: Family</li>
+                            <li><i class="fa-li fa fa-clock fa-xs"></i>Duration: 45'+</li>
                         </ul>
                     </div>
                     <div class="game-rating">
@@ -207,13 +244,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4 class="game-name">Risk </h4> 
     
                     <div class="game-info">
-                        
-                        <ul class="game-details">
-                            <li>Players: 2-6</li>
-                            <li>Age: 10+</li>
-                            <li>Category: Strategy</li>
-                            <li>Duration: 60'+</li>
-                            
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: 2-6</li>
+                            <li><i class="fa-li fa fa-child fa-xs"></i>Age: 10+</li>
+                            <li><i class="fa-li fa fa-quote-right fa-xs"></i>Category: Strategy</li>
+                            <li><i class="fa-li fa fa-clock fa-xs"></i>Duration: 60'+</li>
                         </ul>
                     </div>
                     <div class="game-rating">
@@ -290,13 +325,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h4 class="game-name">Scotland Yard </h4> 
     
                     <div class="game-info">
-                        
-                        <ul class="game-details">
-                            <li>Players: 3-6</li>
-                            <li>Age: 10+</li>
-                            <li>Category: Bluffing</li>
-                            <li>Duration: 45'+</li>
-                            
+                        <ul class="fa-ul">
+                            <li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: 3-6</li>
+                            <li><i class="fa-li fa fa-child fa-xs"></i>Age: 10+</li>
+                            <li><i class="fa-li fa fa-quote-right fa-xs"></i>Category: Bluffing</li>
+                            <li><i class="fa-li fa fa-clock fa-xs"></i>Duration: 45'+</li>
                         </ul>
                     </div>
                     <div class="game-rating">
