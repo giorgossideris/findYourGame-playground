@@ -31,7 +31,7 @@ body {
     grid-column-start: 2;
     grid-column-end: 3;
     text-align: right;
-    font-size: larger;
+    font-size: inherit;
 }
 .sign-in{
     grid-column-start: 3;
@@ -98,6 +98,7 @@ body {
     background-color: rgba(207,202,200,1);
     display: flex;
     margin-top: 20px;
+    justify-content: center;
 }
 .game-title h2{
     color: #FF9800;
@@ -105,6 +106,7 @@ body {
     margin:0px;
     padding-top: 20px;
     padding-left: 10px;
+    font-size: 220%;
 
 }
 .title {
@@ -124,13 +126,18 @@ body {
 }
 .rating {
     font-size: large;
-    justify-self: end;
+    display: flex;
+    justify-content: end;
 
 }
-.rating .rating-value{
+.rate-num {
+    padding-top: 10px;
+    color: aliceblue;
+}
+.rate-num .rating-value{
     font-size: larger; 
 }
-.rating .out-of {
+.rate-num .out-of {
     font-size: smaller;
     margin-right: 20px;
 }
@@ -166,7 +173,9 @@ body {
     padding: 0px 20px;
     margin-bottom: 20px;
     padding-top: 20px;
+    list-style-type: none;
 }
+
 .rules span {
     font-weight: bold;
 }
@@ -234,6 +243,7 @@ body {
     margin-top: 100px;
     padding-bottom: 100px;
 }
+
 /* Comment area css */
 .comment-area {
     margin-top: 50px;
@@ -309,7 +319,7 @@ body {
 }
 .comment-toolbar {
     width: max-content;
-    padding-left: 20px;
+    padding-left: 25px;
     margin-top: -20px;}
 .comment-toolbar ul {
     list-style-type: none;
