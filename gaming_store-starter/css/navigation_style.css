@@ -1,13 +1,19 @@
+.navbar-default {
+    margin-bottom: 30px;
+}
+
 .navigation-area {
     display:grid;
     grid-template-columns: 150px 1fr;
     grid-template-rows: 100%;
 }
 
+
 .filter-area { 
     grid-column: 1/2;
     grid-row: 1/2;
     display: flex;
+
     flex-direction: column;
     width: 100%;
     margin: 0px;
