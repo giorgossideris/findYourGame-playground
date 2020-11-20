@@ -46,37 +46,49 @@
 		<div id="allbody">
 			<!-- banner -->
 			<div class="banner">
+				<div class="agileits-logo" id="smaller">
+					<h1><a href="index.html">Find  <span>Your <a href="index.html">Game</span></a></h1>
+				</div>
+	
 				<div class="header-top">
 					<div class="header-top-info">
 						<nav class="navbar navbar-default">
 									
-									<!-- Collect the nav links, forms, and other content for toggling -->
-									<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-										<nav>
-											<ul class="nav navbar-nav">
-												<li class="inactive"><a href="index.html">Home <i class="fa fa-home"></i></a></li>
-												<li><a href="#blog" class="scroll">Our Suggestions <i class="fas fa-chess"></i></a></li>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+								<nav>
+									<ul class="nav navbar-nav">
+										<li class="inactive">
+											<a href="index.html">
+												Home 
+												<i class="fa fa-home"></i>
+											</a>
+										</li>
 										
-											</ul>
-										</nav>
-									</div>
-									<!-- /.navbar-collapse -->
+											<li id="orange" >
+												<a href="login.html">
+													Sign in 
+													<i class="fas fa-sign-in-alt"></i> 
+												</a>
+											</li>
+										
+											<li id="orange">
+												<a href="signup.html">
+													Register 
+													<i class="fas fa-user-plus"></i>
+												</a>
+											</li>
+									
+									</ul>
+								</nav>
+							</div>
+							<!-- /.navbar-collapse -->
+
 						</nav>
-					</div>
-						
-					
-					<div class="sign-in">
-						<button class="signing-button">
-							<a href="login.html"><i class="fas fa-sign-in-alt"></i> Sign in</a>
-						</button>
-						<button class="signing-button" style="margin-right: 30px;">
-							<a href="login.html"><i class="fas fa-user-plus"></i> Register</a>
-						</button>
 
 					</div>
-					
+						
 				</div>
-				
 				
 			</div>
 
@@ -95,44 +107,40 @@
 				<div class="secdetails">
 
 					<div class="game-title">
-						<h2>UNO</h2>						
-						<div class="ac-footer">
-							<div class="ac-footer-container ac-footer-brand">
-								<span class="ac-icon ac-icon-love-dark"></span> 
+						<h2>UNO Classic Edition</h2>						
+						<div class="right-buttons">
+							<div class="ac-footer">
+								<div class="ac-footer-container ac-footer-brand" title="Add to favorite">
+									<span class="ac-icon ac-icon-love-dark"></span> 
+								</div>
+							</div>
+							<div class="rating-commenting-button" style="margin-left: 0px;">
+									<button class="hover-button" title="Rate it!">
+										<a href="#rate" class="scroll">
+											<i class="far fa-star"></i>
+										</a>
+									</button>
+							</div>
+
+							<div class="rating-commenting-button">
+									<button class="hover-button" title="Leave a comment">
+										<a href="#rate" class="scroll">
+											<i class="far fa-comment"></i>
+										</a>
+									</button>
 							</div>
 						</div>
 
 					</div>
-					<div class="title">	
 
-						<div class="rating">
-							<span class="rate-num">
-								<i class="far fa-star"></i>
-
-								<span class="rating-value">4.67</span>
-								<span class="out-of">/5</span>	
-							</span>
-							<span class="rating-commenting-button">
-								<button class="hover-button">
-
-									<i class="far fa-star"></i>
-									<span class="star-rating-text"><a href="#rate" class="scroll">Rate it!</a></span>
-									
-								</button>
-							</span>
-							<span class="rating-commenting-button">
-								<button class="hover-button">
-									
-									<i class="far fa-comment"></i>
-									<span class="comment-text"><a href="#com" class="scroll">Comment</a></span>
-									
-								</button>
-							</span>
-						</div>
-
+					<div class="rating">
+						<span class="rate-num">
+							<i class="far fa-star"></i>
+							<span class="rating-value">4.67</span>
+							<span class="out-of">/5</span>
 							
-						
-
+	
+						</span>
 					</div>
 
 							
@@ -142,7 +150,8 @@
 							<li class="left-up"> <span class="white"><i class="fa fa-quote-right fa-xs"></i> Category:</span> Cards </li>
 							<li class="right-up"> <span class="white"><i class="fa fa-user-friends fa-xs"></i> Players: </span> 2-10 </li>  
 							<li class="left-down"> <span class="white"><i class="fa fa-child fa-xs"></i> Age:</span> 7+ </li>
-							<li class="right-down"><span class="white"><i class="fa fa-clock fa-xs"></i> Duration:</span> 20'+ </li>
+							<li class="right-down"> <span class="white"><i class="fa fa-clock fa-xs"></i> Duration:</span> 20'+ </li>
+
 						</ul>
 						
 						
@@ -214,8 +223,6 @@
 						<div class="br-headings">
 							<br>
 						</div>
-			
-						
 						
 						<div class="rate">
 							<input type="radio" id="star5" name="rate" value="5" />
@@ -230,6 +237,7 @@
 							<label for="star1" title="Not good at all">1 star</label>
 						</div>
 					</div>
+
 					<div class="comment-area" id="com">
 						<h2 class="comments-ratings-head">
 							<span class="comments-ratings-title">Comments</span>
@@ -253,15 +261,15 @@
 								
 							</div>
 							<!-- comments toolbar -->
-								<div class="comment-toolbar">
-								<!-- inc. date and time  -->
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 04/01/2020 
+							<div class="comment-toolbar">
+							<!-- inc. date and time  -->
+								<ul>
+									<li>
+										<i class="fa fa-calendar"></i> 04/01/2020 
 										
-										</li>
+									</li>
 
-								</div>
+							</div>
 						</div>
 
 						<div class="comment">
@@ -280,22 +288,25 @@
 							<!-- comments toolbar -->
 							<div class="comment-toolbar">
 								<!-- inc. date and time  -->
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 26/01/2020 
+								<ul>
+									<li>
+										<i class="fa fa-calendar"></i> 26/01/2020 
 										
-										</li>
+									</li>
 
 							</div>
 						</div>
+						<div class="comment-br">
+							<br>
+						</div>
 					
 						<div class="create-new-comment">
-								<!-- current #{user} avatar -->
-								<div class="user-avatar">
-									<img src="images/user.png">
-								</div>
-								<!-- the input field -->
-								<input type="text" placeholder="Join the conversation..">
+							<!-- current #{user} avatar -->
+							<div class="user-avatar">
+								<img src="images/user.png">
+							</div>
+							<!-- the input field -->
+							<input type="text" placeholder="Join the conversation..">
 								
 						</div>
 
@@ -325,108 +336,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- //modal -->
-	<!-- testimonial -->
-	<div id="blog" class="jarallax testimonial1" id="testimonial">
-		<div class="testimonial-dot">
-			<div class="container">
-				<div class="agileits-title testimonial-heading"> 
-					<h3>Our Suggestions</h3> 
-				</div>
-				<div class="w3-agile-testimonial">
-					
-						<div class="callbacks_container">
-							<ul class="rslides callbacks callbacks1" id="slider3">
-								<li>
-									<div class="testimonial-img-grid">
-										<div class="testimonial-img t-img1">
-											<img src="images/ts1.jpg" alt="" />
-										</div>
-										<div class="testimonial-img">
-											<img src="images/ts2.jpg" alt="" />
-										</div>
-										<div class="testimonial-img t-img2">
-											<img src="images/ts3.jpg" alt="" />
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="testimonial-img-info">
-										<p>Check Out the New Monopoly "Cheaters Edition" and leave aside your FAIR-side &#128521;</p>
-										<h5>By Hasbro Gaming</h5>
-										<h6>Rating 4,87</h6>
-									</div>
-								</li>
-								<li>
-									<div class="testimonial-img-grid">
-										<div class="testimonial-img t-img1">
-											<img src="images/ts2.jpg" alt="" />
-										</div>
-										<div class="testimonial-img">
-											<img src="images/ts3.jpg" alt="" />
-										</div>
-										<div class="testimonial-img t-img2">
-											<img src="images/ts1.jpg" alt="" />
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="testimonial-img-info">
-										<p>Do not miss Trivial Pursuit Disney Edition</p>
-										<h5>By Hasbro Gaming</h5>
-										<h6>Rating 3,82</h6>
-									</div>
-								</li>
-								<li>
-									<div class="testimonial-img-grid">
-										<div class="testimonial-img t-img1">
-											<img src="images/ts3.jpg" alt="" />
-										</div>
-										<div class="testimonial-img">
-											<img src="images/ts1.jpg" alt="" />
-										</div>
-										<div class="testimonial-img t-img2">
-											<img src="images/ts2.jpg" alt="" />
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="testimonial-img-info">
-										<p>Searching for a Strategic game? Risk is what you are looking for!</p>
-										<h5>By Hasbro Gaming</h5>
-										<h6>Rating 4,34</h6>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="clearfix"> </div>
-						<script>
-									// You can also use "$(window).load(function() {"
-									$(function () {
-									  // Slideshow 4
-									  $("#slider3").responsiveSlides({
-										auto: true,
-										pager:false,
-										nav:false,
-										speed: 400,
-										namespace: "callbacks",
-										before: function () {
-										  $('.events').append("<li>before event fired.</li>");
-										},
-										after: function () {
-										  $('.events').append("<li>after event fired.</li>");
-										}
-									  });
-								
-									});
-						</script>
-						<!--banner Slider starts Here-->
-					
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="br-back"><br></div>
-		<!-- //testimonial -->
-		
+		<!-- //modal -->		
 	
 	
 		<!-- footer -->
