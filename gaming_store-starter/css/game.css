@@ -220,8 +220,6 @@ body {
 }
 .hover-button:hover {
     color: darkorange;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
-
 }
 #showMore {
     grid-area: 2 / 1 / 3/ 6;
@@ -238,6 +236,7 @@ body {
 /* Comment area css */
 .comment-area {
     margin-top: 20px;
+    margin-bottom: 40px;
 }
 .br-headings {
     background-color: #48423c;
@@ -344,9 +343,7 @@ input::placeholder{
 }
 
 @media(max-width:1400px) {
-    /* .section-content {
-        width: 1200px;
-    } */
+
     .secimage img {
         height: 250px;
     }
@@ -367,12 +364,7 @@ input::placeholder{
 
 }
 @media (max-width:1000px) {
-    /* .section-content {
-        width: 800px;
-    } */
-    .secdetails {
-        width: 700px;
-    }
+
     .secimage img {
         height: 150px;
     }
@@ -408,12 +400,7 @@ input::placeholder{
     }
 }
 @media(max-width:800px) {
-    /* .section-content {
-        width: 500px;
-    } */
-    .secdetails {
-        width: 5b0px;
-    }
+
     .secimage img {
         height: 100px;
     }
@@ -435,12 +422,14 @@ input::placeholder{
         width: 150px;
         height: 60px;
     }
-    .short-description p{
-        margin-right: 20px;
+    .game-description p{
+        padding-right: 20px;
     
     }
     .comment-body {
         margin-left: 40px;
+        height: 45px;
+        margin-right: 15px;
     }
     .comments-head {
         margin-right: 10px;
@@ -450,6 +439,17 @@ input::placeholder{
         margin-right: 20px;
     }
 
+}
+@media (max-width:600px) {
+    .comment-body {
+        margin-right: 15px;
+        width: 150px;
+    }
+    .create-new-comment input {
+        margin-right: 15px;
+        width: 165px;
+
+    }
 }
 
 
