@@ -13,14 +13,19 @@ body {
     -moz-background-size: 2px;
     -o-background-size: 2px;
     -ms-background-size: 2px;
-    padding: 3em 0;
+    padding: 0.5em 0;
     padding-bottom: 0em;
 }
 /* banner layout */
 .banner {
     background: none;
-    margin-top: 1em;
+    padding-top: 40px;
     margin-bottom: 4em;
+}
+.logo img {
+    height: 60px;
+    width: auto;
+    margin: -30px 0 0 5px;
 }
 #smaller h1{
     font-size: 20px;
@@ -33,10 +38,10 @@ body {
     color: #FF9800;
     font-weight: bold;
 }
-.navbar-nav li.inactive::after {
+/* .navbar-nav li.inactive::after {
     background: none; 
     width: 0px;
-}
+} */
 .testimonial{
     background: none;
 }
