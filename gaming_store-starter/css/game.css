@@ -2,51 +2,37 @@
     font-family: 'Turret Road', cursive;
 }
 body {
-    background: url(../images/back-game2.jpg);
+    background: url(../images/back-game2.jpg) fixed;
     background-size: cover;
 }
 #allbody {
-
     background: url(../images/dott.png)repeat 0px 0px; 
     background-size: 2px;
     -webkit-background-size: 2px;
     -moz-background-size: 2px;
     -o-background-size: 2px;
     -ms-background-size: 2px;
-    padding: 0.5em 0;
-    padding-bottom: 0em;
+    padding-bottom: 0.5em;
 }
 /* banner layout */
-.banner {
+.agileinfo-dot {
     background: none;
-    padding-top: 40px;
-    margin-bottom: 4em;
+    padding-top: 40px; 
 }
 .logo img {
     height: 60px;
     width: auto;
     margin: -30px 0 0 5px;
 }
-#smaller h1{
-    font-size: 20px;
-    margin-bottom: 20px;
-}
 .nav.navbar-nav {
     margin-top: 0.4em;
+}
+#no-dot::after {
+    position: relative;
 }
 #orange > a {
     color: #FF9800;
     font-weight: bold;
-}
-/* .navbar-nav li.inactive::after {
-    background: none; 
-    width: 0px;
-} */
-.testimonial{
-    background: none;
-}
-.testimonial-dot{
-    background: none
 }
 
 /* game view css */
@@ -86,12 +72,7 @@ body {
     font-size: 220%;
 
 }
-.title {
-    margin: 20px 10px;
-    margin-top: 10px;
-
-}
-
+/* buttons on the right of game title */
 .right-buttons {
     display: inline-flex;
     position: sticky;
@@ -124,7 +105,7 @@ body {
     color: darkorange;
     /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
 }
-
+/* rating number */
 .rating {
     font-size: large;
     margin-top: 5px;
@@ -136,7 +117,6 @@ body {
     color: aliceblue;
     /* border-bottom: 2px solid rgba(59, 57, 57, 0.712); */
 }
-
 .rate-num .rating-value{
     font-size: larger; 
 }
@@ -144,14 +124,9 @@ body {
     font-size: smaller;
     margin-right: 10px;
 }
-
 .star-rating-text a{
     color: white;
 }
-.comment-text a{
-    color: white;
-}
-
 /* categories customization */
 .categories {
     display: grid;
@@ -163,7 +138,6 @@ body {
     padding-top: 20px;
     list-style-type: none;
 }
-
 .rules span {
     font-weight: bold;
 }
@@ -187,10 +161,8 @@ body {
 }
 .right-down {
     grid-area: 2 / 2 / 3/ 3;
-
 }
-/* right top area */
-
+/* description section */
 .desc-heading {
     font-size: x-large;
     margin-bottom: 15px;
@@ -200,7 +172,6 @@ body {
 .game-description p{
     background-color: #B6B6B6BD;
     padding: 10px;
-
 }
 .white {
     color: white;
@@ -230,14 +201,12 @@ body {
     grid-area: 2 / 1 / 3/ 6;
     margin-top: 10px;
     display: none;
-
 }
-
+/* rate area */
 .rate-area {
     margin-top: 80px;
     padding-bottom: 50px;
 }
-
 /* Comment area css */
 .comment-area {
     margin-top: 20px;
@@ -253,7 +222,6 @@ body {
     padding-bottom: 5px;
     padding-left: 5px;
 }
-
 .comments-ratings-title {
     display: block;
     color: black;
@@ -366,7 +334,6 @@ input::placeholder{
     .right-buttons {
         padding-top: 15px;
     }
-
 }
 @media (max-width:1000px) {
 
@@ -376,7 +343,6 @@ input::placeholder{
     .show-more button {
         padding: 8px 10px;
         font-size: 14px;
-
     }
     .right-buttons {
         padding-top: 15px;
@@ -401,7 +367,6 @@ input::placeholder{
     }
     .right-down {
         grid-area: 4 / 1 / 5 / 2;
-      
     }
 }
 @media(max-width:800px) {
@@ -412,7 +377,6 @@ input::placeholder{
     .show-more button {
         padding: 6px 8px;
         font-size: 12px;
-
     }
     .right-buttons {
         padding-top: 15px;
@@ -429,7 +393,6 @@ input::placeholder{
     }
     .game-description p{
         padding-right: 20px;
-    
     }
     .comment-body {
         margin-left: 40px;
@@ -443,7 +406,6 @@ input::placeholder{
         margin-left: 40px;
         margin-right: 20px;
     }
-
 }
 @media (max-width:600px) {
     .comment-body {
