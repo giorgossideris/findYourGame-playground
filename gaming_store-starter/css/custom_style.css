@@ -1,4 +1,9 @@
-
+/* logo top right corner */
+.logo img{
+    height: 60px;
+    width:auto;
+    margin:-30px 0 0 5px;
+}
 
 
 #duration > option {

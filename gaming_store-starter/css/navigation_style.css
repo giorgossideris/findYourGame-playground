@@ -1,3 +1,7 @@
+.navbar-nav { /* FOR NAVIGATION PAGE */
+    margin: 0;
+}
+
 .navbar-default {
     margin-bottom: 30px;
 }
