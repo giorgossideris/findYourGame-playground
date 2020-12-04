@@ -113,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</nav>
 						<form action="index_Controller.jsp" method="GET">
 							<div id="whole-form" class=" example index_searchbar"  >
-								<input class="search-input" type="text" placeholder="Search Your Game.." name="search2">
+								<input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
 								<button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
 							</div>
 
