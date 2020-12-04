@@ -39,7 +39,7 @@ body a{
   }
   /*-- banner --*/
   /*-- header --*/
-  form.example input[type=text] {
+  #whole-form input[type=text] {
 	  padding: 10px;
 	  font-size: 17px;
 	  border: 1px solid grey;
@@ -50,7 +50,8 @@ body a{
   
   
 	/* Style the submit button */
-	form.example button {
+	
+	#whole-form button {
 	  float: left;
 	  width: 20%;
 	  padding: 10px;
@@ -62,20 +63,20 @@ body a{
 	  cursor: pointer;
 	}
   
-	form.example button:hover {
+	#whole-form button:hover {
 	  background: #FF9800;
 	}
   
 	/* Clear floats */
-	form.example::after {
+	#whole-form::after {
 	  content: "";
 	  clear: both;
 	  display: table;
 	}
   
-  /*-- form.example1 --*/
+  /*-- #whole-form1 --*/
   
-  form.example1 input[type=text] {
+  #whole-form1 input[type=text] {
 	  padding: 10px;
 	  font-size: 17px;
 	  border: 1px solid grey;
