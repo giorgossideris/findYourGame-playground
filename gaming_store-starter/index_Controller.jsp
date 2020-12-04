@@ -1,4 +1,24 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page errorPage="app_error.jsp" %>
+
+<%
+String searchbar = request.getParameter("searchbar"); // ama einai keno tote den ehei dwsei timh o hrhsths 
+String players = request.getParameter("players");
+String age = request.getParameter("age");
+int category = Integer.parseInt(request.getParameter("category"));
+int duration = Integer.parseInt(request.getParameter("duration"));
+int num_of_players = -1;
+int age_num = -1;
+
+try{
+    if(!(players.equals("") && age.equals(""))){
+    num_of_players = Integer.parseInt(players);
+    age_num = Integer.parseInt(age);
+    }
+}catch (NumberFormatException ex) {
+   
+    %>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Gaming Store a Games Category Bootstrap responsive Website Template | Home :: w3layouts</title>
@@ -20,8 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="all">
 <!-- //portfolio -->
 <!-- custom css -->
-<link rel="stylesheet" href="css/custom_style.css" type="text/css" media="all">
-<link rel="stylesheet" href="css/navigation_style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/custom_style.css" type="text/css" media="all">	
 <!-- //custom css -->
 <!-- font -->
 <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;500&display=swap" rel="stylesheet"> 
@@ -46,6 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- banner -->
 	<div class="banner1">
 		<div class="agileinfo-dot">
+			<div class="logo"> <img src="images/logo.png"></div>
 			<div class="agileits-logo">
 				<h1><a href="index.html">Find  <span>Your <a href="index.html">Game</span></a></h1>
 			</div>
@@ -61,18 +81,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<span class="icon-bar"></span>
 									<span class="icon-bar"></span>
 								</button>
-							</div>			
+							</div>
+
+						
 							<!-- Collect the nav links, forms, and other content for toggling -->
+							
 							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 								<nav>
 									<ul class="nav navbar-nav">
-										<li class="inactive">
+										<li class="active">
 											<a href="index.html">
 												Home 
 												<i class="fa fa-home"></i>
 											</a>
 										</li>
-										<li class="active">
+										<li class="inactive">
 											<a href="about_us.html">
 												About us <i class="fa fa-group"></i>
 											
@@ -95,80 +118,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</ul>
 								</nav>
 							</div>
+							<br>
+							<br>
+					
+
+		
 						<!-- 	 /.navbar-collapse -->
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  
-    <div class="br-back"><br></div>
-	<!-- //testimonial -->
-	<!-- team -->
-	<div class="team" id="team">
-		<div class="container">
-			<div class="agileits-title"> 
-				<h3>Amazing Team</h3> 
-			</div>
-			<div class="agileits-team-grids">
-				<div class="col-md-3 agileits-team-grid">
-					<div class="team-info">
-						<img src="images/t1.jpg" alt="">
-						<div class="team-caption"> 
-							<h4>Antonopoulos Nikolaos</h4>
-							<p>Software Engineer</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 agileits-team-grid">
-					<div class="team-info">
-						<img src="images/t2.jpg" alt="">
-						<div class="team-caption"> 
-							<h4>Psychogiou Artemis-Konstantina</h4>
-							<p>Software Engineer</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 agileits-team-grid">
-					<div class="team-info">
-						<img src="images/t3.jpg" alt="">
-						<div class="team-caption"> 
-							<h4>Sideris Georgios</h4>
-							<p>Software Engineer</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 agileits-team-grid">
-					<div class="team-info">
-						<img src="images/t4.jpg" alt="">
-						<div  class="team-caption"> 
-							<h4>Stack Overflow</h4>
-							<p>THE savior</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-rss"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<div class="br-back"><br></div>
+						</nav>
+<div class="alert alert-danger" role="alert">  
+     Number of players and age of players have to be integers or blank. 
+</div>
+
+<form action="index.jsp">
+    <button type="submit" class="btn btn-dark"><span class="glyphicon glyphicon-menu-left"></span>Back to the main page</button>
+
+</form>
+<%
+}
+%>
