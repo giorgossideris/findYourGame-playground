@@ -37,6 +37,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	});
 </script> 
+ 
+
 
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -146,16 +148,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>   
         <div class="games-to-navigate-area"> 	
             <div class="results-header">
-                <h2>Your Search Results  </h2>
-                <p>(3 items)</p>
-                <label for="sorting">Sort by:</label>
-
-                <select name="sorting">
-                  <option value="default">Default</option>
-                  <option value="popularity">Popularity</option>
-                  <option value="rating">Rating</option>
-                </select> 
+                <span id="results-title">
+                    <h2>Your Search Results  </h2>
+                    <p>(3 items)</p> 
+                </span>
+                <span id="sorting-section">
+                    <label for="sorting">Sort by:</label>
+                    <select name="sorting">
+                        <option value="default">Default</option>
+                        <option value="popularity">Popularity</option>
+                        <option value="rating">Rating</option>
+                    </select>
+                </span> 
             </div>
+            <button id="show-filters-button">Show filters</button>
             <hr>
             <div class="agileits-title" id="gallery"> 
                 <br>
@@ -485,7 +491,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //copyright -->
 	<script src="js/jarallax.js"></script>
-	<!-- <script src="js/SmoothScroll.min.js"></script> -->
+    <!-- <script src="js/SmoothScroll.min.js"></script> -->
 	<script type="text/javascript">
 		/* init Jarallax */
 		$('.jarallax').jarallax({
@@ -530,6 +536,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				$('.filtr-item a').Chocolat();
 			});
 		</script>
-	<!-- //PopUp-Box-JavaScript -->
+    <!-- //PopUp-Box-JavaScript -->
+    <!-- script to make filter-area displayable for large screens -->
+    <script type="text/javascript">
+        $(window).resize(function() {
+            if ($(this).width() > 843) {
+                $('.filter-area').css({
+                    'display': 'flex',
+                });
+                document.getElementById('show-filters-button').innerHTML = "Show filters";
+            }else{
+                $('.filter-area').css({
+                    'display': 'none',
+                });
+            } 
+        });
+    </script>
+    <!--script for filter-area in small screens  -->
+        <script type="text/javascript">
+            $('#show-filters-button').click(function() {
+                let filter_area = document.querySelector('.filter-area'),
+                    style = window.getComputedStyle(filter_area),
+                    display = style.getPropertyValue('display');
+                if (display == 'none'){
+                    $('.filter-area').css({
+                        'display': 'flex',
+                    });
+                    document.getElementById('show-filters-button').innerHTML = "Hide filters";
+                } else {
+                    $('.filter-area').css({
+                        'display': 'none',      
+                    });
+                    document.getElementById('show-filters-button').innerHTML = "Show filters";
+                }
+            });
+        </script>
 </body>	
 </html>
