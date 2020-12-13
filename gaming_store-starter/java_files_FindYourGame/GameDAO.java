@@ -3,31 +3,45 @@ package java_files_FindYourGame;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 public class GameDAO {
-    public List<Game> getGames(String searchbar, int players, int age, int category, int duration) throws Exception{
+    public List<Game> getGames(String name, int players, int age, int category, int duration) throws Exception{
         List <Game> list_of_games=new ArrayList<Game>();
         Connection con = null;		
 		PreparedStatement stmt = null;
         ResultSet rs = null;
-        DB db = new DB(); 
+        DB db = new DB();
+        boolean isNameSearched = !name.equals(""),
+                isPlNumberSearched = players != -1,
+                isAgeSearched = age != -1,
+                isCategorySearched = category != 1,
+                isDurationSearched = duration != 1;
         
-
-
-        String sqlQuery = "SELECT * FROM game WHERE gamename LIKE '%%' and min_players< ? and max_players> ? and category_id=? and duration= ?  and start_age<? and end_age>? ;";
+        String searchQuery = createSearchQuery(isNameSearched, isPlNumberSearched, isAgeSearched, isCategorySearched, isDurationSearched);
+    
 
     try{
-
-
         con = db.getConnection();
-        stmt=con.prepareStatement(sqlQuery);
-    //    stmt.setString(1,searchbar);
-        stmt.setInt(1,players);
-        stmt.setInt(2,players);
-        stmt.setInt(3,category);
-        stmt.setInt(4,duration);
-        stmt.setInt(5,age);
-        stmt.setInt(6,age);
+        stmt=con.prepareStatement(searchQuery);
+        int counter = 1;
+        if (isNameSearched){
+            stmt.setString(counter++,name);
+        }
+        if (isPlNumberSearched) {
+            stmt.setInt(counter++, players);
+            stmt.setInt(counter++, players);
+        }
+        if (isCategorySearched) {
+            stmt.setInt(counter++,category);
+        }
+        if (isDurationSearched) {
+            stmt.setInt(counter++ ,duration);
+        }
+        if (isAgeSearched) {
+            stmt.setInt(counter++ ,age);
+            stmt.setInt(counter++ ,age);
+        }
 
         rs= stmt.executeQuery();
 
@@ -52,9 +66,33 @@ public class GameDAO {
     }
     }
 
-    
-
-
+    private String createSearchQuery(boolean isNameSearched, boolean isPlNumberSearched, boolean isAgeSearched,
+                                     boolean isCategorySearched, boolean isDurationSearched){
+        String searchQuery = "SELECT * FROM game"; // basic sql query
+        String nameFilter = "locate(?, gamename) > 0",
+               plNumberFilter = "min_players<= ? AND max_players>= ?",
+               ageFilter = "start_age<=? and end_age>=?",
+               categoryFilter = "category_id=?",
+               durationFilter = "duration= ?";
+        List<String> filters = new ArrayList<String>(Arrays.asList(nameFilter, plNumberFilter, ageFilter, 
+                                                                   categoryFilter, durationFilter));
+        List<Boolean> isSearched = new ArrayList<Boolean>(Arrays.asList(isNameSearched, isPlNumberSearched, isAgeSearched, 
+                                                                        isCategorySearched, isDurationSearched));
+        boolean isFirst = true;
+        for(int i = 0; i < filters.size(); i++){
+            if(isSearched.get(i)) {
+				if (isFirst) {
+                    searchQuery += " WHERE ";
+                    isFirst = false;
+                }else {
+                    searchQuery += " AND ";
+                }
+				searchQuery += filters.get(i);
+			} 
+        }
+        searchQuery += ";";
+        return searchQuery;
+    }
 }
 
 
