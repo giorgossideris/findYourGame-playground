@@ -176,14 +176,7 @@
     }
 }
 
-/*KARDOULA*/
-/* .heart-area{left:0;right:100;width:20px;height:30px;margin: auto;}
-.heart-icon{background:url("../images/black-heart.svg") no-repeat center center/contain; margin: 1vw auto 2vw auto;}
-.heart-area{display:block;position:relative}.ac-icon-love-dark:before{content:'';display:block;width:8px;height:8px;position:absolute;top:45%;bottom:0;left:50%;transform:translate(-50%, -50%);right:0;z-index:-1;border-radius:100%}
-.heart-icon{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:5px solid #788795;position:relative;display:inline-block;margin-left:8px} */
-/* 
-.ac-footer .ac-footer-brand:hover .ac-icon-love-dark{background:url("../images/heart.svg") no-repeat center center/contain} */
-.heart-area{
+.heart-icon{
     width: 20px;
     height: 20px;
     background:url("../images/black-heart.svg") no-repeat center center/contain;
