@@ -186,9 +186,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="person_who_made_a_comment_color">
                                 <p class="heart">Add to favorite </p>
                             </div>
-                                <div class="ac-footer-container ac-footer-brand">
-                                    <span class="ac-icon ac-icon-love-dark"></span> 
-                                </div>
+                            <div class="heart-area">
+                            </div>
                                 
                         </section>	
                         <div class="stars">
@@ -277,7 +276,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span class="fa fa-star checked" ></span>
                             <span class="fa fa-star checked"></span>
                             <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star checked"></span>
                             <span class="fa fa-star"></span>
                         </div>
                     </div>
@@ -569,6 +568,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         'display': 'none',      
                     });
                     document.getElementById('show-filters-button').innerHTML = "Show filters";
+                }
+            });
+        </script>
+    <!-- script for clicking heart -->
+        <script type="text/javascript">
+            $('.heart-area').click(function() {
+                let heart_area = document.querySelector('.heart-area'),
+                    style = window.getComputedStyle(heart_area),
+                    heart_image = style.getPropertyValue('background-image');
+                if (heart_image.includes('black-heart')){  // if the black heart is active make the heart pink
+                    $('.heart-area').css({
+                        'background-image': 'url("../images/heart.svg")'
+                    });
+                } else { // else (if the pink heart is active) make the heart black
+                    $('.heart-area').css({
+                        'background-image': 'url("../images/black-heart.svg")'     
+                    });
                 }
             });
         </script>
