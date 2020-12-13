@@ -53,7 +53,7 @@ public class CategoryDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM category WHERE id=? ;";
+		String sqlQuery = "SELECT * FROM category WHERE category_id=? ;";
 
 		try {
 
