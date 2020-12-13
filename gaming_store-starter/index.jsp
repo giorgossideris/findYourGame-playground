@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page errorPage="app_error.jsp" %>
+<%@ page import="java_files_FindYourGame.*, java.util.List" %>
+
+
+
+<%
+CategoryDAO category = new CategoryDAO();
+List<Category> categories = category.getCategories();
+
+%>
+
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -111,6 +121,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 						<!-- 	 /.navbar-collapse -->
 						</nav>
+
+
 						<form action="index_Controller.jsp" method="GET">
 							<div id="whole-form" class=" example index_searchbar"  >
 								<input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
@@ -142,11 +154,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<select class="form-control filter-input rounded-corners" name="category" id="duration">
 												
-												<option class="correct-font" value="1">Action</option>
-												<option value="2">Adventure</option>
-												<option value="3">Card games</option>
-												<option value="4">Memory</option>
-												<option value="5">Family</option>
+												<option class="correct-font" value="">Category</option>
+												<%	for ( Category cat: categories) { %>
+													<option value="<%=cat.getCategory_id()%>"><%=cat.getCategory_name()%></option>
+												<%}%>
 											</select>
 										</div>
 										
