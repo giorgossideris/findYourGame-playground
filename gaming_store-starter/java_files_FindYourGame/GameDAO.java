@@ -14,28 +14,27 @@ public class GameDAO {
         
 
 
-        String sqlQuery = "SELECT * FROM game WHERE min_players< ? and max_players> ? and category_id=? and duration= ?   searchbar LIKE '%?%';";
-    
+        String sqlQuery = "SELECT * FROM game WHERE gamename LIKE '%%' and min_players< ? and max_players> ? and category_id=? and duration= ?  and start_age<? and end_age>? ;";
+
     try{
-         
+
 
         con = db.getConnection();
         stmt=con.prepareStatement(sqlQuery);
+    //    stmt.setString(1,searchbar);
         stmt.setInt(1,players);
         stmt.setInt(2,players);
         stmt.setInt(3,category);
         stmt.setInt(4,duration);
+        stmt.setInt(5,age);
+        stmt.setInt(6,age);
+
         rs= stmt.executeQuery();
 
 
-
-
-
-
-
-
-
         while(rs.next()){
+
+            
             list_of_games.add( new Game(rs.getInt("game_id"),rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("game_description"),rs.getInt("number_of_ratings")));
         }
         rs.close();

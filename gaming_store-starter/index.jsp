@@ -154,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<select class="form-control filter-input rounded-corners" name="category" id="duration">
 												
-												<option class="correct-font" value="">Category</option>
+												<option class="correct-font" value="0">Category</option>
 												<%	for ( Category cat: categories) { %>
 													<option value="<%=cat.getCategory_id()%>"><%=cat.getCategory_name()%></option>
 												<%}%>

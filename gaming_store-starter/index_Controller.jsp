@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java_files_FindYourGame.*, java.util.List" %>
 
 <%
 String searchbar = request.getParameter("searchbar"); // ama einai keno tote den ehei dwsei timh o hrhsths 
@@ -193,7 +194,17 @@ int x = 0 ;
 </body>
 </html>
 <% }else{
-%><jsp:forward page="game-view.jsp"/><%
+
+GameDAO gamedao = new GameDAO(); 
+
+List<Game> games = gamedao.getGames(searchbar,num_of_players,age_num,category,duration);
+
+	
+for ( Game game : games){
+	%><p><%=game.getGamename()%></p><%
+}
+
+
 }
 
 %>    
