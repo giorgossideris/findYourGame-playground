@@ -49,7 +49,7 @@ public class GameDAO {
         while(rs.next()){
 
             
-            list_of_games.add( new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
+            list_of_games.add( new Game(rs.getInt("game_id"), rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
             rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path")));        }
         rs.close();
         stmt.close();
@@ -68,7 +68,8 @@ public class GameDAO {
 
     private String createSearchQuery(boolean isNameSearched, boolean isPlNumberSearched, boolean isAgeSearched,
                                      boolean isCategorySearched, boolean isDurationSearched){
-        String searchQuery = "SELECT * FROM game"; // basic sql query
+        String searchQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
+        " duration_id, rating_value, photo_path start_age FROM game"; // basic sql query
         String nameFilter = "locate(?, gamename) > 0",
                plNumberFilter = "min_players<= ? AND max_players>= ?",
                ageFilter = "start_age<=? and end_age>= ?",
@@ -101,7 +102,8 @@ public class GameDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM game ORDER BY rating_value DESC LIMIT 5;";
+        String sqlQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
+                          " duration_id, rating_value, photo_path start_age FROM game ORDER BY rating_value DESC LIMIT 5;";
 
 		try {
 
@@ -111,7 +113,7 @@ public class GameDAO {
 
 			while(rs.next()) {
 
-				topRatedGames.add(new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
+				topRatedGames.add(new Game(rs.getInt("game_id"),rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
                 rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
 			}
 
@@ -142,8 +144,9 @@ public class GameDAO {
 		DB db = new DB();
 		Connection con = null;
 		PreparedStatement stmt = null;
-		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM game ORDER BY number_of_ratings DESC LIMIT 3;";
+        ResultSet rs = null;
+        String sqlQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
+                          " duration_id, rating_value, photo_path start_age FROM game ORDER BY number_of_ratings DESC LIMIT 3;";
 
 		try {
 
@@ -153,7 +156,7 @@ public class GameDAO {
 
 			while(rs.next()) {
 
-				mostRatedGames.add(new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
+				mostRatedGames.add(new Game(rs.getInt("game_id"), rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
                 rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
 			}
 

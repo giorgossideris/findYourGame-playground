@@ -48,7 +48,7 @@ public class CommentDAO {
 
     public List<Comment> getTwoCommentsOfGame(int game_id) throws Exception {
 
-		List<Comment> allComments =  new ArrayList<Comment>();
+		List<Comment> twoComments =  new ArrayList<Comment>();
 
 		DB db = new DB();
 		Connection con = null;
@@ -63,15 +63,15 @@ public class CommentDAO {
 			stmt.setInt(1, game_id);
 			rs = stmt.executeQuery();
 			while(rs.next()) {
-
-				allComments.add( new Comment(rs.getInt("registered_user_id"), rs.getString("comment_text")) );
-
+				
+				twoComments.add( new Comment(rs.getInt("registered_user_id"), rs.getString("comment_text")) );
+				throw new Exception("it's ok");
 			}
 
 			rs.close();
 			stmt.close();
 			db.close();
-			return allComments;
+			return twoComments;
 
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());

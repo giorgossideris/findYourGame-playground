@@ -34,9 +34,9 @@ this.game_short_description=game_short_description;
 this.favorite_counter=favorite_counter;
 }
 
-public Game(int category_id, String gamename, int start_age, int end_age, int min_players, int max_players,
+public Game(int game_id, int category_id, String gamename, int start_age, int end_age, int min_players, int max_players,
 int duration, double rating_value, String photo_path) {
-
+this.game_id = game_id;
 this.category_id = category_id;
 this.gamename = gamename;
 this.start_age = start_age;
