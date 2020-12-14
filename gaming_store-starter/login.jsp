@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page errorPage="app_error.jsp" %>
+<%@ page import="java_files_FindYourGame.*" %>
+
 <!--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
@@ -47,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body>
 	<!-- banner -->
-	<div class="banner" id="signup-background">
+	<div class="banner" id="login-background">
 		<div class="agileinfo-dot">
 			<div class="logo"> <img src="images/logo.png"></div>
 			<div class="header-top">
@@ -66,31 +70,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</nav>
                         <div class="flexbox">
                             <div class="container login-border box">
-                                <h1 class="login-title text-white">SIGN UP</h1>
-                                <form class="form-horizontal login-form">
+								<h1 class="login-title text-white">LOG IN</h1>
+<% 
+								if(request.getAttribute("message") != null) {
+%>
+									<div class="alert alert-danger" role="alert">
+										<%=request.getAttribute("message")%>
+									</div>
+<%
+								}
+%>
+                                <form class="form-horizontal login-form" action="<%= request.getContextPath()%>/FindYourGame/loginController.jsp" method="POST">
                                     <div class="form-group login-form-group">
                                         <label class="control-label text-white login-field-description">username</label>
                                         <div class="login-input">
-                                            <input type="text" class="form-control rounded-corners" placeholder="username">
-                                        </div>
-                                    </div>
-                                    <div class="form-group login-form-group">
-                                        <label class="control-label text-white login-field-description">email         </label>
-                                        <div class="login-input">
-                                            <input type="email" class="form-control rounded-corners" placeholder="email">
+                                            <input type="text" class="form-control rounded-corners" name="username" placeholder="username">
                                         </div>
                                     </div>
                                     <div class="form-group login-form-group">
                                         <label class="control-label text-white login-field-description">password</label>
                                         <div class="login-input">
-                                            <input type="password" class="form-control rounded-corners" placeholder="password">
+                                            <input type="password" class="form-control rounded-corners" name="password" placeholder="password">
                                         </div>
-                                    </div>
+									</div>
                                     <div class="form-group login-form-group">
-                                        <button type="button" class="login-button rounded-corners text-white login-button-area">I finished!</button>
+                                        <button type="submit" class="login-button rounded-corners text-white login-button-area">I finished!</button>
 									</div>
 									<div class="signup-message login-form-group">
-										<p>Already have an account? Log in <a href="login.html">here</a>.</p>
+										<p>You don't have an account? Sign up <a href="signup.html">here</a>.</p>
 									</div>
                                 </form>
                             </div>  
@@ -112,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="footer-title">
 						<h3>About Us</h3>
 					</div> 
-					<p>We are a team seeking greatness.</p>
+					<p>We are a team that seeks greatness.</p>
 				</div>
 				<div class="col-md-4 amet-sed amet-medium">
 					<div class="footer-title">

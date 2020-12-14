@@ -1,9 +1,15 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java_files_FindYourGame.*, java.util.List" %>
-
+<%@ page errorPage="app_error.jsp" %>
 
 
 <%
+
+if (session.getAttribute("userObj") != null) {
+	User auth_user = (User)session.getAttribute("userObj");
+}
+
+
 CategoryDAO categoryDAO = new CategoryDAO();
 List<Category> categories = categoryDAO.getCategories();
 GameDAO gameDAO = new GameDAO();
@@ -12,6 +18,7 @@ DurationDAO durationdao = new DurationDAO();
 List<Duration> durations = durationdao.getDurations();
 
 %>
+
 
 <!--A Design by W3layouts
 Author: W3layout
