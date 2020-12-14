@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Arrays;
 
 public class GameDAO {
-    public List<Game> getGames(String name, int players, int age, int category, int duration) throws Exception{
+    public List<Game> getGames(String name, int players, int age, int category, int duration_id) throws Exception{
         List <Game> list_of_games=new ArrayList<Game>();
         Connection con = null;		
 		PreparedStatement stmt = null;
@@ -15,8 +15,8 @@ public class GameDAO {
         boolean isNameSearched = !name.equals(""), 
                 isPlNumberSearched = players != -1,
                 isAgeSearched = age != -1,
-                isCategorySearched = category != 1,
-                isDurationSearched = duration != 1;
+                isCategorySearched = category != -1,
+                isDurationSearched = duration_id != -1;
         
         String searchQuery = createSearchQuery(isNameSearched, isPlNumberSearched, isAgeSearched, isCategorySearched, isDurationSearched);
     
@@ -36,7 +36,7 @@ public class GameDAO {
             stmt.setInt(counter++,category);
         }
         if (isDurationSearched) {
-            stmt.setInt(counter++ ,duration);
+            stmt.setInt(counter++ ,duration_id);
         }
         if (isAgeSearched) {
             stmt.setInt(counter++ ,age);
@@ -50,7 +50,7 @@ public class GameDAO {
 
             
             list_of_games.add( new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("photo_path")));        }
+            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path")));        }
         rs.close();
         stmt.close();
         db.close();
@@ -71,9 +71,9 @@ public class GameDAO {
         String searchQuery = "SELECT * FROM game"; // basic sql query
         String nameFilter = "locate(?, gamename) > 0",
                plNumberFilter = "min_players<= ? AND max_players>= ?",
-               ageFilter = "start_age<=? and end_age>=?",
-               categoryFilter = "category_id=?",
-               durationFilter = "duration= ?";
+               ageFilter = "start_age<=? and end_age>= ?",
+               categoryFilter = "category_id= ?",
+               durationFilter = "duration_id= ?";
         List<String> filters = new ArrayList<String>(Arrays.asList(nameFilter, plNumberFilter, ageFilter, 
                                                                    categoryFilter, durationFilter));
         List<Boolean> isSearched = new ArrayList<Boolean>(Arrays.asList(isNameSearched, isPlNumberSearched, isAgeSearched, 
