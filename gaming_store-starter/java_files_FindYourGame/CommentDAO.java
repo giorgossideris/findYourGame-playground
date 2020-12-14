@@ -65,7 +65,6 @@ public class CommentDAO {
 			while(rs.next()) {
 				
 				twoComments.add( new Comment(rs.getInt("registered_user_id"), rs.getString("comment_text")) );
-				throw new Exception("it's ok");
 			}
 
 			rs.close();

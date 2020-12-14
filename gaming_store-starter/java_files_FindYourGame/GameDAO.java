@@ -69,7 +69,7 @@ public class GameDAO {
     private String createSearchQuery(boolean isNameSearched, boolean isPlNumberSearched, boolean isAgeSearched,
                                      boolean isCategorySearched, boolean isDurationSearched){
         String searchQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
-        " duration_id, rating_value, photo_path start_age FROM game"; // basic sql query
+        " duration_id, rating_value, photo_path FROM game"; // basic sql query
         String nameFilter = "locate(?, gamename) > 0",
                plNumberFilter = "min_players<= ? AND max_players>= ?",
                ageFilter = "start_age<=? and end_age>= ?",
@@ -103,7 +103,7 @@ public class GameDAO {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
         String sqlQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
-                          " duration_id, rating_value, photo_path start_age FROM game ORDER BY rating_value DESC LIMIT 5;";
+                          " duration_id, rating_value, photo_path FROM game ORDER BY rating_value DESC LIMIT 5;";
 
 		try {
 
@@ -146,7 +146,7 @@ public class GameDAO {
 		PreparedStatement stmt = null;
         ResultSet rs = null;
         String sqlQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
-                          " duration_id, rating_value, photo_path start_age FROM game ORDER BY number_of_ratings DESC LIMIT 3;";
+                          " duration_id, rating_value, photo_path FROM game ORDER BY number_of_ratings DESC LIMIT 3;";
 
 		try {
 
