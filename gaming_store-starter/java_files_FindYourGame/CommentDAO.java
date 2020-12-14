@@ -19,8 +19,8 @@ public class CommentDAO {
 
 			con = db.getConnection();
 			stmt = con.prepareStatement(sqlQuery);
+			stmt.setInt(1, game_id);
 			rs = stmt.executeQuery();
-            stmt.setInt(1, game_id);
 			while(rs.next()) {
 
 				allComments.add( new Comment(rs.getInt("registered_user_id"), rs.getString("comment_text")) );
@@ -60,8 +60,8 @@ public class CommentDAO {
 
 			con = db.getConnection();
 			stmt = con.prepareStatement(sqlQuery);
+			stmt.setInt(1, game_id);
 			rs = stmt.executeQuery();
-            stmt.setInt(1, game_id);
 			while(rs.next()) {
 
 				allComments.add( new Comment(rs.getInt("registered_user_id"), rs.getString("comment_text")) );
