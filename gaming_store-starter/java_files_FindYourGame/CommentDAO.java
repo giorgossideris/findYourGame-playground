@@ -1,37 +1,36 @@
 package java_files_FindYourGame;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryDAO {
+public class CommentDAO {
     
-    public List<Category> getCategories() throws Exception {
+    public List<Comment> getAllCommentsOfGame(int game_id) throws Exception {
 
-		List<Category> categories =  new ArrayList<Category>();
+		List<Comment> allComments =  new ArrayList<Comment>();
 
 		DB db = new DB();
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM category;";
+		String sqlQuery = "SELECT registered_user_id, comment_text FROM comment WHERE game_id = ?;";
 
 		try {
 
 			con = db.getConnection();
 			stmt = con.prepareStatement(sqlQuery);
 			rs = stmt.executeQuery();
-
+            stmt.setInt(1, game_id);
 			while(rs.next()) {
 
-				categories.add( new Category(rs.getInt("category_id"), rs.getString("category_name")) );
+				allComments.add( new Comment(rs.getInt("registered_user_id"), rs.getString("comment_text")) );
 
 			}
 
 			rs.close();
 			stmt.close();
 			db.close();
-			return categories;
+			return allComments;
 
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -47,33 +46,32 @@ public class CategoryDAO {
 
     }
 
-    public Category getCategoryByID(int category_id) throws Exception {
+    public List<Comment> getTwoCommentsOfGame(int game_id) throws Exception {
+
+		List<Comment> allComments =  new ArrayList<Comment>();
 
 		DB db = new DB();
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM category WHERE category_id=? ;";
+		String sqlQuery = "SELECT registered_user_id, comment_text FROM comment WHERE game_id = ? LIMIT 2;";
 
 		try {
 
 			con = db.getConnection();
 			stmt = con.prepareStatement(sqlQuery);
-			stmt.setInt(1, category_id);
-
 			rs = stmt.executeQuery();
+            stmt.setInt(1, game_id);
+			while(rs.next()) {
 
-			if (!rs.next()) {
-				throw new Exception("Category with id: " + category_id + " not found");
+				allComments.add( new Comment(rs.getInt("registered_user_id"), rs.getString("comment_text")) );
+
 			}
 
-			Category department = new Category(rs.getInt("category_id"), rs.getString("category_name"));
 			rs.close();
 			stmt.close();
 			db.close();
-
-			return department;
-
+			return allComments;
 
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -87,5 +85,5 @@ public class CategoryDAO {
 
 		}
 
-	} 
+    }
 }

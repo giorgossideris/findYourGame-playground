@@ -50,8 +50,7 @@ public class GameDAO {
 
             
             list_of_games.add( new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("photo_path")));
-        }
+            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("photo_path")));        }
         rs.close();
         stmt.close();
         db.close();

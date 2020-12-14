@@ -4,17 +4,17 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryDAO {
+public class DurationDAO {
     
-    public List<Category> getCategories() throws Exception {
+    public List<Duration> getCategories() throws Exception {
 
-		List<Category> categories =  new ArrayList<Category>();
+		List<Duration> durations =  new ArrayList<Duration>();
 
 		DB db = new DB();
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM category;";
+		String sqlQuery = "SELECT * FROM duration;";
 
 		try {
 
@@ -24,14 +24,14 @@ public class CategoryDAO {
 
 			while(rs.next()) {
 
-				categories.add( new Category(rs.getInt("category_id"), rs.getString("category_name")) );
+				durations.add( new Duration(rs.getInt("duration_id"), rs.getString("duration_name")) );
 
 			}
 
 			rs.close();
 			stmt.close();
 			db.close();
-			return categories;
+			return durations;
 
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -47,27 +47,27 @@ public class CategoryDAO {
 
     }
 
-    public Category getCategoryByID(int category_id) throws Exception {
+    public Duration getDurationByID(int duration_id) throws Exception {
 
 		DB db = new DB();
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM category WHERE category_id=? ;";
+		String sqlQuery = "SELECT * FROM duration WHERE duration_id=? ;";
 
 		try {
 
 			con = db.getConnection();
 			stmt = con.prepareStatement(sqlQuery);
-			stmt.setInt(1, category_id);
+			stmt.setInt(1, duration_id);
 
 			rs = stmt.executeQuery();
 
 			if (!rs.next()) {
-				throw new Exception("Category with id: " + category_id + " not found");
+				throw new Exception("Duration with id: " + duration_id + " not found");
 			}
 
-			Category department = new Category(rs.getInt("category_id"), rs.getString("category_name"));
+			Duration department = new Duration(rs.getInt("duration_id"), rs.getString("duration_name"));
 			rs.close();
 			stmt.close();
 			db.close();
