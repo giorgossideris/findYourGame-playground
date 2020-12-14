@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page errorPage="app_error.jsp" %>
+<%@ page import="java_files_FindYourGame.*, java.util.List" %>
 
 <%
 String searchbar = request.getParameter("searchbar"); // ama einai keno tote den ehei dwsei timh o hrhsths 
@@ -10,18 +10,52 @@ int duration = Integer.parseInt(request.getParameter("duration"));
 int num_of_players = -1;
 int age_num = -1;
 
-try{
-    if(!(players.equals("") && age.equals(""))){
-    num_of_players = Integer.parseInt(players);
-    age_num = Integer.parseInt(age);
-    }
-}catch (NumberFormatException ex) {
-   
-    %>
+boolean negative_num_of_players_given = false;
+boolean string_num_of_players_given = false;
+
+boolean string_age_given = false;
+boolean negative_age_given = false;
+
+if(!players.equals("")){
+	try{
+		num_of_players= Integer.parseInt(players);
+	}catch(Exception e){
+		string_num_of_players_given=true;	
+	}
+	if(string_num_of_players_given==false){
+		if(num_of_players<=0){
+			negative_num_of_players_given=true;
+		}
+	}
+}else{
+	num_of_players=-1; // ΑΜΑ ΔΕ ΔΩΣΕΙ ΤΙΜΗ ΒΑΖΩ ΧΕΡΑΤΑ ΤΟ -1 ΩΣΤΕ ΝΑ ΜΠΟΡΩ ΝΑ ΠΑΙΞΩ ΣΤΗ ΒΑΣΗ
+}
+	
+if(!age.equals("")){
+	try{
+		age_num = Integer.parseInt(age);
+	}catch(Exception e){
+		string_age_given=true;
+
+	}
+	if(string_age_given==false){
+		if(age_num<=0){
+			negative_age_given=true;
+		}
+	}
+}else{
+	age_num=-1; // ΑΜΑ ΔΕ ΔΩΣΕΙ ΤΙΜΗ ΒΑΖΩ ΧΕΡΑΤΑ ΤΟ -1 ΩΣΤΕ ΝΑ ΜΠΟΡΩ ΝΑ ΠΑΙΞΩ ΣΤΗ ΒΑΣΗ 
+}
+
+if(negative_age_given || string_num_of_players_given || negative_num_of_players_given || string_age_given){
+
+
+
+%>
     <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Gaming Store a Games Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+<title>Gaming Store a Games Category Bootstrap r	esponsive Website Template | Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta name="keywords" content="Gaming Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -126,13 +160,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- 	 /.navbar-collapse -->
 						</nav>
 <div class="alert alert-danger" role="alert">  
-     Number of players and age of players have to be integers or blank. 
+<%  
+int x = 0 ; 
+	if (string_age_given){        
+		
+		x++;
+		out.println(x +".Age has to be an Integer\n");
+		%><br><%    
+	}
+	if (negative_age_given){                 
+		x++;
+		out.println(x +".Age have to be a positive number \n");
+		%><br><% 
+	}
+	if (string_num_of_players_given){                 
+		x++;
+		out.println(x +".Number of players has to be an Integer\n");
+		%><br><% 
+		
+	}
+	if (negative_num_of_players_given){                 
+		x++;
+		out.println(x +".Number of players has to be a positive number\n");
+		%><br><% 
+		
+	}
+%>
 </div>
 
 <form action="index.jsp">
     <button type="submit" class="btn btn-dark"><span class="glyphicon glyphicon-menu-left"></span>Back to the main page</button>
-
 </form>
-<%
+</body>
+</html>
+<% }else{
+
+GameDAO gamedao = new GameDAO(); 
+
+List<Game> games = gamedao.getGames(searchbar,num_of_players,age_num,category,duration);
+
+	
+for ( Game game : games){
+	%><p><%=game.getGamename()%></p><%
 }
-%>
+
+
+}
+%> 
+<p><%=searchbar%> <%=num_of_players%> <%=age_num%> <%=category%> <%=duration%></p>

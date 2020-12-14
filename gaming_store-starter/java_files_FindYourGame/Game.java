@@ -10,10 +10,14 @@ public class Game {
     private int max_players;
     private int duration;
     private double rating_value;
-    private String game_description;
-    private int number_of_ratings;
+    private String game_long_description;
+	private int number_of_ratings;
+	private String photo_path;
+	private String game_short_description;
+	private int favorite_counter;
 //constructor
-public Game(int game_id, int category_id, String gamename,int start_age,int end_age,int min_players,int max_players,int duration,double rating_value,String game_description,int number_of_ratings){
+public Game(int game_id, int category_id, String gamename,int start_age,int end_age,int min_players,int max_players,
+int duration,double rating_value,String game_long_description,int number_of_ratings,String photo_path,String game_short_description,int favorite_counter){
 this.game_id=game_id;
 this.category_id=category_id;
 this.gamename=gamename;
@@ -23,10 +27,31 @@ this.min_players=min_players;
 this.max_players=max_players;
 this.duration=duration;
 this.rating_value=rating_value;
-this.game_description=game_description;
+this.game_long_description=game_long_description;
 this.number_of_ratings=number_of_ratings;
+this.photo_path=photo_path;
+this.game_short_description=game_short_description;
+this.favorite_counter=favorite_counter;
 }
+
+public Game(int category_id, String gamename, int start_age, int end_age, int min_players, int max_players,
+int duration, double rating_value, String photo_path) {
+
+this.category_id = category_id;
+this.gamename = gamename;
+this.start_age = start_age;
+this.end_age = end_age;
+this.min_players = min_players;
+this.max_players = max_players;
+this.duration = duration;
+this.rating_value = rating_value;
+this.photo_path = photo_path;
+}
+
 /* Getters & Setters */
+
+
+
 public int getGame_id() {
 return game_id;
 }
@@ -99,12 +124,12 @@ public void setRating_value(double rating_value) {
 	this.rating_value = rating_value;
 }
 
-public String getGame_description() {
-	return game_description;
+public String getGame_long_description() {
+	return game_long_description;
 }
 
-public void setGame_description(String game_description) {
-	this.game_description = game_description;
+public void setgame_long_description(String game_long_description) {
+	this.game_long_description = game_long_description;
 }
 
 public int getNumber_of_ratings() {
@@ -114,14 +139,38 @@ public int getNumber_of_ratings() {
 public void setNumber_of_ratings(int number_of_ratings) {
 	this.number_of_ratings = number_of_ratings;
 }
-@Override
-public String toString() {
-	return "Game [game_id=" + game_id + ", category_id=" + category_id + ", gamename=" + gamename + ", start_age="
-			+ start_age + ", end_age=" + end_age + ", min_players=" + min_players + ", max_players=" + max_players
-			+ ", duration=" + duration + ", rating_value=" + rating_value + ", game_description=" + game_description
-			+ ", number_of_ratings=" + number_of_ratings + "]";
+
+public String getPhoto_path() {
+	return photo_path;
 }
 
+public void setPhoto_path(String photo_path) {
+	this.photo_path = photo_path;
+}
 
+public String getGame_short_description() {
+	return game_short_description;
+}
+
+public void setGame_short_description(String game_short_description) {
+	this.game_short_description = game_short_description;
+}
+
+public int getFavorite_counter() {
+	return favorite_counter;
+}
+
+public void setFavorite_counter(int favorite_counter) {
+	this.favorite_counter = favorite_counter;
+}
+@Override
+public String toString() {
+	return "Category [game_id=" + game_id + ", category_id=" + category_id + ", gamename=" + gamename
+			+ ", start_age=" + start_age + ", end_age=" + end_age + ", min_players=" + min_players
+			+ ", max_players=" + max_players + ", duration=" + duration + ", rating_value=" + rating_value
+			+ ", game_long_description=" + game_long_description + ", number_of_ratings=" + number_of_ratings
+			+ ", photo_path=" + photo_path + ", game_short_description=" + game_short_description
+			+ ", favorite_counter=" + favorite_counter + "]";
+}
 
 }

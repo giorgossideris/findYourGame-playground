@@ -174,5 +174,11 @@
     .filter-area{
       height: 89%;
     }
+}
 
-
+.heart-icon{
+    width: 20px;
+    height: 20px;
+    background:url("../images/black-heart.svg") no-repeat center center/contain;
+    margin:15px auto 20px auto;
+}

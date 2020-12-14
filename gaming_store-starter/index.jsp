@@ -1,11 +1,22 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java_files_FindYourGame.*, java.util.List" %>
 <%@ page errorPage="app_error.jsp" %>
 
 
 <%
+
 if (session.getAttribute("userObj") != null) {
 	User auth_user = (User)session.getAttribute("userObj");
 }
+
+
+CategoryDAO categoryDAO = new CategoryDAO();
+List<Category> categories = categoryDAO.getCategories();
+GameDAO gameDAO = new GameDAO();
+
+DurationDAO durationdao = new DurationDAO();
+List<Duration> durations = durationdao.getDurations();
+
 %>
 
 
@@ -43,14 +54,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script> 
 
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -120,6 +123,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 						<!-- 	 /.navbar-collapse -->
 						</nav>
+
+
 						<form action="index_Controller.jsp" method="GET">
 							<div id="whole-form" class=" example index_searchbar"  >
 								<input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
@@ -151,21 +156,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<select class="form-control filter-input rounded-corners" name="category" id="duration">
 												
-												<option class="correct-font" value="1">Action</option>
-												<option value="2">Adventure</option>
-												<option value="3">Card games</option>
-												<option value="4">Memory</option>
-												<option value="5">Family</option>
+												<option class="correct-font" value="-1">Choose Category</option>
+												<%	for ( Category cat: categories) { %>
+													<option value="<%=cat.getCategory_id()%>"><%=cat.getCategory_name()%></option>
+												<%}%>
 											</select>
 										</div>
 										
 										<div class="filter col-sm-6">
 											<label for="duration" class="control-label filter-description">Duration:</label>
 											<select class="form-control filter-input rounded-corners" name="duration" id="duration">
-												<option value="1">20'</option>
-												<option value="2">30'</option>
-												<option value="3">45'</option>
-												<option value="4">60+'</option>
+												<option class="correct-font" value="-1">Choose Duration</option>
+												<%	for ( Duration dur: durations ) { %>
+													<option value="<%=dur.getDuration_id()%>"><%=(dur.getDuration_name())%></option>
+												<%}%>
+
 											</select>
 										</div>
 										
@@ -194,10 +199,78 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<br>
 		<br>
 		<div class="agileits-title" id="gallery"> 
-			<h3>Hot Games</h3> 
+			<h3>Top Rated Games</h3> 
 			<br>
-																						<!-- HOT GAME NUMBER 1-->
+<% 
+List<Game> topRatedGames = gameDAO.getTopRatedGames();
+for (Game game : topRatedGames){
+%>
 			<div class="game-layout">
+						
+				<img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
+
+				<h4 class="game-name"><%=game.getGamename()%></h4> 
+
+				<div class="game-info">
+					<ul class="fa-ul">
+						<li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: <%=game.getMin_players()%>-<%=game.getMax_players()%></li>
+						<li><i class="fa-li fa fa-child fa-xs"></i>Age: <%=game.getStart_age()%>-<%=game.getEnd_age()%></li>
+						<li><i class="fa-li fa fa-quote-right fa-xs"></i>Category: <%=categoryDAO.getCategoryByID(game.getCategory_id()).getCategory_name()%></li>
+						<li><i class="fa-li fa fa-clock fa-xs"></i>Duration: <%=game.getDuration()%></li>
+					</ul>
+				</div>
+				<div class="game-rating">
+					<section class="ac-footer">
+						<div class="person_who_made_a_comment_color">
+							<p class="heart">Add to favorite </p>
+						</div>
+							<div class="ac-footer-container ac-footer-brand">
+								<span class="ac-icon ac-icon-love-dark"></span> 
+							</div>
+							
+					</section>	
+					<div class="stars">
+
+						<span class="fa fa-star checked" ></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star checked"></span>
+						<span class="fa fa-star"></span>
+						
+					</div>
+					
+				</div>
+				<div class=game-comments>
+					<ul class="rslides callbacks callbacks1 sliding-comments">
+						<li>
+							<div class="banner_text">
+
+								<h4>An awesome game for kids and adults!</h4>
+								<div class="person_who_made_a_comment_color">	
+									<p>by Deathwariorr</p>
+								</div>
+							</div>
+
+						</li>
+						<li>
+							<div class="banner_text">
+
+								<h4>I can't get enough of this game!</h4>
+								<div class="person_who_made_a_comment_color">
+									<p>by nickiller66</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="clearfix"> </div>
+	
+				</div>
+			</div>
+			<br>
+<% } %>			
+
+																						<!-- HOT GAME NUMBER 1-->
+			<!-- <div class="game-layout">
 				
 				<img class="game-photo" src="images/ts2.jpg" alt="Photo of the game">
 
@@ -275,9 +348,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 				</div>
 			</div>
-			<br>																							
+			<br>	-->																					
 													<!-- HOT GAME NUMBER 2-->
-			<div class="game-layout">
+			<!-- <div class="game-layout">
 				
 				<img class="game-photo" src="images/ts1.jpg" alt="Photo of the game">
 
@@ -355,9 +428,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 				</div>	
 			</div>
-			<br>
+			<br> -->
 																									<!-- HOT GAME NUMBER 3-->
-			<div class="game-layout">
+			<!-- <div class="game-layout">
 				
 				<img class="game-photo" src="images/scotland_yard.jpeg" alt="Photo of the game">
 
@@ -434,7 +507,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</script>
 				</div>
 			</div>
-			<br>
+			<br> -->
 
 		</div>
 	</div>
@@ -607,6 +680,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!-- //copyright -->
+		<!-- scripts for sliding comments -->
+		<script src="js/responsiveslides.min.js"></script>
+		<script>
+			// You can also use "$(window).load(function() {"
+			$(function () {
+				// Slideshow 4
+				$(".sliding-comments").responsiveSlides({
+				auto: true,
+				pager:true,
+				nav:true,
+				speed: 50,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+				});
+		
+			});
+		</script>
+	<!-- end of scrips for sliding comments -->
 	<script src="js/jarallax.js"></script>
 	<!-- <script src="js/SmoothScroll.min.js"></script> -->
 	<script type="text/javascript">
@@ -617,7 +713,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			imgHeight: 768
 		})
 	</script>
-	<script src="js/responsiveslides.min.js"></script>
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
 	<!-- here stars scrolling icon -->
@@ -654,5 +749,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 	<!-- //PopUp-Box-JavaScript -->
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script> 
 </body>	
 </html>
