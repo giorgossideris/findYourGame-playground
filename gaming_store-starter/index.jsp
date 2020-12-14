@@ -201,7 +201,7 @@ for (Game game : topRatedGames){
 
 				<div class="game-info">
 					<ul class="fa-ul">
-						<li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: <%=game.getMin_players()%>-<%=game.getMin_players()%></li>
+						<li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: <%=game.getMin_players()%>-<%=game.getMax_players()%></li>
 						<li><i class="fa-li fa fa-child fa-xs"></i>Age: <%=game.getStart_age()%>-<%=game.getEnd_age()%></li>
 						<li><i class="fa-li fa fa-quote-right fa-xs"></i>Category: <%=categoryDAO.getCategoryByID(game.getCategory_id()).getCategory_name()%></li>
 						<li><i class="fa-li fa fa-clock fa-xs"></i>Duration: <%=game.getDuration()%>'</li>
