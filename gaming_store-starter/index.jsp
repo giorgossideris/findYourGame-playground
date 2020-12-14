@@ -164,10 +164,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													<option value="<%=dur.getDuration_id()%>"><%=dur.getDuration_name()%></option>
 												<%}%>
 
-												<option value="1">20'</option>
-												<option value="2">30'</option>
-												<option value="3">45'</option>
-												<option value="4">60+'</option>
 											</select>
 										</div>
 										
