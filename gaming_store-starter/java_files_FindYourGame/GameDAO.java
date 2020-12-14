@@ -12,7 +12,7 @@ public class GameDAO {
 		PreparedStatement stmt = null;
         ResultSet rs = null;
         DB db = new DB();
-        boolean isNameSearched = !name.equals(""),
+        boolean isNameSearched = !name.equals(""), 
                 isPlNumberSearched = players != -1,
                 isAgeSearched = age != -1,
                 isCategorySearched = category != 1,
@@ -49,7 +49,8 @@ public class GameDAO {
         while(rs.next()){
 
             
-            list_of_games.add( new Game(rs.getInt("game_id"),rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("game_description"),rs.getInt("number_of_ratings")));
+            list_of_games.add( new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
+            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("photo_path")));
         }
         rs.close();
         stmt.close();
