@@ -48,6 +48,12 @@ this.rating_value = rating_value;
 this.photo_path = photo_path;
 }
 
+public Game(int game_id, String gamename, String photo_path) {
+	this.game_id = game_id;
+	this.gamename = gamename;
+	this.photo_path = photo_path;
+}
+
 /* Getters & Setters */
 
 
