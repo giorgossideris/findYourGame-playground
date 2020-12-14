@@ -233,31 +233,30 @@ for (Game game : topRatedGames){
 					</div>
 					
 				</div>
+			<%
+				CommentDAO commentDAO = new CommentDAO();
+				List<Comment> gameComments = commentDAO.getTwoCommentsOfGame(game.getGame_id());
+				if (gameComments.size() == 2){
+			%>
 				<div class=game-comments>
 					<ul class="rslides callbacks callbacks1 sliding-comments">
+					<%for (Comment comment : gameComments){ %>
 						<li>
 							<div class="banner_text">
 
-								<h4>An awesome game for kids and adults!</h4>
+								<h4>comment.getComment_text()</h4>
 								<div class="person_who_made_a_comment_color">	
-									<p>by Deathwariorr</p>
+									<p>by Deathwariorr</p> <!-- I have to find the name of the user dynamically -->
 								</div>
 							</div>
 
 						</li>
-						<li>
-							<div class="banner_text">
-
-								<h4>I can't get enough of this game!</h4>
-								<div class="person_who_made_a_comment_color">
-									<p>by nickiller66</p>
-								</div>
-							</div>
-						</li>
+					<% } %>
 					</ul>
 					<div class="clearfix"> </div>
 	
 				</div>
+			<% } %>
 			</div>
 			<br>
 <% } %>			
