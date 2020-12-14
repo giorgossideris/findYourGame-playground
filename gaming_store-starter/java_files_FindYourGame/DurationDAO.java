@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DurationDAO {
     
-    public List<Duration> getCategories() throws Exception {
+    public List<Duration> getDurations() throws Exception {
 
 		List<Duration> durations =  new ArrayList<Duration>();
 
