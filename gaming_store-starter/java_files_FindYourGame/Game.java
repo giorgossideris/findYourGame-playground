@@ -8,7 +8,7 @@ public class Game {
     private int end_age;
     private int min_players;
     private int max_players;
-    private int duration;
+    private int duration_id;
     private double rating_value;
     private String game_long_description;
 	private int number_of_ratings;
@@ -17,7 +17,7 @@ public class Game {
 	private int favorite_counter;
 //constructor
 public Game(int game_id, int category_id, String gamename,int start_age,int end_age,int min_players,int max_players,
-int duration,double rating_value,String game_long_description,int number_of_ratings,String photo_path,String game_short_description,int favorite_counter){
+int duration_id,double rating_value,String game_long_description,int number_of_ratings,String photo_path,String game_short_description,int favorite_counter){
 this.game_id=game_id;
 this.category_id=category_id;
 this.gamename=gamename;
@@ -25,7 +25,7 @@ this.start_age=start_age;
 this.end_age=end_age;
 this.min_players=min_players;
 this.max_players=max_players;
-this.duration=duration;
+this.duration_id=duration_id;
 this.rating_value=rating_value;
 this.game_long_description=game_long_description;
 this.number_of_ratings=number_of_ratings;
@@ -35,7 +35,7 @@ this.favorite_counter=favorite_counter;
 }
 
 public Game(int game_id, int category_id, String gamename, int start_age, int end_age, int min_players, int max_players,
-int duration, double rating_value, String photo_path) {
+int duration_id, double rating_value, String photo_path) {
 this.game_id = game_id;
 this.category_id = category_id;
 this.gamename = gamename;
@@ -43,7 +43,7 @@ this.start_age = start_age;
 this.end_age = end_age;
 this.min_players = min_players;
 this.max_players = max_players;
-this.duration = duration;
+this.duration_id = duration_id;
 this.rating_value = rating_value;
 this.photo_path = photo_path;
 }
@@ -108,12 +108,12 @@ public void setMax_players(int max_players) {
 	this.max_players = max_players;
 }
 
-public int getDuration() {
-	return duration;
+public int getDuration_id() {
+	return duration_id;
 }
 
-public void setDuration(int duration) {
-	this.duration = duration;
+public void setDuration_id(int duration_id) {
+	this.duration_id = duration_id;
 }
 
 public double getRating_value() {
@@ -167,7 +167,7 @@ public void setFavorite_counter(int favorite_counter) {
 public String toString() {
 	return "Category [game_id=" + game_id + ", category_id=" + category_id + ", gamename=" + gamename
 			+ ", start_age=" + start_age + ", end_age=" + end_age + ", min_players=" + min_players
-			+ ", max_players=" + max_players + ", duration=" + duration + ", rating_value=" + rating_value
+			+ ", max_players=" + max_players + ", duration_id=" + duration_id + ", rating_value=" + rating_value
 			+ ", game_long_description=" + game_long_description + ", number_of_ratings=" + number_of_ratings
 			+ ", photo_path=" + photo_path + ", game_short_description=" + game_short_description
 			+ ", favorite_counter=" + favorite_counter + "]";
