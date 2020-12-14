@@ -94,6 +94,7 @@ public class GameDAO {
         searchQuery += ";";
         return searchQuery;
     }
+    
     public List<Game> getTopRatedGames() throws Exception { //returns the top 5 best rated games
 
         List<Game> topRatedGames =  new ArrayList<Game>();
@@ -137,16 +138,15 @@ public class GameDAO {
 
     } //End of getTopRatedGames
 
-    public List<Game> getMostRatedGames() throws Exception { // returns the top 3 most rated games (with the most rating not top rated)
+    public List<Game> getMostFavorite() throws Exception { // returns the top 3 most favorited games
 
-        List<Game> mostRatedGames =  new ArrayList<Game>();
+        List<Game> mostFavoriteGames =  new ArrayList<Game>();
 
 		DB db = new DB();
 		Connection con = null;
 		PreparedStatement stmt = null;
-        ResultSet rs = null;
-        String sqlQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
-                          " duration_id, rating_value, photo_path FROM game ORDER BY number_of_ratings DESC LIMIT 3;";
+		ResultSet rs = null;
+		String sqlQuery = "SELECT * FROM game ORDER BY favorite_counter DESC LIMIT 3;";
 
 		try {
 
@@ -156,14 +156,13 @@ public class GameDAO {
 
 			while(rs.next()) {
 
-				mostRatedGames.add(new Game(rs.getInt("game_id"), rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-                rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
+				mostFavoriteGames.add(new Game(rs.getInt("game_id"),rs.getString("gamename"),rs.getString("photo_path")  )); 
 			}
 
 			rs.close();
 			stmt.close();
 			db.close();
-			return mostRatedGames;
+			return mostFavoriteGames;
 
 		} catch (Exception e) {
 			throw new Exception(e.getMessage());
@@ -178,7 +177,7 @@ public class GameDAO {
 		}
 
 
-	} //End of getMostRatedGames
+	} //End of getMostFavoriteGames
 
 
 
