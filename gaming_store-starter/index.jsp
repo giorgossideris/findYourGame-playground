@@ -216,7 +216,7 @@ for (Game game : topRatedGames){
 						<li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: <%=game.getMin_players()%>-<%=game.getMax_players()%></li>
 						<li><i class="fa-li fa fa-child fa-xs"></i>Age: <%=game.getStart_age()%>-<%=game.getEnd_age()%></li>
 						<li><i class="fa-li fa fa-quote-right fa-xs"></i>Category: <%=categoryDAO.getCategoryByID(game.getCategory_id()).getCategory_name()%></li>
-						<li><i class="fa-li fa fa-clock fa-xs"></i>Duration: <%=game.getDuration()%></li>
+						<li><i class="fa-li fa fa-clock fa-xs"></i>Duration: <%=durationdao.getDurationByID(game.getDuration_id()).getDuration_name()%></li>
 					</ul>
 				</div>
 				<div class="game-rating">
@@ -242,7 +242,9 @@ for (Game game : topRatedGames){
 				</div>
 			<%
 				CommentDAO commentDAO = new CommentDAO();
-				List<Comment> gameComments = commentDAO.getTwoCommentsOfGame(game.getGame_id());
+				List<Comment> gameComments = commentDAO.getTwoCommentsOfGame(game.getGame_id());%>
+					
+<%
 				if (gameComments.size() == 2){
 			%>
 				<div class=game-comments>
@@ -251,7 +253,7 @@ for (Game game : topRatedGames){
 						<li>
 							<div class="banner_text">
 
-								<h4>comment.getComment_text()</h4>
+								<h4><%=comment.getComment_text()%></h4>
 								<div class="person_who_made_a_comment_color">	
 									<p>by Deathwariorr</p> <!-- I have to find the name of the user dynamically -->
 								</div>
@@ -530,6 +532,11 @@ for (Game game : topRatedGames){
 		</div>
 	</div>
 	<!-- //modal -->
+<%
+	GameDAO gameDA = new GameDAO();
+	List <Game> MostRatedGames = gameDA.getMostFavorite();
+%>
+
 	<!-- testimonial -->
 	<div id="blog" class="jarallax testimonial1" id="testimonial">
 		<div class="testimonial-dot">
@@ -541,16 +548,16 @@ for (Game game : topRatedGames){
 					
 						<div class="callbacks_container">
 							<ul class="rslides callbacks callbacks1" id="slider3">
-								<li>
+								<li>    
 									<div class="testimonial-img-grid">
 										<div class="testimonial-img t-img1">
-											<img src="images/ts1.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(1).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img">
-											<img src="images/ts2.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(0).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img t-img2">
-											<img src="images/ts3.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(2).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="clearfix"> </div>
 									</div>
@@ -563,13 +570,13 @@ for (Game game : topRatedGames){
 								<li>
 									<div class="testimonial-img-grid">
 										<div class="testimonial-img t-img1">
-											<img src="images/ts2.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(0).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img">
-											<img src="images/ts3.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(2).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img t-img2">
-											<img src="images/ts1.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(1).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="clearfix"> </div>
 									</div>
@@ -582,13 +589,13 @@ for (Game game : topRatedGames){
 								<li>
 									<div class="testimonial-img-grid">
 										<div class="testimonial-img t-img1">
-											<img src="images/ts3.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(2).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img">
-											<img src="images/ts1.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(1).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img t-img2">
-											<img src="images/ts2.jpg" alt="" />
+											<img src="<%=MostRatedGames.get(0).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="clearfix"> </div>
 									</div>
@@ -675,7 +682,7 @@ for (Game game : topRatedGames){
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
-			<p class="footer-class">© 2020 Gaming App . All Rights Reserved | Design by  <a href="index.html" target="_blank"></a>FindYourGame </a> </p>
+			<p class="footer-class">Β© 2020 Gaming App . All Rights Reserved | Design by  <a href="index.html" target="_blank"></a>FindYourGame </a> </p>
 		</div>
 	</div>
 	<!-- //copyright -->
