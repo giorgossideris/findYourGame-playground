@@ -53,7 +53,7 @@ public class DurationDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT duration_value FROM duration WHERE duration_id=? ;";
+		String sqlQuery = "SELECT duration_value FROM duration WHERE duration_id=?;";
 
 		try {
 
@@ -67,12 +67,12 @@ public class DurationDAO {
 				throw new Exception("Duration with id: " + duration_id + " not found");
 			}
 
-			Duration department = new Duration(rs.getString("duration_value"));
+			Duration duration = new Duration(rs.getString("duration_value"));
 			rs.close();
 			stmt.close();
 			db.close();
 
-			return department;
+			return duration;
 
 
 		} catch (Exception e) {

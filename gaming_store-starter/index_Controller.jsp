@@ -207,4 +207,4 @@ for ( Game game : games){
 
 }
 %> 
-
+<p><%=searchbar%> <%=num_of_players%> <%=age_num%> <%=category%> <%=duration%></p>
