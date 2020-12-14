@@ -112,7 +112,7 @@ public class GameDAO {
 			while(rs.next()) {
 
 				topRatedGames.add(new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-                rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
+                rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
 			}
 
 			rs.close();
@@ -154,7 +154,7 @@ public class GameDAO {
 			while(rs.next()) {
 
 				mostRatedGames.add(new Game(rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-                rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
+                rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
 			}
 
 			rs.close();
