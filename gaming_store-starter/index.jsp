@@ -7,6 +7,10 @@
 CategoryDAO categoryDAO = new CategoryDAO();
 List<Category> categories = categoryDAO.getCategories();
 GameDAO gameDAO = new GameDAO();
+
+DurationDAO durationdao = new DurationDAO();
+List<Duration> durations = durationdao.getDurations();
+
 %>
 
 <!--A Design by W3layouts
@@ -145,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 											<select class="form-control filter-input rounded-corners" name="category" id="duration">
 												
-												<option class="correct-font" value="0">Category</option>
+												<option class="correct-font" value="-1">Choose Category</option>
 												<%	for ( Category cat: categories) { %>
 													<option value="<%=cat.getCategory_id()%>"><%=cat.getCategory_name()%></option>
 												<%}%>
@@ -155,10 +159,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<div class="filter col-sm-6">
 											<label for="duration" class="control-label filter-description">Duration:</label>
 											<select class="form-control filter-input rounded-corners" name="duration" id="duration">
-												<option value="1">20'</option>
-												<option value="2">30'</option>
-												<option value="3">45'</option>
-												<option value="4">60+'</option>
+												<option class="correct-font" value="-1">Choose Duration</option>
+												<%	for ( Duration dur: durations ) { %>
+													<option value="<%=dur.getDuration_id()%>"><%=dur.getDuration_name()%></option>
+												<%}%>
+
 											</select>
 										</div>
 										
