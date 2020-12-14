@@ -161,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<select class="form-control filter-input rounded-corners" name="duration" id="duration">
 												<option class="correct-font" value="-1">Choose Duration</option>
 												<%	for ( Duration dur: durations ) { %>
-													<option value="<%=dur.getDuration_id()%>"><%=dur.getDuration_name()%></option>
+													<option value="<%=dur.getDuration_id()%>"><%=(dur.getDuration_name())%></option>
 												<%}%>
 
 											</select>
@@ -200,7 +200,7 @@ for (Game game : topRatedGames){
 %>
 			<div class="game-layout">
 						
-				<img class="game-photo" src="images/ts2.jpg" alt="Photo of the game">
+				<img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
 				<h4 class="game-name"><%=game.getGamename()%></h4> 
 
@@ -209,7 +209,7 @@ for (Game game : topRatedGames){
 						<li><i class="fa-li fa fa-user-friends fa-xs"></i>Players: <%=game.getMin_players()%>-<%=game.getMax_players()%></li>
 						<li><i class="fa-li fa fa-child fa-xs"></i>Age: <%=game.getStart_age()%>-<%=game.getEnd_age()%></li>
 						<li><i class="fa-li fa fa-quote-right fa-xs"></i>Category: <%=categoryDAO.getCategoryByID(game.getCategory_id()).getCategory_name()%></li>
-						<li><i class="fa-li fa fa-clock fa-xs"></i>Duration: <%=game.getDuration()%>'</li>
+						<li><i class="fa-li fa fa-clock fa-xs"></i>Duration: <%=game.getDuration()%></li>
 					</ul>
 				</div>
 				<div class="game-rating">
@@ -223,12 +223,15 @@ for (Game game : topRatedGames){
 							
 					</section>	
 					<div class="stars">
+
 						<span class="fa fa-star checked" ></span>
 						<span class="fa fa-star checked"></span>
 						<span class="fa fa-star checked"></span>
 						<span class="fa fa-star checked"></span>
 						<span class="fa fa-star"></span>
+						
 					</div>
+					
 				</div>
 				<div class=game-comments>
 					<ul class="rslides callbacks callbacks1 sliding-comments">
