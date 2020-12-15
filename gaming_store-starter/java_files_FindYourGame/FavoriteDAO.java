@@ -9,8 +9,10 @@ public class FavoriteDAO {
         DB db = new DB();
         Connection con = null;
         PreparedStatement stmt = null;
-        String addFavoriteSql = "INSERT INTO favorite (game_id, registered_user_id) VALUES (?, ?); UPDATE game SET favorite_counter = favorite_counter + 1 WHERE game_id = ?;";   
-        // it creates a new row in favorite and adds one to the favorite counter of the favorited game
+        String addFavoriteSql = "INSERT INTO favorite (game_id, registered_user_id) VALUES (?, ?);";   
+        // it creates a new row in favorite
+        String addToCounterSql = "UPDATE game SET favorite_counter = favorite_counter + 1 WHERE game_id = ?";
+        //adds one to the favorite counter of the favorited game
         try {
             
             con = db.getConnection();
@@ -18,7 +20,11 @@ public class FavoriteDAO {
             stmt = con.prepareStatement(addFavoriteSql);
             stmt.setInt(1, game_id);
             stmt.setInt(2, user_id);
-            stmt.setInt(3, game_id);
+
+            stmt.executeUpdate();
+            
+            stmt = con.prepareStatement(addToCounterSql);
+            stmt.setInt(1, game_id);
 
             stmt.executeUpdate();
             

@@ -186,7 +186,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="person_who_made_a_comment_color">
                                 <p class="heart">Add to favorite </p>
                             </div>
-                            <div class="heart-icon"></div>       
+                            <div class="heart-icon" data-is-favorite="false"></div>       
                         </section>	
                         <div class="stars">
                             <span class="fa fa-star checked" ></span>
@@ -265,7 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="person_who_made_a_comment_color">
                                 <p class="heart">Add to favorite </p>
                             </div>
-                            <div class="heart-icon"></div>        
+                            <div class="heart-icon" data-is-favorite="false"></div>        
                         </section>	
                         <div class="stars">
                             <span class="fa fa-star checked" ></span>
@@ -343,7 +343,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="person_who_made_a_comment_color">
                                 <p class="heart">Add to favorite </p>
                             </div>
-                            <div class="heart-icon"></div> 
+                            <div class="heart-icon" data-is-favorite="false"></div> 
                         </section>	
                         <div class="stars">
                             <span class="fa fa-star checked" ></span>
@@ -545,40 +545,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!--script for filter-area in small screens  -->
-        <script type="text/javascript">
-            $('#show-filters-button').click(function() {
-                let filter_area = document.querySelector('.filter-area'),
-                    style = window.getComputedStyle(filter_area),
-                    display = style.getPropertyValue('display');
-                if (display == 'none'){
-                    $('.filter-area').css({
-                        'display': 'flex',
-                    });
-                    document.getElementById('show-filters-button').innerText = "Hide filters";
-                } else {
-                    $('.filter-area').css({
-                        'display': 'none',      
-                    });
-                    document.getElementById('show-filters-button').innerText = "Show filters";
-                }
-            });
-        </script>
-    <!-- script for clicking heart -->
-        <script type="text/javascript">
-            $('.heart-icon').click(function() {
-                let heart_area = document.querySelector('.heart-icon'),
-                    style = window.getComputedStyle(heart_area),
-                    heart_image = style.getPropertyValue('background-image');
-                if (heart_image.includes('black-heart')){  // if the black heart is active make the heart pink
-                    $('.heart-icon').css({
-                        'background-image': 'url("./images/heart.svg")'
-                    });
-                } else { // else (if the pink heart is active) make the heart black
-                    $('.heart-icon').css({
-                        'background-image': 'url("./images/black-heart.svg")'     
-                    });
-                }
-            });
-        </script>
+    <script src="js/favorite.js"></script>
 </body>	
 </html>
