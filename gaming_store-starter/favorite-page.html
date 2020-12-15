@@ -29,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
  
 
 
@@ -59,7 +60,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<nav>
 									<ul class="nav navbar-nav">
 										<li><a href="index.html">Home <i class="fa fa-home"></i></a></li>	
-										<li><a href="about.html">About us <i class="fa fa-group"></i></a></li>
+                                        <li><a href="about.html">About us <i class="fa fa-group"></i></a></li>
+                                        <li class="active"><a href="#">Favorites<i class="fa fa-group"></i></a></li>
 										<li id="color_of_nav_button_index"><a href="login.html">Sign in <i class="fas fa-sign-in-alt"></i> </a></li>
                                         <li id="color_of_nav_button_index"><a href="signup.html">Register <i class="fas fa-user-plus"></i></a></li>
 									</ul>
@@ -141,7 +143,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="games-to-navigate-area"> 	
             <div class="results-header">
                 <span id="results-title">
-                    <h2>Your Search Results  </h2>
+                    <h2>Your favorite games</h2>
                     <p>(3 items)</p> 
                 </span>
                 <span id="sorting-section">
@@ -559,7 +561,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--script for filter-area in small screens  -->
     <!-- script for clicking heart -->
 	<script src="js/favorite.js"></script>
-	<!-- end of script for clicking heart -->
+    <!-- end of script for clicking heart -->
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){		
