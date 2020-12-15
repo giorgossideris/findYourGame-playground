@@ -35,28 +35,29 @@ if (session.getAttribute("userObj") == null) {
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav>
 	    				<ul class="nav navbar-nav">
-							<li id="no-dot" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame", "").equals("index.jsp") ? "active": "" %>" >
+							<li id="no-dot" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("index.jsp") ? "active": "" %>" >
 								<a href="<%=request.getContextPath() %>/FindYourGame/index.jsp">
 									Home 
 		    						<i class="fa fa-home"></i>
 								</a>
 							</li>
-							<!-- <li class="inactive">
-			    					<a href="about.html">
+
+							<li class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("about_us.jsp") ? "active": "" %>" >
+			    				<a href="about_us.jsp">
 									About us 
 									<i class="fa fa-group"></i>
 									
-				    				</a>
-								</li> -->
+				    			</a>
+							</li> 
 										
-							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame", "").equals("login.jsp") ? "active": "" %>" >
+							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("login.jsp") ? "active": "" %>" >
 								<a href="<%=request.getContextPath() %>/FindYourGame/login.jsp">
 						    		Sign in 
 					    			<i class="fas fa-sign-in-alt"></i> 
 								</a>
 							</li>
 										
-							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame", "").equals("signup.jsp") ? "active": "" %>" >
+							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("signup.jsp") ? "active": "" %>" >
 								<a href="<%=request.getContextPath() %>/FindYourGame/signup.jsp">
 									Register 
 							    	<i class="fas fa-user-plus"></i>
@@ -105,21 +106,21 @@ if (session.getAttribute("userObj") == null) {
 					<nav>
 	    				<ul class="nav navbar-nav">
 
-							<li id="no-dot" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame", "").equals("index.jsp") ? "active": "" %>" >
+							<li id="no-dot" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("index.jsp") ? "active": "" %>" >
 								<a href="<%=request.getContextPath() %>/FindYourGame/index.jsp">
 									Home 
 		    						<i class="fa fa-home"></i>
 								</a>
 							</li>
 
-							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame", "").equals("favorite_page.jsp") ? "active": "" %>" >
+							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("favorite_page.jsp") ? "active": "" %>" >
 								<a href="<%=request.getContextPath() %>/FindYourGame/favorite_page.jsp">
 						    		Favorites
 					    			<i class="fas fa-heart"></i> 
 								</a>
 							</li>
 
-							<li class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame", "").equals("about_us.jsp") ? "active": "" %>" >
+							<li class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("about_us.jsp") ? "active": "" %>" >
 			    				<a href="about_us.jsp">
 									About us 
 									<i class="fa fa-group"></i>

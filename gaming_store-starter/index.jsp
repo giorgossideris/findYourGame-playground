@@ -75,6 +75,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="container">
 					<div class="header-top-info">
 						<%@ include file = "navMenu.jsp" %>
+						<br>
+						<br>
 
 						<form action="index_Controller.jsp" method="GET">
 							<div id="whole-form" class=" example index_searchbar"  >
