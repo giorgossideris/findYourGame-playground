@@ -176,6 +176,10 @@
     }
 }
 
+.game-info ul li {
+    margin-left: 20px;
+}
+
 .heart-icon{
     width: 20px;
     height: 20px;

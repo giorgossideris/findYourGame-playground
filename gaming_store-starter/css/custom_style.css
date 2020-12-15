@@ -268,14 +268,6 @@
     justify-content: center;
 }
 
-/*fixed stars on rating */
-
-.checked {
-    color: #c59b08;
-  
-  }
-  /*fixed stars on rating */
-
 /* GENERAL CSS */
 .rounded-corners {
     border-radius: 10px;
