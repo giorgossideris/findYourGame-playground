@@ -230,7 +230,12 @@ for (Game game : topRatedGames){
 						</div>
 						<div class="heart-icon"  
 							data-is-favorite=<%= isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId()) ? "true" : "false"%>
-							data-game-id = "<%=game.getGame_id()%>">
+							data-game-id = "<%=game.getGame_id()%>"
+							data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>"
+							<% if (isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId())){%>
+								style='background-image: url("./images/heart.svg");'
+							<% } %>
+							>
 						</div>
 							
 					</section>	
@@ -260,7 +265,7 @@ for (Game game : topRatedGames){
 
 								<h4><%=comment.getComment_text()%></h4>
 								<div class="person_who_made_a_comment_color">	
-									<p>by <%=userDAO.searchUserByID(comment.getCommening_user_id()).getUsername()%></p> <!-- I have to find the name of the user dynamically -->
+									<p>by <%=userDAO.searchUserByID(comment.getCommening_user_id()).getUsername()%></p>
 								</div>
 							</div>
 
@@ -769,24 +774,7 @@ for (Game game : topRatedGames){
 		});
 	</script> 
 	<!-- script for clicking heart -->
-	<script type="text/javascript">
-		var heart_icons = document.querySelectorAll('.heart-icon');
-		for (var i = 0; i < heart_icons.length; i++){
-			heart_icons[i].onclick = heart_pressed;
-		}
-		function heart_pressed() {
-			let heart_icon = this,
-				style = window.getComputedStyle(heart_icon),
-				heart_image = style.getPropertyValue('background-image');
-			if (this.dataset.isFavorite == "false"){  // if the game is not favorite make the heart pink
-				this.style.backgroundImage = 'url("./images/heart.svg")';
-				this.dataset.isFavorite = "true";
-			} else { // else (if the game is not favorite) make the heart black
-				this.style.backgroundImage = 'url("./images/black-heart.svg")';
-				this.dataset.isFavorite = "false";
-			}
-		}
-	</script>
-<!-- end of script for clicking heart -->
+	<script src="js/favorite.js"></script>
+	<!-- end of script for clicking heart -->
 </body>	
 </html>

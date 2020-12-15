@@ -68,18 +68,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						<!-- 	 /.navbar-collapse -->
 						</nav>
-                        <div class="flexbox">
-                            <div class="container login-border box">
-								<h1 class="login-title text-white">LOG IN</h1>
 <% 
-								if(request.getAttribute("message") != null) {
+								if(request.getParameter("message") != null) {
 %>
-									<div class="alert alert-danger" role="alert">
-										<%=request.getAttribute("message")%>
+									<div class="alert alert-danger message-box" role="alert">
+										<%=request.getParameter("message")%>
 									</div>
 <%
 								}
 %>
+                        <div class="flexbox">
+                            <div class="container login-border box">
+								<h1 class="login-title text-white">LOG IN</h1>
                                 <form class="form-horizontal login-form" action="<%= request.getContextPath()%>/FindYourGame/loginController.jsp" method="POST">
                                     <div class="form-group login-form-group">
                                         <label class="control-label text-white login-field-description">username</label>

@@ -67,9 +67,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						<!-- 	 /.navbar-collapse -->
 						</nav>
-                        <div class="flexbox">
-                            <div class="container login-border box">
-								<h1 class="login-title text-white">SIGN UP</h1>
 <% 
 								if(request.getAttribute("error_message") != null) {
 %>
@@ -79,6 +76,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <%
 								}
 %>
+                        <div class="flexbox">
+                            <div class="container login-border box">
+								<h1 class="login-title text-white">SIGN UP</h1>
                                 <form class="form-horizontal login-form" action="<%=request.getContextPath()%>/FindYourGame/signupController.jsp" method="POST">
                                     <div class="form-group login-form-group">
                                         <label class="control-label text-white login-field-description">username</label>

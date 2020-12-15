@@ -29,6 +29,7 @@ public class FavoriteDAO {
             stmt.executeUpdate();
             
             stmt.close();
+            con.close();
 
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -44,26 +45,34 @@ public class FavoriteDAO {
 
     }
 
-    public void removesFromFavorite(int user_id, int game_id) throws Exception {
+    public void removeFromFavorite(int user_id, int game_id) throws Exception {
 
 
         DB db = new DB();
         Connection con = null;
         PreparedStatement stmt = null;
-        String addFavoriteSql = "DELETE FROM favorite WHERE game_id = ? AND registered_user_id = ?; UPDATE game SET favorite_counter = favorite_counter - 1 WHERE game_id = ?;";   
-        // it removes row in favorite and removes one from the favorite counter of the favorited game
+        String removeFavoriteSql = "DELETE FROM favorite WHERE game_id = ? AND registered_user_id = ?;";   
+        // it removes row in favorite
+        String subtractFromCounterSql = "UPDATE game SET favorite_counter = favorite_counter - 1 WHERE game_id = ?;";
+        //is subtracts one from the favorite counter of the favorited game  
+
         try {
             
             con = db.getConnection();
 
-            stmt = con.prepareStatement(addFavoriteSql);
+            stmt = con.prepareStatement(removeFavoriteSql);
             stmt.setInt(1, game_id);
             stmt.setInt(2, user_id);
-            stmt.setInt(3, game_id);
+
+            stmt.executeUpdate();
+            
+            stmt = con.prepareStatement(subtractFromCounterSql);
+            stmt.setInt(1, game_id);
 
             stmt.executeUpdate();
             
             stmt.close();
+            con.close();
 
         } catch (Exception e) {
             throw new Exception(e.getMessage());

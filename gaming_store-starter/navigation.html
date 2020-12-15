@@ -528,6 +528,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
     <!-- //PopUp-Box-JavaScript -->
+        <!--script for filter-area in small screens  -->
+    <!--script for filter-area in small screens  -->
+    <script type="text/javascript">
+        $('#show-filters-button').click(function() {
+            let filter_area = document.querySelector('.filter-area'),
+                style = window.getComputedStyle(filter_area),
+                display = style.getPropertyValue('display');
+            if (display == 'none'){
+                $('.filter-area').css({
+                    'display': 'flex',
+                });
+                document.getElementById('show-filters-button').innerText = "Hide filters";
+            } else {
+                $('.filter-area').css({
+                    'display': 'none',           
+                });
+                document.getElementById('show-filters-button').innerText = "Show filters";
+            }
+        });
+    </script>
     <!-- script to make filter-area displayable for large screens -->
     <script type="text/javascript">
         $(window).resize(function() {

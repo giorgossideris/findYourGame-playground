@@ -60,6 +60,12 @@
     ) 1 0%;
 }
 
+.message-box{
+    text-align: center;
+    width: 60%;
+    margin:auto;
+}
+
 .login-title {
     text-align: center;
     font-size: 70px;
