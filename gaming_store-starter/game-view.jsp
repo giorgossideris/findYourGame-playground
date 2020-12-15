@@ -1,5 +1,7 @@
 <%@  page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -10,20 +12,20 @@
 		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 		<!-- bootstrap-css -->
-		<link href="<%=request.getContextPath() %>/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="<%=request.getContextPath() %>/FindYourGame/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 		<!--// bootstrap-css -->
 		<!-- css -->
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/css/style.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/css/game.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/style.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/game.css" type="text/css" media="all" />
 		<!--// css -->
 		<!-- font-awesome icons -->
-		<link href="<%=request.getContextPath() %>/css/font-awesome.css" rel="stylesheet"> 
+		<link href="<%=request.getContextPath() %>/FindYourGame/css/font-awesome.css" rel="stylesheet"> 
 		<!-- //font-awesome icons -->
-		<link href="<%=request.getContextPath() %>/css/all.css" rel="stylesheet">
+		<link href="<%=request.getContextPath() %>/FindYourGame/css/all.css" rel="stylesheet">
 		<!-- portfolio -->	
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/css/chocolat.css" type="text/css" media="all">
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/chocolat.css" type="text/css" media="all">
 		<!-- //portfolio -->
-		<link href="<%=request.getContextPath() %>/css/custom_style.css" rel="stylesheet"> 
+		<link href="<%=request.getContextPath() %>/FindYourGame/css/custom_style.css" rel="stylesheet"> 
 	    <!-- Font -->
 		<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;500&display=swap" rel="stylesheet"> 
 	
@@ -31,8 +33,8 @@
 		<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 		<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
 		<!-- //font -->
-		<script src="<%=request.getContextPath() %>/js/jquery-1.11.1.min.js"></script>
-		<script src="<%=request.getContextPath() %>/js/bootstrap.js"></script>
+		<script src="<%=request.getContextPath() %>/FindYourGame/js/jquery-1.11.1.min.js"></script>
+		<script src="<%=request.getContextPath() %>/FindYourGame/js/bootstrap.js"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -48,7 +50,7 @@
 		<div id="allbody">
 			<!-- banner -->
 			<div class="agileinfo-dot">
-				<div class="logo"> <img src="<%=request.getContextPath() %>/images/logo.png"></div>
+				<div class="logo"> <img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png"></div>
 				
 				<!-- <div class="agileits-logo" id="smaller">
 					<h1><a href="index.html">Find  <span>Your <a href="index.html">Game</span></a></h1>
@@ -56,54 +58,7 @@
 	
 				<div class="header-top">
 					<div class="header-top-info">
-						<nav class="navbar navbar-default">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>			
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-								<nav>
-									<ul class="nav navbar-nav">
-										<li id="no-dot">
-											<a href="<%=request.getContextPath() %>/index.html">
-												Home 
-												<i class="fa fa-home"></i>
-											</a>
-										</li>
-										<li class="inactive">
-											<a href="<%=request.getContextPath() %>/about_us.html">
-												About us 
-												<i class="fa fa-group"></i>
-											
-											</a>
-										</li>
-										
-											<li id="orange" >
-												<a href="<%=request.getContextPath() %>/login.html">
-													Sign in 
-													<i class="fas fa-sign-in-alt"></i> 
-												</a>
-											</li>
-										
-											<li id="orange">
-												<a href="<%=request.getContextPath() %>/signup.html">
-													Register 
-													<i class="fas fa-user-plus"></i>
-												</a>
-											</li>
-									
-									</ul>
-								</nav>
-							</div>
-							<!-- /.navbar-collapse -->
-
-						</nav>
+						<%@ include file = "navMenu.jsp" %>
 
 					</div>
 						
@@ -119,7 +74,7 @@
 				<div class="section-content">
 					<div class="secimage">
 						<!-- <a href="#" class="thumbnail"> -->
-						<img src="<%=request.getContextPath() %>/images/uno.png" alt="UNO">
+						<img src="<%=request.getContextPath() %>/FindYourGame/images/uno.png" alt="UNO">
 						<!-- </a> -->
 					
 					</div>
@@ -183,55 +138,58 @@
 										The rest of the cards are placed in a Draw Pile face down. 
 										Next to the pile a space should be designated for a Discard Pile. 
 										The top card should be placed in the Discard Pile, and the game begins!	
-									
-									</p>
-								
-							</div>
-							<div class="show-more">
-								<button class="hover-button" onclick="myFunction()">Show details</button>
-								<div id="showMore" class="game-description">
-									<p>
-										The first player is normally the player to the left of the dealer (you can also choose the youngest player) and gameplay usually 
-										follows a clockwise direction. Every player views his/her cards and tries to match the card in 
-										the Discard Pile. 
-										You have to match either by the number, color, or the symbol/Action. 
-										For instance, if the Discard Pile has a red card that is an 8 you have to place either a red card or a card with an 8 on it.  
-										You can also play a Wild card (which can alter current color in play). 
-										If the player has no matches or they choose not to play any of their cards even though they might have 
-										a match, they must draw a card from the Draw pile. If that card can be played, play it. 
-										Otherwise, keep the card, and the game moves on to the next person in turn.  
-										You can also play a Wild card, or a Wild Draw Four card on your turn. Note: If the first card turned 
-										up from the Draw Pile (to form the Discard Pile) is an Action card, the Action from that card 
-										applies and must be carried out by the first player to go (as stated, it is usually the player 
-										to the dealer’s left). The exceptions are if a Wild or Wild Draw Four card is turned up. If it is a 
-										Wild card, Mattel has now stated that the first player to start (usually the one on the dealer’s left),
-										can choose whatever color to begin play. If the first card is a Wild Draw Four card – Return it to the 
-										Draw Pile, shuffle the deck, and turn over a new card. At any time during the game, if the Draw Pile becomes 
-										depleted and no one has yet won the round, take the Discard Pile, shuffle it, and turn it over to regenerate 
-										a new Draw Pile. Take note that you can only put down one card at a time; you cannot stack two or more cards 
-										together on the same turn. For example, you cannot put down a Draw Two on top of another Draw Two, 
-										or Wild Draw Four during the same turn, or put down two Wild Draw Four cards together.
-										The game continues until a player has one card left. The moment a player has just one card 
-										they must yell “UNO!”. If they are caught not saying “Uno” by another player before the next player 
-										has taken their turn, that player must draw two new cards as a penalty. Assuming that the 
-										player is unable to play/discard their last card and needs to draw, but after drawing, is then 
-										able to play/discard that penultimate card, the player has to repeat the action of calling out “Uno”. 
-										The bottom line is – Announcing “Uno” needs to be repeated every time you are left with one card. 
-										Once a player has no cards remaining, the game round is over, points are scored, and the game begins 
-										over again. Normally, everyone tries to be the first one to achieve 500 points, but you can also 
-										choose whatever points number to win the game, as long as everyone agrees to it.
-										The game continues until a player has one card left. The moment a player has just one card 
-										they must yell “UNO!”. If they are caught not saying “Uno” by another player before the next 
-										player has taken their turn, that player must draw two new cards as a penalty. Assuming that 
-										the player is unable to play/discard their last card and needs to draw, but after drawing, 
-										is then able to play/discard that penultimate card, the player has to repeat the action of 
-										calling out “Uno”. The bottom line is – Announcing “Uno” needs to be repeated every time you 
-										are left with one card. Once a player has no cards remaining, the game round is over, points 
-										are scored, and the game begins over again. Normally, everyone tries to be the first one to 
-										achieve 500 points, but you can also choose whatever points number to win the game, 
-										as long as everyone agrees to it.
-									</p>
-								</div>
+										<span id="points">...</span> 
+									</p>	
+										<div class="desc-heading">Details</div>
+										<div class="br-headings">
+											<br>
+										</div> 
+										<span id="moreText" class="game-description">
+												
+												The first player is normally the player to the left of the dealer (you can also choose the youngest player) and gameplay usually 
+												follows a clockwise direction. Every player views his/her cards and tries to match the card in 
+												the Discard Pile. 
+												You have to match either by the number, color, or the symbol/Action. 
+												For instance, if the Discard Pile has a red card that is an 8 you have to place either a red card or a card with an 8 on it.  
+												You can also play a Wild card (which can alter current color in play). 
+												If the player has no matches or they choose not to play any of their cards even though they might have 
+												a match, they must draw a card from the Draw pile. If that card can be played, play it. 
+												Otherwise, keep the card, and the game moves on to the next person in turn.  
+												You can also play a Wild card, or a Wild Draw Four card on your turn. Note: If the first card turned 
+												up from the Draw Pile (to form the Discard Pile) is an Action card, the Action from that card 
+												applies and must be carried out by the first player to go (as stated, it is usually the player 
+												to the dealer’s left). The exceptions are if a Wild or Wild Draw Four card is turned up. If it is a 
+												Wild card, Mattel has now stated that the first player to start (usually the one on the dealer’s left),
+												can choose whatever color to begin play. If the first card is a Wild Draw Four card – Return it to the 
+												Draw Pile, shuffle the deck, and turn over a new card. At any time during the game, if the Draw Pile becomes 
+												depleted and no one has yet won the round, take the Discard Pile, shuffle it, and turn it over to regenerate 
+												a new Draw Pile. Take note that you can only put down one card at a time; you cannot stack two or more cards 
+												together on the same turn. For example, you cannot put down a Draw Two on top of another Draw Two, 
+												or Wild Draw Four during the same turn, or put down two Wild Draw Four cards together.
+												The game continues until a player has one card left. The moment a player has just one card 
+												they must yell “UNO!”. If they are caught not saying “Uno” by another player before the next player 
+												has taken their turn, that player must draw two new cards as a penalty. Assuming that the 
+												player is unable to play/discard their last card and needs to draw, but after drawing, is then 
+												able to play/discard that penultimate card, the player has to repeat the action of calling out “Uno”. 
+												The bottom line is – Announcing “Uno” needs to be repeated every time you are left with one card. 
+												Once a player has no cards remaining, the game round is over, points are scored, and the game begins 
+												over again. Normally, everyone tries to be the first one to achieve 500 points, but you can also 
+												choose whatever points number to win the game, as long as everyone agrees to it.
+												The game continues until a player has one card left. The moment a player has just one card 
+												they must yell “UNO!”. If they are caught not saying “Uno” by another player before the next 
+												player has taken their turn, that player must draw two new cards as a penalty. Assuming that 
+												the player is unable to play/discard their last card and needs to draw, but after drawing, 
+												is then able to play/discard that penultimate card, the player has to repeat the action of 
+												calling out “Uno”. The bottom line is – Announcing “Uno” needs to be repeated every time you 
+												are left with one card. Once a player has no cards remaining, the game round is over, points 
+												are scored, and the game begins over again. Normally, everyone tries to be the first one to 
+												achieve 500 points, but you can also choose whatever points number to win the game, 
+												as long as everyone agrees to it.
+												
+										</span>
+									<div class="moreButton">									
+										<button class="hover-button" onclick="toggleText()" id="textButton">Show details</button>
+									</div>
 							</div>
 						</div>
 						<div class="rate-area" id="rate">
@@ -266,7 +224,7 @@
 
 							<div class="comment">
 								<div class="user-avatar">
-									<img src="<%=request.getContextPath() %>/images/user.png">
+									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
 								<!-- the comment body -->
 								<div class="comment-body">
@@ -292,7 +250,7 @@
 
 							<div class="comment">
 								<div class="user-avatar">
-									<img src="<%=request.getContextPath() %>/images/user.png">
+									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
 								<!-- the comment body -->
 								<div class="comment-body">
@@ -319,13 +277,14 @@
 							</div>
 						
 							<div class="create-new-comment">
-								<!-- current #{user} avatar -->
+								<!-- current {user} avatar -->
 								<div class="user-avatar">
-									<img src="<%=request.getContextPath() %>/images/user.png">
+									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
 								<!-- the input field -->
 								<input type="text" placeholder="Join the conversation..">
-									
+								<button class="hover-button submit" >Submit it!</button></div>
+
 							</div>
 
 						</div>
@@ -347,7 +306,7 @@
 						</div> 
 						<div class="modal-body">
 							<div class="agileits-w3layouts-info">
-								<img src="<%=request.getContextPath() %>/images/1.jpg" alt="" />
+								<img src="<%=request.getContextPath() %>/FindYourGame/images/1.jpg" alt="" />
 								<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
 							</div>
 						</div>
@@ -365,7 +324,7 @@
 							<div class="footer-title">
 								<h3>About Us</h3>
 							</div> 
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+							<p>We are a team that seeks greatness.</p>
 						</div>
 						<div class="col-md-4 amet-sed amet-medium">
 							<div class="footer-title">
@@ -403,7 +362,7 @@
 			</div>
 			<!-- //copyright -->
 		</div>
-		<script src="<%=request.getContextPath() %>/js/jarallax.js"></script>
+		<script src="<%=request.getContextPath() %>/FindYourGame/js/jarallax.js"></script>
 		<!-- <script src="js/SmoothScroll.min.js"></script> -->
 		<script type="text/javascript">
 			/* init Jarallax */
@@ -413,9 +372,9 @@
 				imgHeight: 768
 			})
 		</script>
-		<script src="<%=request.getContextPath() %>/js/responsiveslides.min.js"></script>
-		<script type="text/javascript" src="<%=request.getContextPath() %>/js/move-top.js"></script>
-		<script type="text/javascript" src="<%=request.getContextPath() %>/js/easing.js"></script>
+		<script src="<%=request.getContextPath() %>/FindYourGame/js/responsiveslides.min.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath() %>/FindYourGame/js/move-top.js"></script>
+		<script type="text/javascript" src="<%=request.getContextPath() %>/FindYourGame/js/easing.js"></script>
 		<!-- here stars scrolling icon -->
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -434,8 +393,8 @@
 		</script>
 		<!-- //here ends scrolling icon -->
 		<!-- Tabs-JavaScript -->
-		<script src="<%=request.getContextPath() %>/js/jquery.filterizr.js"></script>
-			<script src="<%=request.getContextPath() %>/js/controls.js"></script>
+		<script src="<%=request.getContextPath() %>/FindYourGame/js/jquery.filterizr.js"></script>
+			<script src="<%=request.getContextPath() %>/FindYourGame/js/controls.js"></script>
 			<script type="text/javascript">
 				$(function() {
 					$('.filtr-container').filterizr();
@@ -443,7 +402,7 @@
 			</script>
 		<!-- //Tabs-JavaScript -->
 		<!-- PopUp-Box-JavaScript -->
-			<script src="<%=request.getContextPath() %>/js/jquery.chocolat.js"></script>
+			<script src="<%=request.getContextPath() %>/FindYourGame/js/jquery.chocolat.js"></script>
 			<script type="text/javascript">
 				$(function() {
 					$('.filtr-item a').Chocolat();
@@ -452,16 +411,53 @@
 		<!-- //PopUp-Box-JavaScript -->
 		</div>
 		<!-- script for show-more -->
-		<script>
-			function myFunction() {
-			  var x = document.getElementById("showMore");
-			  if (x.style.display === "none") {
-				x.style.display = "block";
-			  } else {
-				x.style.display = "none";
-			  }
-			}
-			</script>
-	
+		<script> 
+			function toggleText() { 
+	  
+				// Get all the elements from the page 
+				var points =  
+					document.getElementById("points"); 
+	  
+				var showMoreText = 
+					document.getElementById("moreText"); 
+	  
+				var buttonText = 
+					document.getElementById("textButton"); 
+	  
+				// If the display property of the dots  
+				// to be displayed is already set to  
+				// 'none' (that is hidden) then this  
+				// section of code triggers 
+				if (points.style.display === "none") { 
+	  
+					// Hide the text between the span 
+					// elements 
+					showMoreText.style.display = "none"; 
+	  
+					// Show the dots after the text 
+					points.style.display = "inline"; 
+	  
+					// Change the text on button to  
+					// 'Show More' 
+					buttonText.innerHTML = "Show Details"; 
+				} 
+	  
+				// If the hidden portion is revealed, 
+				// we will change it back to be hidden 
+				else { 
+	  
+					// Show the text between the 
+					// span elements 
+					showMoreText.style.display = "inline"; 
+	  
+					// Hide the dots after the text 
+					points.style.display = "none"; 
+	  
+					// Change the text on button 
+					// to 'Show Less' 
+					buttonText.innerHTML = "Show Less"; 
+				} 
+			} 
+		</script> 	
 	</body>	
 </html>

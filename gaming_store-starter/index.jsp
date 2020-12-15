@@ -74,60 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
-						<nav class="navbar navbar-default">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-
-						
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							
-							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-								<nav>
-									<ul class="nav navbar-nav">
-										<li class="active">
-											<a href="index.html">
-												Home 
-												<i class="fa fa-home"></i>
-											</a>
-										</li>
-										<li class="inactive">
-											<a href="about_us.html">
-												About us <i class="fa fa-group"></i>
-											
-											</a>
-										</li>
-											<li id="color_of_nav_button_index" >
-												<a href="login.html">
-													Sign in 
-													<i class="fas fa-sign-in-alt"></i> 
-												</a>
-											</li>
-										
-											<li id="color_of_nav_button_index">
-												<a href="signup.html">
-													Register 
-													<i class="fas fa-user-plus"></i>
-												</a>
-											</li>
-									
-									</ul>
-								</nav>
-							</div>
-							<br>
-							<br>
-					
-
-		
-						<!-- 	 /.navbar-collapse -->
-						</nav>
-
+						<%@ include file = "navMenu.jsp" %>
 
 						<form action="index_Controller.jsp" method="GET">
 							<div id="whole-form" class=" example index_searchbar"  >

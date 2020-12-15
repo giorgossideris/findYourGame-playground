@@ -12,10 +12,12 @@
 
 }
 
-
-#color_of_nav_button_index > a {
-    color: #FF9800;
-    font-weight: bold;
+#no-dot::after {
+    position: relative !important;
+}
+#orange > a {
+    color: #FF9800 !important;
+    font-weight: bold !important;
 }
 .container1 {
     padding-right: 15px;
@@ -51,7 +53,6 @@
 .correct-font{
     font-family: 'Turret Road', cursive;
 }
-
 
 
 

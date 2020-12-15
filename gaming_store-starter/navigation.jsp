@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java_files_FindYourGame.*" %>
+<%@ page errorPage="app_error.jsp" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,29 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
-						<nav class="navbar navbar-default">
-							<!-- Brand and toggle get grouped for better mobile display -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>			
-							<!-- Collect the nav links, forms, and other content for toggling -->
-							<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-								<nav>
-									<ul class="nav navbar-nav">
-										<li class="active"><a href="index.html">Home <i class="fa fa-home"></i></a></li>	
-										<li><a href="about.html">About us <i class="fa fa-group"></i></a></li>
-										<li id="color_of_nav_button_index"><a href="login.html">Sign in <i class="fas fa-sign-in-alt"></i> </a></li>
-                                        <li id="color_of_nav_button_index"><a href="signup.html">Register <i class="fas fa-user-plus"></i></a></li>
-									</ul>
-								</nav>
-							</div>
-						<!-- 	 /.navbar-collapse -->
-						</nav>
+                        <%@ include file = "navMenu.jsp" %>
                         <div id="whole-form" class=" example index_searchbar"  >
 							<input class="search-input" type="text" placeholder="Search Your Game.." name="search2">
 							<button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
