@@ -294,7 +294,7 @@ for (Game game : topRatedGames){
 						<li>
 							<div class="banner_text">
 
-								<h4><%=modulus%></h4>
+								<h4><%=comment.getComment_text()%></h4>
 								<div class="person_who_made_a_comment_color">	
 									<p>by <%=userDAO.searchUserByID(comment.getCommening_user_id()).getUsername()%></p>
 								</div>
