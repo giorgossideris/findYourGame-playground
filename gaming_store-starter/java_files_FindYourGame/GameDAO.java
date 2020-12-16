@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Arrays;
 
 public class GameDAO {
-    public List<Game> getGames(String name, int players, int age, int category, int duration_id) throws Exception{
+    public List<Game> getGames(String name, int players, int age, int category_id, int duration_id) throws Exception{
         List <Game> list_of_games=new ArrayList<Game>();
         Connection con = null;		
 		PreparedStatement stmt = null;
@@ -15,7 +15,7 @@ public class GameDAO {
         boolean isNameSearched = !name.equals(""), 
                 isPlNumberSearched = players != -1,
                 isAgeSearched = age != -1,
-                isCategorySearched = category != -1,
+                isCategorySearched = category_id != -1,
                 isDurationSearched = duration_id != -1;
         
         String searchQuery = createSearchQuery(isNameSearched, isPlNumberSearched, isAgeSearched, isCategorySearched, isDurationSearched);
@@ -33,7 +33,7 @@ public class GameDAO {
             stmt.setInt(counter++, players);
         }
         if (isCategorySearched) {
-            stmt.setInt(counter++,category);
+            stmt.setInt(counter++,category_id);
         }
         if (isDurationSearched) {
             stmt.setInt(counter++ ,duration_id);
