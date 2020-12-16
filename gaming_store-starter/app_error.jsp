@@ -1,14 +1,10 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page errorPage="app_error.jsp" %>
-
-
+<%@ page isErrorPage="true"%>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Gaming Store a Games Category Bootstrap responsive Website Template | Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="3;url=<%=request.getContextPath() %>/FindYourGame/index.jsp" />
-
 <meta charset="utf-8">
 <meta name="keywords" content="Gaming Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
@@ -46,75 +42,49 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->
-</head>
-<body>
-	<!-- banner -->
-	<div class="banner" id="login-background">
-		<div class="agileinfo-dot">
-			<div class="logo"> <img src="images/logo.png"></div>
-			<div class="header-top">
-				<div class="container">
-					<div class="header-top-info">
+		
+		<title>Error page</title>
 
-						<%@ include file = "navMenu.jsp" %>
-						<%
-						session.invalidate();
-						
- 
-								if(request.getAttribute("message") != null) {
-%>
-									<div class="alert alert-danger message-box" role="alert">
-										<%=request.getAttribute("message")%>
-									</div>
-<%
-								}
-%>
-                        <div class="flexbox">
-                            <div class="container login-border box">
-                                <h1 class="login-title text-white">LOG OUT</h1>
-                                <h2 class="logout-title text-orange">Logged out Succesfully </h2>
-                                <h3 class="logout-title text-orange">You are returning to the log in page </h3>
-                            </div>  
-                        </div>                         
-					</div>
-				</div>
-			</div>
-		</div>	
-	</div>
-	
-    
+	</head>
 
-	<!-- //banner -->
-	<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-top">
-				<div class="col-md-4 amet-sed"> 
-					<div class="footer-title">
-						<h3>About Us</h3>
-					</div> 
-					<p>We are a team that seeks greatness.</p>
-				</div>
-			
-				<div class="col-md-4 amet-sed ">
-					<div class="footer-title">
-						<h3>Follow Us</h3>
-					</div> 
-					<div class="agileinfo-social-grids">
-						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
+	<body>
+
+		<!-- Fixed navbar -->
+        <nav class="navbar navbar-default">
+            <!-- Collect the nav links, forms, and other content for toggling -->					
+            <div class=" nav-wil">
+                <nav>
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.jsp">Home <i class="fa fa-home"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
+        <!-- 	 /.navbar-collapse -->
+        </nav>
+		<div class="container" role="main">
+
+
+<% if(exception != null) { %>
+			<!-- Page Title -->
+			<div class="page-header">
+				<h1>Σφάλμα</h1>
+			</div>		
+
+			<div class="alert alert-danger" role="alert">
+				<p>
+					<b>Message: </b> <%= exception.getMessage() %>
+				</p>
+				<p>
+					<b>Class: </b> <%= exception.getClass() %>
+				</p>
 			</div>
+<% } %>			
 		</div>
-	</div>
-	<!-- //footer --> 
-	<!-- copyright -->
-	<div class="copyright">
+		<!-- /container -->
+
+<!-- footer -->
+<!-- copyright -->
+	<div class="copyright" style="margin-bottom: 25em;">
 		<div class="container">
 			<p class="footer-class">© 2020 Gaming Store . All Rights Reserved | FindYourGame© </p>
 		</div>
@@ -167,5 +137,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 	<!-- //PopUp-Box-JavaScript -->
-</body>	
+
+	
+	</body>
 </html>
