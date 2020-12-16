@@ -57,18 +57,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
-						<nav class="navbar navbar-default">
-							<!-- Collect the nav links, forms, and other content for toggling -->					
-							<div class=" nav-wil">
-								<nav>
-									<ul class="nav navbar-nav">
-										<li><a href="index.html">Home <i class="fa fa-home"></i></a></li>
-									</ul>
-								</nav>
-							</div>
-						<!-- 	 /.navbar-collapse -->
-						</nav>
-<% 
+						<%@ include file = "navMenu.jsp" %>
+                        <div class="flexbox">
+                            <div class="container login-border box">
+								<h1 class="login-title text-white">LOG IN</h1>
+                                <form class="form-horizontal login-form" action="<%= request.getContextPath()%>/FindYourGame/loginController.jsp" method="POST">
+                                    <div class="form-group login-form-group">
+                                        <label class="control-label text-white login-field-description">username</label>
+                                        <div class="login-input">
+                                            <input type="text" class="form-control rounded-corners" name="username" placeholder="username" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group login-form-group">
+                                        <label class="control-label text-white login-field-description">password</label>
+                                        <div class="login-input">
+                                            <input type="password" class="form-control rounded-corners" name="password" placeholder="password" required> 
+                                        </div>
+									</div>
+									<% 
 								if(request.getAttribute("message") != null) {
 %>
 									<div class="alert alert-danger message-box" role="alert">
@@ -77,22 +83,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <%
 								}
 %>
-                        <div class="flexbox">
-                            <div class="container login-border box">
-								<h1 class="login-title text-white">LOG IN</h1>
-                                <form class="form-horizontal login-form" action="<%= request.getContextPath()%>/FindYourGame/loginController.jsp" method="POST">
-                                    <div class="form-group login-form-group">
-                                        <label class="control-label text-white login-field-description">username</label>
-                                        <div class="login-input">
-                                            <input type="text" class="form-control rounded-corners" name="username" placeholder="username">
-                                        </div>
-                                    </div>
-                                    <div class="form-group login-form-group">
-                                        <label class="control-label text-white login-field-description">password</label>
-                                        <div class="login-input">
-                                            <input type="password" class="form-control rounded-corners" name="password" placeholder="password">
-                                        </div>
-									</div>
                                     <div class="form-group login-form-group">
                                         <button type="submit" class="login-button rounded-corners text-white login-button-area">I finished!</button>
 									</div>

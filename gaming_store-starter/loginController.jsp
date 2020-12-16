@@ -3,15 +3,14 @@
 <%@ page import="java_files_FindYourGame.*" %>
 
 <%
-String username = request.getParameter("username");
-String password = request.getParameter("password");
 
-//if direct access not via login.jsp redirect to login
-if (username == null || password == null) {
-
+//if direct access not via login.jsp forward an appropriate message 
+if (request.getParameter("username") == null || request.getParameter("password") == null) {
     response.sendRedirect("login.jsp");
     return;
 }
+String username = request.getParameter("username");
+String password = request.getParameter("password");
 
 UserDAO userdao = new UserDAO();
 

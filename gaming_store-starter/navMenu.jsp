@@ -6,8 +6,28 @@
 
 String x = request.getContextPath();
 String y = request.getRequestURI();
+boolean entered = false;
+if (y.replace(x + "/FindYourGame/", "").equals("login.jsp") || y.replace(x + "/FindYourGame/", "").equals("signup.jsp")) {
+%>
 
-if (session.getAttribute("userObj") == null) {
+<nav class="navbar navbar-default">
+	<!-- Collect the nav links, forms, and other content for toggling -->					
+	<div class=" nav-wil">
+		<nav>
+			<ul class="nav navbar-nav">
+				<li><a href="index.jsp">Home <i class="fa fa-home"></i></a></li>
+			</ul>
+		</nav>
+	</div>
+<!-- 	 /.navbar-collapse -->
+</nav>
+
+<%
+entered = true;
+}
+
+
+if (session.getAttribute("userObj") == null && !(entered)) {
 	/* Navigation menu for visitors */
 %>
 
@@ -77,7 +97,7 @@ if (session.getAttribute("userObj") == null) {
 				
 </div> -->
 <%
-} else {
+} else if (!(entered)){
 	/* Navigation menu for authenticated users */
 
 %>

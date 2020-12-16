@@ -4,17 +4,18 @@
 
 <%
 
-String username = request.getParameter("username");
-String email = request.getParameter("email");
-String password = request.getParameter("password");
-
 //if direct access not via signup redirect to signup
-if (username == null || email == null || password == null) {
+if (request.getParameter("username") == null || request.getParameter("email") == null || request.getParameter("password") == null) {
 
     response.sendRedirect("signup.jsp");
     return;
 
 }
+
+String username = request.getParameter("username");
+String email = request.getParameter("email");
+String password = request.getParameter("password");
+
 
 //validating inputs of the user
 String message = "<ol>";
@@ -42,7 +43,7 @@ if( !m.matches() ) {
 }	
 
 //validating password
-if (password.length() < 8) {
+if (password.length() < 4) {
      message += "<li>Password must be at least 8 characters</li>";
      flag = false;
 }
