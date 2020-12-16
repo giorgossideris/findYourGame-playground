@@ -525,6 +525,7 @@ for (Game game : topRatedGames){
 <%
 	GameDAO gameDA = new GameDAO();
 	List <Game> MostRatedGames = gameDA.getMostFavorite();
+	
 %>
 
 	<!-- testimonial -->
@@ -541,29 +542,10 @@ for (Game game : topRatedGames){
 								<li>    
 									<div class="testimonial-img-grid">
 										<div class="testimonial-img t-img1">
-											<img src="<%=MostRatedGames.get(1).getPhoto_path()%>" alt="" />
+											<img src="<%=MostRatedGames.get(2).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img">
 											<img src="<%=MostRatedGames.get(0).getPhoto_path()%>" alt="" />
-										</div>
-										<div class="testimonial-img t-img2">
-											<img src="<%=MostRatedGames.get(2).getPhoto_path()%>" alt="" />
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-									<div class="testimonial-img-info">
-										<p>Check Out the New Monopoly "Cheaters Edition" and leave aside your FAIR-side &#128521;</p>
-										<h5>By Hasbro Gaming</h5>
-										<h6>Rating 4,87</h6>
-									</div>
-								</li>
-								<li>
-									<div class="testimonial-img-grid">
-										<div class="testimonial-img t-img1">
-											<img src="<%=MostRatedGames.get(0).getPhoto_path()%>" alt="" />
-										</div>
-										<div class="testimonial-img">
-											<img src="<%=MostRatedGames.get(2).getPhoto_path()%>" alt="" />
 										</div>
 										<div class="testimonial-img t-img2">
 											<img src="<%=MostRatedGames.get(1).getPhoto_path()%>" alt="" />
@@ -571,9 +553,14 @@ for (Game game : topRatedGames){
 										<div class="clearfix"> </div>
 									</div>
 									<div class="testimonial-img-info">
-										<p>Do not miss Trivial Pursuit Disney Edition</p>
-										<h5>By Hasbro Gaming</h5>
-										<h6>Rating 3,82</h6>
+										<h5>	
+										</h5>
+										<%	CommentDAO commentdao = new CommentDAO();
+											List<Comment> game_1_comment = commentdao.getOneCommentOfGame(MostRatedGames.get(0).getGame_id());
+										%>													
+										<h5><%=MostRatedGames.get(0).getGamename()%><h5>
+										<h6><%= 	game_1_comment.get(0).getComment_text()%></h6>
+										<h6>Rating: <%=MostRatedGames.get(0).getRating_value()%></h6>
 									</div>
 								</li>
 								<li>
@@ -590,9 +577,34 @@ for (Game game : topRatedGames){
 										<div class="clearfix"> </div>
 									</div>
 									<div class="testimonial-img-info">
-										<p>Searching for a Strategic game? Risk is what you are looking for!</p>
-										<h5>By Hasbro Gaming</h5>
-										<h6>Rating 4,34</h6>
+									<%	List<Comment> game_2_comment = commentdao.getOneCommentOfGame(MostRatedGames.get(1).getGame_id());%>													
+											<h5><%=MostRatedGames.get(1).getGamename()%><h5>
+											<h6><%= 	game_2_comment.get(0).getComment_text()%></h6>
+											<h6>Rating: <%=MostRatedGames.get(1).getRating_value()%></h6>
+
+
+									
+									</div>
+								</li>
+								<li>
+									<div class="testimonial-img-grid">
+										<div class="testimonial-img t-img1">
+											<img src="<%=MostRatedGames.get(1).getPhoto_path()%>" alt="" />
+										</div>
+										<div class="testimonial-img">
+											<img src="<%=MostRatedGames.get(2).getPhoto_path()%>" alt="" />
+										</div>
+										<div class="testimonial-img t-img2">
+											<img src="<%=MostRatedGames.get(0).getPhoto_path()%>" alt="" />
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+									<div class="testimonial-img-info">
+										<%	List<Comment> game_3_comment = commentdao.getOneCommentOfGame(MostRatedGames.get(2).getGame_id());%>													
+											<h5><%=MostRatedGames.get(2).getGamename()%><h5>
+											<h6><%= 	game_3_comment.get(0).getComment_text()%></h6>
+											<h6>Rating: <%=MostRatedGames.get(2).getRating_value()%></h6>
+
 									</div>
 								</li>
 							</ul>
@@ -646,8 +658,8 @@ for (Game game : topRatedGames){
 						<h3>Subscribe</h3>
 					</div> 
 					<div class="support">
-						<form action="#" method="post">
-							<input type="email" placeholder="Enter email...." required="" class="footer-email"> 
+						<form action="email.jsp" method="post">
+							<input type="email" name="email" placeholder="Enter email...." required="" class="footer-email"> 
 							<input type="submit" value="Subscribe" class="botton">
 						</form> 
 					</div>

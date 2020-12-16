@@ -156,7 +156,7 @@ public class GameDAO {
 
 			while(rs.next()) {
 
-				mostFavoriteGames.add(new Game(rs.getInt("game_id"),rs.getString("gamename"),rs.getString("photo_path")  )); 
+				mostFavoriteGames.add(new Game(rs.getInt("game_id"),rs.getString("gamename"),rs.getString("photo_path"),rs.getDouble("rating_value")  )); 
 			}
 
 			rs.close();
