@@ -9,7 +9,9 @@
 .text-white {
     color: white;
 }
-
+.text-orange{ 
+    color:#FF9800
+}
 .rounded-corners {
     border-radius: 10px;
 }
@@ -69,6 +71,13 @@
 .login-title {
     text-align: center;
     font-size: 70px;
+    margin: 9vh;
+}
+
+.logout-title{
+
+    text-align: center;
+    font-size: 20px;
     margin: 9vh;
 }
 
