@@ -69,10 +69,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!-- 	 /.navbar-collapse -->
 						</nav>
 <% 
-								if(request.getParameter("message") != null) {
+								if(request.getAttribute("message") != null) {
 %>
 									<div class="alert alert-danger message-box" role="alert">
-										<%=request.getParameter("message")%>
+										<%=request.getAttribute("message")%>
 									</div>
 <%
 								}
