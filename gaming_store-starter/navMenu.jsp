@@ -7,7 +7,7 @@
 String x = request.getContextPath();
 String y = request.getRequestURI();
 boolean entered = false;
-if (y.replace(x + "/FindYourGame/", "").equals("login.jsp") || y.replace(x + "/FindYourGame/", "").equals("signup.jsp")) {
+if (y.replace(x + "/FindYourGame/", "").equals("login.jsp") || y.replace(x + "/FindYourGame/", "").equals("signup.jsp") || y.replace(x + "/FindYourGame/", "").equals("logout.jsp")) {
 %>
 
 <nav class="navbar navbar-default">

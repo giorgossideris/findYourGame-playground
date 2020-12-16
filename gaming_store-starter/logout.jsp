@@ -9,7 +9,7 @@ session.invalidate();
 <head>
 <title>Gaming Store a Games Category Bootstrap responsive Website Template | Home :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="3;url=<%=request.getContextPath() %>/FindYourGame/login.jsp" />
+<meta http-equiv="refresh" content="3;url=<%=request.getContextPath() %>/FindYourGame/index.jsp" />
 
 <meta charset="utf-8">
 <meta name="keywords" content="Gaming Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -57,17 +57,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
-						<nav class="navbar navbar-default">
-							<!-- Collect the nav links, forms, and other content for toggling -->					
-							<div class=" nav-wil">
-								<nav>
-									<ul class="nav navbar-nav">
-										<li><a href="index.html">Home <i class="fa fa-home"></i></a></li>
-									</ul>
-								</nav>
-							</div>
-						<!-- 	 /.navbar-collapse -->
-						</nav>
+						
+						<%@ include file = "navMenu.jsp" %>
 <% 
 								if(request.getAttribute("message") != null) {
 %>
