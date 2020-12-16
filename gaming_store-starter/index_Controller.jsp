@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java_files_FindYourGame.*, java.util.List, java.util.Arrays" %>
+<%@ page import="java_files_FindYourGame.*, java.util.List, java.util.ArrayList, java.util.Arrays" %>
 
 <%
 
@@ -46,7 +46,7 @@ if(!age_str.equals("")){
 
 boolean isSomethingWrong=negative_age_given || string_num_of_players_given || negative_num_of_players_given || string_age_given;
 if(isSomethingWrong){
-	/*String errorMessage = "<ol>";
+	String errorMessage = "<ol>";
 	if (string_age_given){        
 		errorMessage += "<li>Age has to be an Integer</li>";   
 	} else if (negative_age_given){                 
@@ -59,12 +59,12 @@ if(isSomethingWrong){
 		errorMessage += "<li>Number of players has to be a positive number.</li>";
 	}
 	errorMessage += "</ol>";
-	request.setAttribute("message", errorMessage);*/
+	request.setAttribute("message", errorMessage);
 %>
-<!-- <jsp:forward page="index.jsp"/> -->
+<jsp:forward page="index.jsp"/>
 <%} 
-	else {%>
-	List<String> search_items = new List<String>(Arrays.toList(searchbar, Integer.toString(players), Integer.toString(age),
+	else {
+	List<String> search_items = new ArrayList<String>(Arrays.asList(searchbar, Integer.toString(players), Integer.toString(age),
 												  Integer.toString(category_id), Integer.toString(duration_id)));
 	request.setAttribute("search_items", search_items);
 %>

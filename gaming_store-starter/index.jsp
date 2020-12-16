@@ -131,10 +131,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</form>
 					<%
-					if (request.getParameter("message")!=null){
+					if (request.getAttribute("message")!=null){
 					%>
 					<div class="alert alert-danger error-message" role="alert">  
-						<%=request.getParameter("message")%>
+						<%=(String)request.getAttribute("message")%>
 					</div>
 					<% } %>
 					</div>
