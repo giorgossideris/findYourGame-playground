@@ -651,7 +651,7 @@ for (Game game : topRatedGames){
 					<div class="footer-title">
 						<h3>About Us</h3>
 					</div> 
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+					<p>A great team from a small greek suburb that seeks glory and honor.</p>
 				</div>
 				<div class="col-md-4 amet-sed amet-medium">
 					<div class="footer-title">
@@ -670,9 +670,9 @@ for (Game game : topRatedGames){
 					</div> 
 					<div class="agileinfo-social-grids">
 						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
