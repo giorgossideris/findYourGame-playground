@@ -144,8 +144,8 @@ for (Game game : topRatedGames){
 				<p id="counter"><%=counter++%>.</p>
 				<div class="game-layout">	
 					<img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
-					<a href="game-view.jsp">
-						<h4 class="game-name"><%=game.getGamename()%></h4>
+					<a class="game-name" href="game-view.jsp">
+						<h4><%=game.getGamename()%></h4>
 					</a>
 	
 					<div class="game-info">
