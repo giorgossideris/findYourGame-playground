@@ -115,6 +115,11 @@
 #show-filters-button {
     display: none;
 }
+
+.no-games{
+    text-align: center;
+}
+
 .games-to-navigate-area {
     grid-column: 2/3;
     padding-bottom: 50px;
@@ -126,7 +131,7 @@
 }
 
 
-@media (max-width:860px){
+@media (max-width:900px){
     .filter-area{
       display: none;
       position: absolute;

@@ -169,9 +169,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <hr>
             <div class="agileits-title" id="gallery"> 
                 <br>
-                <% 
-for (Game game : searchedGames){
-%>
+            <%
+            if (searchedGames.size()==0){
+            %>
+            <p class="no-games">No games found.</p>
+            <%
+            }else{
+                for (Game game : searchedGames){
+            %>
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
@@ -271,7 +276,8 @@ for (Game game : searchedGames){
         <% } %>
         </div>
 			<br>
-<% } %>			
+<%      } 
+    }%>			
     
             </div>
         </div>
@@ -414,21 +420,7 @@ for (Game game : searchedGames){
         });
     </script>
     <!-- script to make filter-area displayable for large screens -->
-    <script type="text/javascript">
-        $(window).resize(function() {
-            if ($(this).width() > 843) {
-                $('.filter-area').css({
-                    'display': 'flex',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            }else{
-                $('.filter-area').css({
-                    'display': 'none',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            } 
-        });
-    </script>
+    <script src="js/resp_filters.js"></script>
     <!-- script for clicking heart -->
 	<script src="js/favorite.js"></script>
     <!-- end of script for clicking heart -->

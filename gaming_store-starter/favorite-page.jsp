@@ -8,11 +8,6 @@ User auth_user = null;
 if (session.getAttribute("userObj") != null) {
 	auth_user = (User)session.getAttribute("userObj");
 	isUserRegistered = true;
-}else{
-%>
-<jsp:forward page="index.jsp"/>
-<%  
-    return;
 }
 
 
@@ -272,25 +267,7 @@ for (Game game : favoriteGames){
 <% } %>			
     
             </div>
-        </div>
-        <!-- modal -->
-        <div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header"> 
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-                        <h4 class="modal-title">Deathwariorr's <span>Comment</span></h4>
-                    </div> 
-                    <div class="modal-body">
-                        <div class="agileits-w3layouts-info">
-                            
-                            <p>An awesome game for kids and adults. I've been palying this game for over 3 years and can't get enough of it. Although is the most expensive game i've ever bought, it's worth every penny. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //modal -->   
+        </div> 
     </div>
     <!-- testimonial -->
     
