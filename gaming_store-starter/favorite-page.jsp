@@ -150,7 +150,9 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
-            <h4 class="game-name"><%=game.getGamename()%></h4> 
+            <a href="game-view.jsp">
+                <h4 class="game-name"><%=game.getGamename()%></h4>
+            </a>
 
             <div class="game-info">
                 <ul class="fa-ul">

@@ -29,23 +29,29 @@
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
-
-						<%@ include file = "navMenu.jsp" %>
-
-								<%				
-								if(request.getAttribute("message") != null) {
-								%>
-									<div class="alert alert-danger message-box" role="alert">
-										<%=request.getAttribute("message")%>
-									</div>
-								<%
-								}
-								%>
 						<div class="team" id="team">
     						<div class="container">
 								<div class="agileits-title"> 
-									<h3>Amazing Team</h3> 
+									<h3>Who we are</h3> 
 								</div>
+								<p class="about-us">
+									<div class="basic-about-paragraph">
+										Did you think that this webpage was designed by professionals? Close enough. As perfect as it may seem, it was
+										created just by 3 students from Athens, Greece.
+									</div>
+									<br>
+									<div class="members-quote">
+										<b>Nikos Antonopoulos:</b> <i>"When we started we never imagined the huge success of FindYourGame©. One million visitors every
+										day is a huge accomplishment and we owe it to all of you."</i>
+										</div>
+									<div class="members-quote">
+										<b>Georgios Sideris:</b>  <i>"We had to face many difficulties, Tomcat's bugs, NullPointerExceptions and randomly placed '%>' are 
+										only some of them. But here we are, a multimillion dollar company."</i>
+										</div>
+									<div class="members-quote">
+										<b>Konstantina-Artemis Psychogiou:</b>  <i>"I like Big Brother."</i>
+									</div>
+								</p>
 								<div class="agileits-team-grids">
 									<div class="col-md-3 agileits-team-grid">
 										<div class="team-info">
@@ -54,9 +60,9 @@
 												<h4>Antonopoulos Nikolaos</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -68,9 +74,9 @@
 												<h4>Psychogiou Artemis-Konstantina</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -82,9 +88,9 @@
 												<h4>Sideris Georgios</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -96,9 +102,9 @@
 												<h4>Stack Overflow</h4>
 												<p>THE savior</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>

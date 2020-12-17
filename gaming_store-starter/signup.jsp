@@ -78,8 +78,9 @@ Author URL: http://w3layouts.com
 			</div>
 		</div>	
 	</div>
-	
+
     <%@ include file = "footer.jsp" %>
+
 	<script src="js/jarallax.js"></script>
 	<!-- <script src="js/SmoothScroll.min.js"></script> -->
 	<script type="text/javascript">
