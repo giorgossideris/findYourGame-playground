@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page errorPage="app_error.jsp" %>
 <%@ page import="java_files_FindYourGame.*" %>
 <!--A Design by W3layouts
 Author: W3layout

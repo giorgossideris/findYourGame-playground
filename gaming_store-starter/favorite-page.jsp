@@ -8,19 +8,17 @@ User auth_user = null;
 if (session.getAttribute("userObj") != null) {
 	auth_user = (User)session.getAttribute("userObj");
 	isUserRegistered = true;
+}else{
+%>
+<jsp:forward page="index.jsp"/>
+<%  
+    return;
 }
 
-List<String> search_items = (List<String>)request.getAttribute("search_items");
-String searchbar = search_items.get(0);
-int players = Integer.parseInt(search_items.get(1));
-int age = Integer.parseInt(search_items.get(2));
-int category_id = Integer.parseInt(search_items.get(3));
-int duration_id = Integer.parseInt(search_items.get(4));
 
 
 CategoryDAO categoryDAO = new CategoryDAO();
 List<Category> categories = categoryDAO.getCategories();
-GameDAO gameDAO = new GameDAO();
 
 DurationDAO durationdao = new DurationDAO();
 List<Duration> durations = durationdao.getDurations();
@@ -28,7 +26,7 @@ List<Duration> durations = durationdao.getDurations();
 FavoriteDAO favoriteDAO = new FavoriteDAO();
 UserDAO userDAO = new UserDAO();
 
-List<Game> searchedGames = gameDAO.getGames(searchbar, players, age, category_id, duration_id);
+List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
 %>
 
 <!DOCTYPE html>
@@ -153,8 +151,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="games-to-navigate-area"> 	
             <div class="results-header">
                 <span id="results-title">
-                    <h2>Search Results</h2>
-                    <p>(<%=searchedGames.size()%> item<%=searchedGames.size()!=1 ? "s" : ""%>)</p> 
+                    <h2><%=auth_user.getUsername()%>'<%=auth_user.getUsername().toLowerCase().charAt(auth_user.getUsername().length() - 1)!="s".charAt(0) ? "s" : ""%> Favorite Games</h2>
+                    <p>(<%=favoriteGames.size()%> item<%=favoriteGames.size()!=1 ? "s" : ""%>)</p> 
                 </span>
                 <span id="sorting-section">
                     <label for="sorting">Sort by:</label>
@@ -170,7 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="agileits-title" id="gallery"> 
                 <br>
                 <% 
-for (Game game : searchedGames){
+for (Game game : favoriteGames){
 %>
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
@@ -275,6 +273,24 @@ for (Game game : searchedGames){
     
             </div>
         </div>
+        <!-- modal -->
+        <div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header"> 
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+                        <h4 class="modal-title">Deathwariorr's <span>Comment</span></h4>
+                    </div> 
+                    <div class="modal-body">
+                        <div class="agileits-w3layouts-info">
+                            
+                            <p>An awesome game for kids and adults. I've been palying this game for over 3 years and can't get enough of it. Although is the most expensive game i've ever bought, it's worth every penny. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //modal -->   
     </div>
     <!-- testimonial -->
     

@@ -56,6 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="header-top-info">
 
 						<%@ include file = "navMenu.jsp" %>
+
 								<%				
 								if(request.getAttribute("message") != null) {
 								%>
@@ -131,7 +132,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     							</div>
 							</div>
 						</div>
-						<div class="br-back"><br></div>                     
+						<div class="br-back"><br></div>                                       
+
 					</div>
 				</div>
 			</div>

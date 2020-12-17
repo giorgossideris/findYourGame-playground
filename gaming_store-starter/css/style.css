@@ -1475,7 +1475,7 @@ body a{
 		  max-width: 28.5%;
 	  }
   }
-  @media(max-width:768px){
+  @media(max-width:767px){
 	  .callbacks_tabs {
 		  left: 47%;
 	  }
@@ -1483,7 +1483,7 @@ body a{
 		  margin-top: 100px;
 	  }
   }
-  @media(max-width:768px){
+  @media(max-width:767px){
 	  .agileits-logo h1 a {
 		  font-size: 1.5em;
 	  }

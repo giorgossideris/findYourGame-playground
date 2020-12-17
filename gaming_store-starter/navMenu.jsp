@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java_files_FindYourGame.*, java.util.List" %>
-<%@ page errorPage="app_error.jsp" %>
+
 
 <%
 
@@ -133,8 +133,8 @@ if (session.getAttribute("userObj") == null && !(entered)) {
 								</a>
 							</li>
 
-							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("favorite_page.jsp") ? "active": "" %>" >
-								<a href="<%=request.getContextPath() %>/FindYourGame/favorite_page.jsp">
+							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("favorite-page.jsp") ? "active": "" %>" >
+								<a href="<%=request.getContextPath() %>/FindYourGame/favorite-page.jsp">
 						    		Favorites
 					    			<i class="fas fa-heart"></i> 
 								</a>
