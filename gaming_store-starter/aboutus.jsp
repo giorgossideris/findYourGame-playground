@@ -86,9 +86,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Antonopoulos Nikolaos</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fab fa-instagram"></i></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -100,9 +100,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Psychogiou Artemis-Konstantina</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fab fa-instagram"></i></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -114,9 +114,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Sideris Georgios</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fab fa-instagram"></i></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>
@@ -128,9 +128,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Stack Overflow</h4>
 												<p>THE savior</p>
 												<ul>
-													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fab fa-instagram"></i></li>
+													<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>
