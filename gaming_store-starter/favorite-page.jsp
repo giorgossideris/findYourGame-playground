@@ -10,11 +10,10 @@ if (session.getAttribute("userObj") != null) {
 	isUserRegistered = true;
 }else{
 %>
-<jsp:forward page="index.jsp"/>
-<%  
-    return;
+<jsp:forward page="index.jsp"></jsp:forward>
+<%
+return;
 }
-
 
 
 CategoryDAO categoryDAO = new CategoryDAO();
@@ -167,9 +166,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <hr>
             <div class="agileits-title" id="gallery"> 
                 <br>
-                <% 
-for (Game game : favoriteGames){
-%>
+            <%
+            if (favoriteGames.size()==0){
+            %>
+            <p class="no-games">No games found.</p>
+            <%
+            }else{
+                for (Game game : favoriteGames){
+            %>
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
@@ -269,28 +273,11 @@ for (Game game : favoriteGames){
         <% } %>
         </div>
 			<br>
-<% } %>			
+<%      } 
+    }%>			
     
             </div>
         </div>
-        <!-- modal -->
-        <div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header"> 
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-                        <h4 class="modal-title">Deathwariorr's <span>Comment</span></h4>
-                    </div> 
-                    <div class="modal-body">
-                        <div class="agileits-w3layouts-info">
-                            
-                            <p>An awesome game for kids and adults. I've been palying this game for over 3 years and can't get enough of it. Although is the most expensive game i've ever bought, it's worth every penny. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- //modal -->   
     </div>
     <!-- testimonial -->
     
@@ -430,21 +417,7 @@ for (Game game : favoriteGames){
         });
     </script>
     <!-- script to make filter-area displayable for large screens -->
-    <script type="text/javascript">
-        $(window).resize(function() {
-            if ($(this).width() > 843) {
-                $('.filter-area').css({
-                    'display': 'flex',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            }else{
-                $('.filter-area').css({
-                    'display': 'none',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            } 
-        });
-    </script>
+    <script src="js/resp_filters.js"></script>
     <!-- script for clicking heart -->
 	<script src="js/favorite.js"></script>
     <!-- end of script for clicking heart -->

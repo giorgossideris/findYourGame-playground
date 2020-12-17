@@ -64,9 +64,8 @@ if(isSomethingWrong){
 <jsp:forward page="index.jsp"/>
 <%} 
 	else {
-	List<String> search_items = new ArrayList<String>(Arrays.asList(searchbar, Integer.toString(players), Integer.toString(age),
-												  Integer.toString(category_id), Integer.toString(duration_id)));
-	request.setAttribute("search_items", search_items);
+	Search_fields sfields = new Search_fields(searchbar, players, age, category_id, duration_id);
+	request.setAttribute("search_items", sfields);
 %>
 <jsp:forward page="navigation.jsp"/>
 <% } %>

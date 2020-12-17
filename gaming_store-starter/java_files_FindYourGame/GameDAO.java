@@ -6,12 +6,17 @@ import java.util.List;
 import java.util.Arrays;
 
 public class GameDAO {
-    public List<Game> getGames(String name, int players, int age, int category_id, int duration_id) throws Exception{
+    public List<Game> getGames(Search_fields search_items) throws Exception{
         List <Game> list_of_games=new ArrayList<Game>();
         Connection con = null;		
 		PreparedStatement stmt = null;
         ResultSet rs = null;
         DB db = new DB();
+        String name = search_items.getSearch_bar();
+        int players = search_items.getPlayers();
+        int age = search_items.getAge();
+        int category_id = search_items.getCategory_id();
+        int duration_id = search_items.getDuration_id();
         boolean isNameSearched = !name.equals(""), 
                 isPlNumberSearched = players != -1,
                 isAgeSearched = age != -1,
@@ -32,15 +37,15 @@ public class GameDAO {
             stmt.setInt(counter++, players);
             stmt.setInt(counter++, players);
         }
+        if (isAgeSearched) {
+            stmt.setInt(counter++ ,age);
+            stmt.setInt(counter++ ,age);
+        }
         if (isCategorySearched) {
             stmt.setInt(counter++,category_id);
         }
         if (isDurationSearched) {
             stmt.setInt(counter++ ,duration_id);
-        }
-        if (isAgeSearched) {
-            stmt.setInt(counter++ ,age);
-            stmt.setInt(counter++ ,age);
         }
 
         rs= stmt.executeQuery();
@@ -67,7 +72,7 @@ public class GameDAO {
     }
 
     private String createSearchQuery(boolean isNameSearched, boolean isPlNumberSearched, boolean isAgeSearched,
-                                     boolean isCategorySearched, boolean isDurationSearched){
+                                     boolean isCategorySearched, boolean isDurationSearched) throws Exception{
         String searchQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
         " duration_id, rating_value, photo_path FROM game"; // basic sql query
         String nameFilter = "locate(?, gamename) > 0",

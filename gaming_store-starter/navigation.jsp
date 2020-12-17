@@ -10,12 +10,7 @@ if (session.getAttribute("userObj") != null) {
 	isUserRegistered = true;
 }
 
-List<String> search_items = (List<String>)request.getAttribute("search_items");
-String searchbar = search_items.get(0);
-int players = Integer.parseInt(search_items.get(1));
-int age = Integer.parseInt(search_items.get(2));
-int category_id = Integer.parseInt(search_items.get(3));
-int duration_id = Integer.parseInt(search_items.get(4));
+Search_fields search_items = (Search_fields)request.getAttribute("search_items");
 
 
 CategoryDAO categoryDAO = new CategoryDAO();
@@ -28,7 +23,7 @@ List<Duration> durations = durationdao.getDurations();
 FavoriteDAO favoriteDAO = new FavoriteDAO();
 UserDAO userDAO = new UserDAO();
 
-List<Game> searchedGames = gameDAO.getGames(searchbar, players, age, category_id, duration_id);
+List<Game> searchedGames = gameDAO.getGames(search_items);
 %>
 
 <!DOCTYPE html>
@@ -169,9 +164,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <hr>
             <div class="agileits-title" id="gallery"> 
                 <br>
-                <% 
-for (Game game : searchedGames){
-%>
+            <%
+            if (searchedGames.size()==0){
+            %>
+            <p class="no-games">No games found.</p>
+            <%
+            }else{
+                for (Game game : searchedGames){
+            %>
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
@@ -271,7 +271,8 @@ for (Game game : searchedGames){
         <% } %>
         </div>
 			<br>
-<% } %>			
+<%      } 
+    }%>			
     
             </div>
         </div>
@@ -414,21 +415,7 @@ for (Game game : searchedGames){
         });
     </script>
     <!-- script to make filter-area displayable for large screens -->
-    <script type="text/javascript">
-        $(window).resize(function() {
-            if ($(this).width() > 843) {
-                $('.filter-area').css({
-                    'display': 'flex',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            }else{
-                $('.filter-area').css({
-                    'display': 'none',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            } 
-        });
-    </script>
+    <script src="js/resp_filters.js"></script>
     <!-- script for clicking heart -->
 	<script src="js/favorite.js"></script>
     <!-- end of script for clicking heart -->

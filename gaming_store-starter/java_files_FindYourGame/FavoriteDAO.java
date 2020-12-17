@@ -140,17 +140,19 @@ public class FavoriteDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM game WHERE game_id IN (SELECT game_id FROM favorite WHERE registered_user_id = 2);";
+		String sqlQuery = "SELECT * FROM game WHERE game_id IN (SELECT game_id FROM favorite WHERE registered_user_id = ?);";
 
 		try {
 
 			con = db.getConnection();
-			stmt = con.prepareStatement(sqlQuery);
+            stmt = con.prepareStatement(sqlQuery);
+            stmt.setInt(1, user_id);
 			rs = stmt.executeQuery();
 
 			while(rs.next()) {
 
-				favoriteGames.add(new Game(rs.getInt("game_id"),rs.getString("gamename"),rs.getString("photo_path"),rs.getDouble("rating_value")  )); 
+				favoriteGames.add( new Game(rs.getInt("game_id"), rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
+                                            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path")));
 			}
 
 			rs.close();
