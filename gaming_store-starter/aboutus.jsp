@@ -56,85 +56,84 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="header-top-info">
 
 						<%@ include file = "navMenu.jsp" %>
-						<%
-						session.invalidate();
-						
- 
+
+								<%				
 								if(request.getAttribute("message") != null) {
-%>
+								%>
 									<div class="alert alert-danger message-box" role="alert">
 										<%=request.getAttribute("message")%>
 									</div>
-<%
+								<%
 								}
-%>
-<div class="team" id="team">
-    <div class="container">
-        <div class="agileits-title"> 
-            <h3>Amazing Team</h3> 
-        </div>
-        <div class="agileits-team-grids">
-            <div class="col-md-3 agileits-team-grid">
-                <div class="team-info">
-                    <img src="images/t1 .jpg" alt="">
-                    <div class="team-caption"> 
-                        <h4>Antonopoulos Nikolaos</h4>
-                        <p>Software Engineer</p>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 agileits-team-grid">
-                <div class="team-info">
-                    <img src="images/t2.jpg" alt="">
-                    <div class="team-caption"> 
-                        <h4>Psychogiou Artemis-Konstantina</h4>
-                        <p>Software Engineer</p>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 agileits-team-grid">
-                <div class="team-info">
-                    <img src="images/t3.jpg" alt="">
-                    <div class="team-caption"> 
-                        <h4>Sideris Georgios</h4>
-                        <p>Software Engineer</p>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 agileits-team-grid">
-                <div class="team-info">
-                    <img src="images/t4.jpg" alt="">
-                    <div  class="team-caption"> 
-                        <h4>Stack Overflow</h4>
-                        <p>THE savior</p>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
-<div class="br-back"><br></div>                     
+								%>
+						<div class="team" id="team">
+    						<div class="container">
+								<div class="agileits-title"> 
+									<h3>Amazing Team</h3> 
+								</div>
+								<div class="agileits-team-grids">
+									<div class="col-md-3 agileits-team-grid">
+										<div class="team-info">
+											<img src="images/t1.jpg" alt="">
+											<div class="team-caption"> 
+												<h4>Antonopoulos Nikolaos</h4>
+												<p>Software Engineer</p>
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3 agileits-team-grid">
+										<div class="team-info">
+											<img src="images/t2.jpg" alt="">
+											<div class="team-caption"> 
+												<h4>Psychogiou Artemis-Konstantina</h4>
+												<p>Software Engineer</p>
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3 agileits-team-grid">
+										<div class="team-info">
+											<img src="images/t3.jpg" alt="">
+											<div class="team-caption"> 
+												<h4>Sideris Georgios</h4>
+												<p>Software Engineer</p>
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3 agileits-team-grid">
+										<div class="team-info">
+											<img src="images/t4.jpg" alt="">
+											<div  class="team-caption"> 
+												<h4>Stack Overflow</h4>
+												<p>THE savior</p>
+												<ul>
+													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"> </div>
+    							</div>
+							</div>
+						</div>
+						<div class="br-back"><br></div>                                       
+
 					</div>
 				</div>
 			</div>
