@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java_files_FindYourGame.*, java.util.List" %>
-
+<%@ page errorPage="app_error.jsp" %>
 
 <%
 boolean isUserRegistered = false;
@@ -248,25 +248,7 @@ for (Game game : topRatedGames){
 		</div>
 	</div>
 	<div class="br-back"><br></div>
-	<!-- //portfolio -->
-	<!-- modal -->
-	<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header"> 
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-					<h4 class="modal-title">Deathwariorr's <span>Comment</span></h4>
-				</div> 
-				<div class="modal-body">
-					<div class="agileits-w3layouts-info">
-						
-						<p>An awesome game for kids and adults. I've been palying this game for over 3 years and can't get enough of it. Although is the most expensive game i've ever bought, it's worth every penny. </p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //modal -->
+
 <%
 	GameDAO gameDA = new GameDAO();
 	List <Game> MostRatedGames = gameDA.getMostFavorite();
@@ -383,7 +365,7 @@ for (Game game : topRatedGames){
 	</div>
 	
 	<div class="br-back"><br></div>
-	
+
 	<%@ include file = "footer.jsp" %>
 
 		<!-- scripts for sliding comments -->

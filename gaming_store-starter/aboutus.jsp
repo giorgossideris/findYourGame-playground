@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page errorPage="app_error.jsp" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +29,7 @@
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
+						<%@ include file = "navMenu.jsp" %>
 						<div class="team" id="team">
     						<div class="container">
 								<div class="agileits-title"> 
