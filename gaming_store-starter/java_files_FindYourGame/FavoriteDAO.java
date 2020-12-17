@@ -1,5 +1,7 @@
 package java_files_FindYourGame;
 import java.sql.*;
+import java.util.List;
+import java.util.ArrayList;
 
 public class FavoriteDAO {
     
@@ -128,5 +130,45 @@ public class FavoriteDAO {
 
 		}
 
-	}
+    }
+    
+    public List<Game> getFavoritesOfUser(int user_id) throws Exception{
+        
+        List<Game> favoriteGames =  new ArrayList<Game>();
+
+		DB db = new DB();
+		Connection con = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String sqlQuery = "SELECT * FROM game WHERE game_id IN (SELECT game_id FROM favorite WHERE registered_user_id = 2);";
+
+		try {
+
+			con = db.getConnection();
+			stmt = con.prepareStatement(sqlQuery);
+			rs = stmt.executeQuery();
+
+			while(rs.next()) {
+
+				favoriteGames.add(new Game(rs.getInt("game_id"),rs.getString("gamename"),rs.getString("photo_path"),rs.getDouble("rating_value")  )); 
+			}
+
+			rs.close();
+			stmt.close();
+			db.close();
+			return favoriteGames;
+
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		} finally {
+
+			try {
+				db.close();
+			} catch (Exception e) {
+
+			}
+
+		}
+
+    }
 }
