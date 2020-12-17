@@ -8,45 +8,21 @@ Author URL: http://w3layouts.com
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Gaming Store a Games Category Bootstrap responsive Website Template | Home :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<meta name="keywords" content="Gaming Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<!--// bootstrap-css -->
-<!-- css -->
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-<!--// css -->
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- //font-awesome icons -->
-<!-- portfolio -->	
-<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="all">
-<!-- //portfolio -->
-<!-- custom login css -->
-<link rel="stylesheet" href="css/login_style.css" type="text/css" media="all">	
-<!-- //custom login css -->
-<!-- font -->
-<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;500&display=swap" rel="stylesheet"> 
-<!-- //font -->
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script> 
 
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
+	<title>Log in</title>
+	<%@ include file = "header.jsp" %>
+	<!-- custom login css -->
+	<link rel="stylesheet" href="css/login_style.css" type="text/css" media="all">	
+	<!-- //custom login css -->
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script> 
+
 </head>
 <body>
 	<!-- banner -->
@@ -97,54 +73,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>	
 	</div>
 	
-    
-
-	<!-- //banner -->
-	<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-top">
-				<div class="col-md-4 amet-sed"> 
-					<div class="footer-title">
-						<h3>About Us</h3>
-					</div> 
-					<p>We are a team that seeks greatness.</p>
-				</div>
-				<div class="col-md-4 amet-sed amet-medium">
-					<div class="footer-title">
-						<h3>Subscribe</h3>
-					</div> 
-					<div class="support">
-						<form action="#" method="post">
-							<input type="email" placeholder="Enter email...." required="" class="footer-email"> 
-							<input type="submit" value="Subscribe" class="botton">
-						</form> 
-					</div>
-				</div>
-				<div class="col-md-4 amet-sed ">
-					<div class="footer-title">
-						<h3>Follow Us</h3>
-					</div> 
-					<div class="agileinfo-social-grids">
-						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<!-- //footer --> 
-	<!-- copyright -->
-	<div class="copyright">
-		<div class="container">
-			<p class="footer-class">© 2020 Gaming Store . All Rights Reserved | FindYourGame© </p>
-		</div>
-	</div>
-	<!-- //copyright -->
+	<%@ include file = "footer.jsp" %>
+	
 	<script src="js/jarallax.js"></script>
 	<!-- <script src="js/SmoothScroll.min.js"></script> -->
 	<script type="text/javascript">
