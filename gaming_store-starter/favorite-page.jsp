@@ -8,8 +8,12 @@ User auth_user = null;
 if (session.getAttribute("userObj") != null) {
 	auth_user = (User)session.getAttribute("userObj");
 	isUserRegistered = true;
+}else{
+%>
+<jsp:forward page="index.jsp"></jsp:forward>
+<%
+return;
 }
-
 
 
 CategoryDAO categoryDAO = new CategoryDAO();
@@ -162,9 +166,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <hr>
             <div class="agileits-title" id="gallery"> 
                 <br>
-                <% 
-for (Game game : favoriteGames){
-%>
+            <%
+            if (favoriteGames.size()==0){
+            %>
+            <p class="no-games">No games found.</p>
+            <%
+            }else{
+                for (Game game : favoriteGames){
+            %>
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
@@ -264,10 +273,11 @@ for (Game game : favoriteGames){
         <% } %>
         </div>
 			<br>
-<% } %>			
+<%      } 
+    }%>			
     
             </div>
-        </div> 
+        </div>
     </div>
     <!-- testimonial -->
     
@@ -407,21 +417,7 @@ for (Game game : favoriteGames){
         });
     </script>
     <!-- script to make filter-area displayable for large screens -->
-    <script type="text/javascript">
-        $(window).resize(function() {
-            if ($(this).width() > 843) {
-                $('.filter-area').css({
-                    'display': 'flex',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            }else{
-                $('.filter-area').css({
-                    'display': 'none',
-                });
-                document.getElementById('show-filters-button').innerText = "Show filters";
-            } 
-        });
-    </script>
+    <script src="js/resp_filters.js"></script>
     <!-- script for clicking heart -->
 	<script src="js/favorite.js"></script>
     <!-- end of script for clicking heart -->

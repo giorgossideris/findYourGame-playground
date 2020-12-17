@@ -8,19 +8,19 @@ public class Search_fields {
 
 	private int age; 
 
-    private int category; 
-    private int duration; 
+    private int category_id; 
+    private int duration_id; 
    
     
     
     
     
-	public Search_fields(String search_bar, int players, int age, int category, int duration) {
+	public Search_fields(String search_bar, int players, int age, int category_id, int duration_id) {
 		this.search_bar = search_bar;
 		this.players = players;
 		this.age = age;
-		this.category = category;
-		this.duration = duration;
+		this.category_id = category_id;
+		this.duration_id = duration_id;
 	}
 	public String getSearch_bar() {
 		return search_bar;
@@ -40,22 +40,22 @@ public class Search_fields {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public int getCategory() {
-		return category;
+	public int getCategory_id() {
+		return category_id;
 	}
-	public void setCategory(int category) {
-		this.category = category;
+	public void setCategory_id(int category_id) {
+		this.category_id = category_id;
 	}
-	public int getDuration() {
-		return duration;
+	public int getDuration_id() {
+		return duration_id;
 	}
-	public void setDuration(int duration) {
-		this.duration = duration;
+	public void setDuration_id(int duration_id) {
+		this.duration_id = duration_id;
 	}
 	 @Override
 		public String toString() {
-			return "Category [search_bar=" + search_bar + ", players=" + players + ", age=" + age + ", category=" + category
-					+ ", duration=" + duration + "]";
+			return "Search fields [search_bar=" + search_bar + ", players=" + players + ", age=" + age + ", category_id=" + category_id
+					+ ", duration_id=" + duration_id + "]";
 		}
     
 }

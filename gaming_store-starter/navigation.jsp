@@ -10,12 +10,7 @@ if (session.getAttribute("userObj") != null) {
 	isUserRegistered = true;
 }
 
-List<String> search_items = (List<String>)request.getAttribute("search_items");
-String searchbar = search_items.get(0);
-int players = Integer.parseInt(search_items.get(1));
-int age = Integer.parseInt(search_items.get(2));
-int category_id = Integer.parseInt(search_items.get(3));
-int duration_id = Integer.parseInt(search_items.get(4));
+Search_fields search_items = (Search_fields)request.getAttribute("search_items");
 
 
 CategoryDAO categoryDAO = new CategoryDAO();
@@ -28,7 +23,7 @@ List<Duration> durations = durationdao.getDurations();
 FavoriteDAO favoriteDAO = new FavoriteDAO();
 UserDAO userDAO = new UserDAO();
 
-List<Game> searchedGames = gameDAO.getGames(searchbar, players, age, category_id, duration_id);
+List<Game> searchedGames = gameDAO.getGames(search_items);
 %>
 
 <!DOCTYPE html>
