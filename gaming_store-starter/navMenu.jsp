@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java_files_FindYourGame.*, java.util.List" %>
-
+<%@ page errorPage="app_error.jsp" %>
 
 <%
 
@@ -31,16 +31,6 @@ if (session.getAttribute("userObj") == null && !(entered)) {
 	/* Navigation menu for visitors */
 %>
 
-<!-- banner -->
-<!-- <div class="agileinfo-dot">
-	<div class="logo"> <img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png"></div> -->
-				
-	<!-- <div class="agileits-logo" id="smaller">
-	<h1><a href="index.html">Find  <span>Your <a href="index.html">Game</span></a></h1>
-	</div> -->
-	
-	<!-- <div class="header-top">
-		<div class="header-top-info"> -->
 			<nav class="navbar navbar-default">
     			<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -90,27 +80,13 @@ if (session.getAttribute("userObj") == null && !(entered)) {
 							<!-- /.navbar-collapse -->
 
 	        </nav>
-<!-- 
-		</div>
-						
-	</div>
-				
-</div> -->
+
 <%
 } else if (!(entered)){
 	/* Navigation menu for authenticated users */
 
 %>
-<!-- banner -->
-<!-- <div class="agileinfo-dot">
-	<div class="logo"> <img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png"></div> -->
-				
-	<!-- <div class="agileits-logo" id="smaller">
-	<h1><a href="index.html">Find  <span>Your <a href="index.html">Game</span></a></h1>
-	</div> -->
-	
-	<!-- <div class="header-top">
-		<div class="header-top-info"> -->
+
 			<nav class="navbar navbar-default">
     			<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -133,7 +109,7 @@ if (session.getAttribute("userObj") == null && !(entered)) {
 								</a>
 							</li>
 
-							<li id="orange" class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("favorite-page.jsp") ? "active": "" %>" >
+							<li class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("favorite-page.jsp") ? "active": "" %>" >
 								<a href="<%=request.getContextPath() %>/FindYourGame/favorite-page.jsp">
 						    		Favorites
 					    			<i class="fas fa-heart"></i> 
@@ -158,15 +134,10 @@ if (session.getAttribute("userObj") == null && !(entered)) {
 						</ul>
 					</nav>
 				</div>
-							<!-- /.navbar-collapse -->
+				<!-- /.navbar-collapse -->
 
 	        </nav>
-<!-- 
-		</div>
-						
-	</div>
-				
-</div> -->
+
 <%
 }
 %>

@@ -1,49 +1,30 @@
 <%@  page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-
+<%@ page errorPage="app_error.jsp" %>
 
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Game details</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta charset="utf-8">
-		<meta name="keywords" content="Gaming Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-		Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<!-- bootstrap-css -->
-		<link href="<%=request.getContextPath() %>/FindYourGame/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-		<!--// bootstrap-css -->
-		<!-- css -->
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/style.css" type="text/css" media="all" />
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/game.css" type="text/css" media="all" />
-		<!--// css -->
-		<!-- font-awesome icons -->
-		<link href="<%=request.getContextPath() %>/FindYourGame/css/font-awesome.css" rel="stylesheet"> 
-		<!-- //font-awesome icons -->
-		<link href="<%=request.getContextPath() %>/FindYourGame/css/all.css" rel="stylesheet">
-		<!-- portfolio -->	
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/chocolat.css" type="text/css" media="all">
-		<!-- //portfolio -->
-		<link href="<%=request.getContextPath() %>/FindYourGame/css/custom_style.css" rel="stylesheet"> 
-	    <!-- Font -->
-		<link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;500&display=swap" rel="stylesheet"> 
-	
-		<!-- font -->
-		<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-		<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
-		<!-- //font -->
-		<script src="<%=request.getContextPath() %>/FindYourGame/js/jquery-1.11.1.min.js"></script>
-		<script src="<%=request.getContextPath() %>/FindYourGame/js/bootstrap.js"></script>
-		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
+<head>
+
+	<title>Game details</title>
+	<%@ include file = "header.jsp" %>
+	<!-- css -->
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/game.css" type="text/css" media="all" />
+	<!--// css -->
+	<link href="<%=request.getContextPath() %>/FindYourGame/css/all.css" rel="stylesheet">
+	<link href="<%=request.getContextPath() %>/FindYourGame/css/custom_style.css" rel="stylesheet"> 
+	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+	<!-- //font -->
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 			});
-		</script>
-	</head>
+		});
+	</script>
+</head>
 
 
 	<body>
@@ -283,7 +264,7 @@
 								</div>
 								<!-- the input field -->
 								<input type="text" placeholder="Join the conversation..">
-								<button class="hover-button submit" >Submit it!</button></div>
+								<button class="hover-button submit" >Submit it!</button>
 
 							</div>
 
@@ -294,73 +275,9 @@
 				</div>
 				<!-- section-content end -->
 			</section>
-
-
-			<!-- modal -->
-			<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header"> 
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-							<h4 class="modal-title">Gaming <span>Store</span></h4>
-						</div> 
-						<div class="modal-body">
-							<div class="agileits-w3layouts-info">
-								<img src="<%=request.getContextPath() %>/FindYourGame/images/1.jpg" alt="" />
-								<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- //modal -->		
 	
-	
-			<!-- footer -->
-			<div class="footer">
-				<div class="container">
-					<div class="footer-top">
-						<div class="col-md-4 amet-sed"> 
-							<div class="footer-title">
-								<h3>About Us</h3>
-							</div> 
-							<p>A great team from a small greek suburb that seeks glory and honor.</p>
-						</div>
-						<div class="col-md-4 amet-sed amet-medium">
-							<div class="footer-title">
-								<h3>Subscribe</h3>
-							</div> 
-							<div class="support">
-								<form action="email.jsp" method="post">
-									<input type="email" name="email" placeholder="Enter email...." required="" class="footer-email"> 
-									<input type="submit" value="Subscribe" class="botton">
-								</form> 
-							</div>
-						</div>
-						<div class="col-md-4 amet-sed ">
-							<div class="footer-title">
-								<h3>Follow Us</h3>
-							</div> 
-							<div class="agileinfo-social-grids">
-								<ul>
-									<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-			</div>
-			<!-- //footer --> 
-			<!-- copyright -->
-			<div class="copyright">
-				<div class="container">
-					<p class="footer-class">© 2020 Gaming Store . All Rights Reserved | FindYourGame© </p>
-				</div>
-			</div>
-			<!-- //copyright -->
+			<%@ include file = "footer.jsp" %>
+			
 		</div>
 		<script src="<%=request.getContextPath() %>/FindYourGame/js/jarallax.js"></script>
 		<!-- <script src="js/SmoothScroll.min.js"></script> -->

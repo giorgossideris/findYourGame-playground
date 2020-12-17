@@ -4,32 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta name="keywords" content="Gaming Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- bootstrap-css -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <!--// bootstrap-css -->
-    <!-- css -->
-    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
-    <!--// css -->
-    <!-- font-awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- //font-awesome icons -->
-    <!-- portfolio -->	
-    <link rel="stylesheet" href="css/chocolat.css" type="text/css" media="all">
-    <!-- //portfolio -->
+
+	<title>Error page</title>
+	<%@ include file = "header.jsp" %>
     <!-- custom login css -->
     <link rel="stylesheet" href="css/login_style.css" type="text/css" media="all">	
     <!-- //custom login css -->
-    <!-- font -->
-    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;500&display=swap" rel="stylesheet"> 
-    <!-- //font -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     <script type="text/javascript">
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){		
@@ -37,13 +17,7 @@
                 $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
             });
         });
-    </script> 
-
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
-            
-    <title>Error page</title>
+    </script>             
 
 </head>
 
@@ -82,8 +56,7 @@
 		</div>
 		<!-- /container -->
 
-<!-- footer -->
-<!-- copyright -->
+	<!-- copyright -->
 	<div class="copyright" style="margin-bottom: 25em;">
 		<div class="container">
 			<p class="footer-class">© 2020 Gaming Store . All Rights Reserved | FindYourGame© </p>
