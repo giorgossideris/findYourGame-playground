@@ -27,6 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- custom login css -->
 <link rel="stylesheet" href="css/login_style.css" type="text/css" media="all">	
 <!-- //custom login css -->
+<link rel="stylesheet" href="css/custom_style.css" type="text/css" media="all">	
 <!-- font -->
 <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;500&display=swap" rel="stylesheet"> 
 <!-- //font -->
