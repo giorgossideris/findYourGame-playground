@@ -49,7 +49,8 @@
 										only some of them. But here we are, a multimillion dollar company."</i>
 										</div>
 									<div class="members-quote">
-										<b>Konstantina-Artemis Psychogiou:</b>  <i>"I like Big Brother."</i>
+										<b>Konstantina-Artemis Psychogiou:</b>  <i>"We started from zero but here we are managing such a successful site that gains a lot of attention 
+											as the time passes. We are proud of what we have achieved so far"</i>
 									</div>
 								</p>
 								<div class="agileits-team-grids">
