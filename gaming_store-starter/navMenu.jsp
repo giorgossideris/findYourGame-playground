@@ -62,8 +62,8 @@ if (session.getAttribute("userObj") == null && !(entered)) {
 								</a>
 							</li>
 
-							<li class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("about_us.jsp") ? "active": "" %>" >
-			    				<a href="about_us.jsp">
+							<li class="<%=request.getRequestURI().replace(request.getContextPath() + "/FindYourGame/", "").equals("aboutus.jsp") ? "active": "" %>" >
+			    				<a href="aboutus.jsp">
 									About us 
 									<i class="fa fa-group"></i>
 									
