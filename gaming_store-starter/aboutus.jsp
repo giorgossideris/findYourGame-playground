@@ -55,23 +55,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
-
-						<%@ include file = "navMenu.jsp" %>
-
-								<%				
-								if(request.getAttribute("message") != null) {
-								%>
-									<div class="alert alert-danger message-box" role="alert">
-										<%=request.getAttribute("message")%>
-									</div>
-								<%
-								}
-								%>
 						<div class="team" id="team">
     						<div class="container">
 								<div class="agileits-title"> 
-									<h3>Amazing Team</h3> 
+									<h3>Who we are</h3> 
 								</div>
+								<p class="about-us">
+									<div class="basic-about-paragraph">
+										Did you think that this webpage was designed by professionals? Close enough. As perfect as it may seem, it was
+										created just by 3 students from Athens, Greece.
+									</div>
+									<br>
+									<div class="members-quote">
+										<b>Nikos Antonopoulos:</b> <i>"When we started we never imagined the huge success of FindYourGame©. One million visitors every
+										day is a huge accomplishment and we owe it to all of you."</i>
+										</div>
+									<div class="members-quote">
+										<b>Georgios Sideris:</b>  <i>"We had to face many difficulties, Tomcat's bugs, NullPointerExceptions and randomly placed '%>' are 
+										only some of them. But here we are, a multimillion dollar company."</i>
+										</div>
+									<div class="members-quote">
+										<b>Konstantina-Artemis Psychogiou:</b>  <i>"I like Big Brother."</i>
+									</div>
+								</p>
 								<div class="agileits-team-grids">
 									<div class="col-md-3 agileits-team-grid">
 										<div class="team-info">
@@ -80,9 +86,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Antonopoulos Nikolaos</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fab fa-instagram"></i></li>
 												</ul>
 											</div>
 										</div>
@@ -94,9 +100,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Psychogiou Artemis-Konstantina</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fab fa-instagram"></i></li>
 												</ul>
 											</div>
 										</div>
@@ -108,9 +114,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Sideris Georgios</h4>
 												<p>Software Engineer</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fab fa-instagram"></i></li>
 												</ul>
 											</div>
 										</div>
@@ -122,9 +128,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												<h4>Stack Overflow</h4>
 												<p>THE savior</p>
 												<ul>
-													<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-													<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-													<li><a href="#"><i class="fa fa-rss"></i></a></li>
+													<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+													<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+													<li><a href="#"><i class="fab fa-instagram"></i></li>
 												</ul>
 											</div>
 										</div>
@@ -152,15 +158,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="footer-title">
 						<h3>About Us</h3>
 					</div> 
-					<p>We are a team that seeks greatness.</p>
+					<p>A great team from a small greek suburb that seeks glory and honor.</p>
 				</div>
 				<div class="col-md-4 amet-sed amet-medium">
 					<div class="footer-title">
 						<h3>Subscribe</h3>
 					</div> 
 					<div class="support">
-						<form action="#" method="post">
-							<input type="email" placeholder="Enter email...." required="" class="footer-email"> 
+						<form action="email.jsp" method="post">
+							<input type="email" name="email" placeholder="Enter email...." required="" class="footer-email"> 
 							<input type="submit" value="Subscribe" class="botton">
 						</form> 
 					</div>
@@ -171,9 +177,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div> 
 					<div class="agileinfo-social-grids">
 						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>

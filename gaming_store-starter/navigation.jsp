@@ -175,7 +175,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
-            <h4 class="game-name"><%=game.getGamename()%></h4> 
+            <a href="game-view.jsp">
+                <h4 class="game-name"><%=game.getGamename()%></h4>
+            </a>
 
             <div class="game-info">
                 <ul class="fa-ul">
@@ -294,15 +296,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="footer-title">
 						<h3>About Us</h3>
 					</div> 
-					<p>We are a team that seeks greatness.</p>
+					<p>A great team from a small greek suburb that seeks glory and honor.</p>
 				</div>
 				<div class="col-md-4 amet-sed amet-medium">
 					<div class="footer-title">
 						<h3>Subscribe</h3>
 					</div> 
 					<div class="support">
-						<form action="#" method="post">
-							<input type="email" placeholder="Enter email...." required="" class="footer-email"> 
+						<form action="email.jsp" method="post">
+							<input type="email" name="email" placeholder="Enter email...." required="" class="footer-email"> 
 							<input type="submit" value="Subscribe" class="botton">
 						</form> 
 					</div>
@@ -313,9 +315,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div> 
 					<div class="agileinfo-social-grids">
 						<ul>
-							<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
 						</ul>
 					</div>
 				</div>
