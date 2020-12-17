@@ -14,7 +14,7 @@ public class DurationDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT duration_value FROM duration;";
+		String sqlQuery = "SELECT * FROM duration;";
 
 		try {
 
@@ -24,7 +24,7 @@ public class DurationDAO {
 
 			while(rs.next()) {
 
-				durations.add( new Duration(rs.getString("duration_value")) );
+				durations.add( new Duration(rs.getInt("duration_id"),rs.getString("duration_value")) );
 
 			}
 
