@@ -62,7 +62,7 @@ Author URL: http://w3layouts.com
                                         <button type="submit" class="login-button rounded-corners text-white login-button-area">I finished!</button>
 									</div>
 									<div class="signup-message login-form-group">
-										<p>You don't have an account? Sign up <a href="signup.html">here</a>.</p>
+										<p>You don't have an account? Sign up <a href="signup.jsp">here</a>.</p>
 									</div>
                                 </form>
                             </div>  

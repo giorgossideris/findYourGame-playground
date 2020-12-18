@@ -23,18 +23,7 @@
 
 	<body>
 
-		<!-- Fixed navbar -->
-        <nav class="navbar navbar-default">
-            <!-- Collect the nav links, forms, and other content for toggling -->					
-            <div class=" nav-wil">
-                <nav>
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.jsp">Home <i class="fa fa-home"></i></a></li>
-                    </ul>
-                </nav>
-            </div>
-        <!-- 	 /.navbar-collapse -->
-        </nav>
+		<%@ include file = "navMenu.jsp" %>
 		<div class="container" role="main">
 
 
