@@ -62,21 +62,27 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
             <div  class="form-group filter-form">
                 <div class="filter">
                     <label   class="control-label filter-description">Players:</label>
-                    <input   type="text" class="form-control filter-input rounded-corners" placeholder="3">
+                    <input   type="text" class="form-control filter-input rounded-corners" placeholder= "<%= search_items.getPlayers() == 0 ? "" : search_items.getPlayers() %>" >
                 </div>
                 <div class="filter">
                     <label  class="control-label filter-description">  Age:</label>
-                    <input  type="text" class="form-control filter-input rounded-corners" placeholder="12">
+                    <input  type="text" class="form-control filter-input rounded-corners" placeholder="<%= search_items.getAge() == 0 ? "" : search_items.getAge() %>" >
                 </div>
             
                 <div class="filter">
                     <label   class="control-label filter-description">Category:</label>
                         <div class="options-area">
-                            <div class="option">
-                                <input type="checkbox" name="action" value="action">
-                                <label for="action">Action</label>
-                            </div>
-                            <div class="option">
+                            <%
+                                String name;
+                                for (Category cat : categories) {
+                                    name = cat.getCategory_name();
+                            
+                            %>
+                                <div class="option">
+                                    <input type="checkbox" name="action" value="<%= name%>" <%= search_items.getCategory_id()==cat.getCategory_id() ? "checked" : "" %> >
+                                    <label for="<%= name%>"><%= name%></label>
+                                </div>
+                            <!-- <div class="option">
                                 <input type="checkbox" name="adventure" value="adventure">
                                 <label for="adventure">Adventure</label>  
                             </div>
@@ -91,17 +97,24 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                             <div class="option">      
                                 <input type="checkbox" name="family" value="family">
                                 <label for="family">Family</label>
-                            </div>
+                            </div> -->
+                            <%
+                        }
+                            %>
                         </div>
                 </div>
                 <div class="filter">
                     <label for="duration" class="control-label filter-description">Duration:</label>
                     <div class="options-area">
-                        <div class="option">
-                            <input type="checkbox" name="mins_20" value="mins_20">
-                            <label for="mins_20">20'</label>
-                        </div>
-                        <div class="option">
+                        <%
+                            for (Duration dur : durations) {
+                                name = dur.getDuration_name();
+                        %>
+                            <div class="option">
+                                <input type="checkbox" name="<%= name%>" value="<%= name%>" <%= search_items.getDuration_id()==dur.getDuration_id() ? "checked" : "" %>>
+                                <label for="<%= name%>"><%= name%></label>
+                            </div>
+                        <!-- <div class="option">
                             <input type="checkbox" name="mins_30" value="mins_30">
                             <label for="mins_30">30'</label>  
                         </div>
@@ -112,7 +125,10 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                         <div class="option">
                             <input type="checkbox" name="mins_60_plus" value="mins_60_plus">
                             <label for="mins_60_plus">60'+</label>  
-                        </div>
+                        </div> -->
+                        <%
+                    }
+                        %>
                     </div>
                 </div>				
             </div>
@@ -121,8 +137,8 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
         <div class="games-to-navigate-area"> 	
             <div class="results-header">
                 <span id="results-title">
-                    <h2>Search Results</h2>
-                    <p>(<%=searchedGames.size()%> item<%=searchedGames.size()!=1 ? "s" : ""%>)</p> 
+                    <h2>Search Results</h2> <span class="badge"><%=searchedGames.size()%></span>
+                   
                 </span>
                 <span id="sorting-section">
                     <label for="sorting">Sort by:</label>
@@ -233,7 +249,7 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
 
                             <h4><%=comment.getComment_text()%></h4>
                             <div class="person_who_made_a_comment_color">	
-                                <p>by <%=userDAO.searchUserByID(comment.getCommening_user_id()).getUsername()%></p>
+                                <p>by <%=userDAO.searchUserByID(comment.getCommenting_user_id()).getUsername()%></p>
                             </div>
                         </div>
 
