@@ -123,7 +123,46 @@ public class CommentDAO {
 
 		}
 
-    }
+	}
+	public void add_comment(String comment_text, int game_id, int registered_user_id) throws Exception {
+		DB db = new DB();
+        Connection con = null;
+		PreparedStatement stmt= null; 
+		String sqlQuery1 = "INSERT INTO comment (comment_text,game_id,registered_user_id) VALUES (?,?,?);";
+
+		try{
+            con = db.getConnection();
+            stmt = con.prepareStatement(sqlQuery1);
+			stmt=con.prepareStatement(sqlQuery1);
+			stmt.setString(1,comment_text);
+			stmt.setInt(2,game_id);
+			stmt.setInt(3,registered_user_id);
+
+			stmt.executeUpdate();
+			stmt.close();
+
+        }catch(Exception e){
+            throw new Exception(e.getMessage());
+        }finally{
+            try{
+                db.close();
+            }catch(Exception e){
+                throw new Exception(e.getMessage());
+            }
+        }
+
+
+		
+		
+	}//end of register
+
+
+
+
+
+
+
+
 }
 
 
