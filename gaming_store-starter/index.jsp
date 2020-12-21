@@ -134,7 +134,7 @@ Author URL: http://w3layouts.com
 		<br>
 		<div class="agileits-title" id="gallery"> 
 			<h3>Top Rated Games</h3> 
-			<br>
+			<br>	
 <% 
 List<Game> topRatedGames = gameDAO.getTopRatedGames();
 int counter=1;
@@ -144,9 +144,9 @@ for (Game game : topRatedGames){
 				<p id="counter"><%=counter++%>.</p>
 				<div class="game-layout">	
 					<img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
-					<a class="game-name" href="game-view.jsp">
+					<a class="game-name" href="game-view.jsp?game_id=<%=game.getGame_id()%>">
 						<h4><%=game.getGamename()%></h4>
-					</a>
+					</a>    
 	
 					<div class="game-info">
 						<ul class="fa-ul">
@@ -229,7 +229,7 @@ for (Game game : topRatedGames){
 	
 									<h4><%=comment.getComment_text()%></h4>
 									<div class="person_who_made_a_comment_color">	
-										<p>by <%=userDAO.searchUserByID(comment.getCommening_user_id()).getUsername()%></p>
+										<p>by <%=userDAO.searchUserByID(comment.getCommenting_user_id()).getUsername()%></p>
 									</div>
 								</div>
 	

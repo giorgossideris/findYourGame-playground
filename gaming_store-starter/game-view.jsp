@@ -1,5 +1,14 @@
 <%@  page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page errorPage="app_error.jsp" %>
+<%@  page errorPage="app_error.jsp" %>
+<%@ page import="java_files_FindYourGame.*, java.util.List" %>
+<%   int game_id = Integer.parseInt(request.getParameter("game_id"));
+GameDAO gamedao = new GameDAO();
+DurationDAO durationdao = new DurationDAO();
+CategoryDAO categorydao = new CategoryDAO();
+CommentDAO commentdao = new CommentDAO();
+UserDAO userdao = new UserDAO();
+Game game = gamedao.searchGameByID(game_id);
+%>
 
 
 <!DOCTYPE html>
@@ -55,14 +64,14 @@
 				<div class="section-content">
 					<div class="secimage">
 						<!-- <a href="#" class="thumbnail"> -->
-						<img src="<%=request.getContextPath() %>/FindYourGame/images/uno.png" alt="UNO">
+						<img src="<%=game.getPhoto_path()%>" alt="game.getGamename()">
 						<!-- </a> -->
 					
 					</div>
 					<div class="secdetails">
 
 						<div class="game-title">
-							<h2>UNO Classic Edition</h2>						
+							<h2><%=game.getGamename()%></h2>						
 							<div class="right-buttons">
 								<div class="ac-footer">
 									<div class="ac-footer-container ac-footer-brand" title="Add to favorite">
@@ -92,7 +101,7 @@
 							<span class="rate-num">
 
 								<i class="far fa-star"></i>
-								<span class="rating-value">4.67</span>
+								<span class="rating-value"><%=game.getRating_value()%></span>
 								<span class="out-of">/5</span>
 								
 							</span>
@@ -101,10 +110,10 @@
 						<div class="rules">
 
 							<ul class="categories">
-								<li class="left-up"> <span class="white"><i class="fa fa-quote-right fa-xs"></i> Category:</span> Cards </li>
-								<li class="right-up"> <span class="white"><i class="fa fa-user-friends fa-xs"></i> Players: </span> 2-10 </li>  
-								<li class="left-down"> <span class="white"><i class="fa fa-child fa-xs"></i> Age:</span> 7+ </li>
-								<li class="right-down"> <span class="white"><i class="fa fa-clock fa-xs"></i> Duration:</span> 20'+ </li>
+								<li class="left-up"> <span class="white"><i class="fa fa-quote-right fa-xs"></i> Category:</span> <%=categorydao.getCategoryByID(game.getCategory_id()).getCategory_name()%> </li>
+								<li class="right-up"> <span class="white"><i class="fa fa-user-friends fa-xs"></i> Players: </span> <%=game.getMin_players()%>-<%=game.getMax_players()%> </li>  
+								<li class="left-down"> <span class="white"><i class="fa fa-child fa-xs"></i> Age:</span> <%=game.getStart_age()%>+ </li>
+								<li class="right-down"> <span class="white"><i class="fa fa-clock fa-xs"></i> Duration:</span> <%=durationdao.getDurationByID(game.getDuration_id()).getDuration_name()%> </li>
 
 							</ul>
 							
@@ -115,10 +124,8 @@
 									<br>
 								</div>
 		
-									<p> Every player starts with seven cards, and they are dealt face down. 
-										The rest of the cards are placed in a Draw Pile face down. 
-										Next to the pile a space should be designated for a Discard Pile. 
-										The top card should be placed in the Discard Pile, and the game begins!	
+									<p> <%=game.getGame_short_description() %>
+										
 										<span id="points">...</span> 
 									</p>	
 										<div class="desc-heading">Details</div>
@@ -126,46 +133,8 @@
 											<br>
 										</div> 
 										<span id="moreText" class="game-description">
+											    <%=game.getGame_long_description()%>
 												
-												The first player is normally the player to the left of the dealer (you can also choose the youngest player) and gameplay usually 
-												follows a clockwise direction. Every player views his/her cards and tries to match the card in 
-												the Discard Pile. 
-												You have to match either by the number, color, or the symbol/Action. 
-												For instance, if the Discard Pile has a red card that is an 8 you have to place either a red card or a card with an 8 on it.  
-												You can also play a Wild card (which can alter current color in play). 
-												If the player has no matches or they choose not to play any of their cards even though they might have 
-												a match, they must draw a card from the Draw pile. If that card can be played, play it. 
-												Otherwise, keep the card, and the game moves on to the next person in turn.  
-												You can also play a Wild card, or a Wild Draw Four card on your turn. Note: If the first card turned 
-												up from the Draw Pile (to form the Discard Pile) is an Action card, the Action from that card 
-												applies and must be carried out by the first player to go (as stated, it is usually the player 
-												to the dealer’s left). The exceptions are if a Wild or Wild Draw Four card is turned up. If it is a 
-												Wild card, Mattel has now stated that the first player to start (usually the one on the dealer’s left),
-												can choose whatever color to begin play. If the first card is a Wild Draw Four card – Return it to the 
-												Draw Pile, shuffle the deck, and turn over a new card. At any time during the game, if the Draw Pile becomes 
-												depleted and no one has yet won the round, take the Discard Pile, shuffle it, and turn it over to regenerate 
-												a new Draw Pile. Take note that you can only put down one card at a time; you cannot stack two or more cards 
-												together on the same turn. For example, you cannot put down a Draw Two on top of another Draw Two, 
-												or Wild Draw Four during the same turn, or put down two Wild Draw Four cards together.
-												The game continues until a player has one card left. The moment a player has just one card 
-												they must yell “UNO!”. If they are caught not saying “Uno” by another player before the next player 
-												has taken their turn, that player must draw two new cards as a penalty. Assuming that the 
-												player is unable to play/discard their last card and needs to draw, but after drawing, is then 
-												able to play/discard that penultimate card, the player has to repeat the action of calling out “Uno”. 
-												The bottom line is – Announcing “Uno” needs to be repeated every time you are left with one card. 
-												Once a player has no cards remaining, the game round is over, points are scored, and the game begins 
-												over again. Normally, everyone tries to be the first one to achieve 500 points, but you can also 
-												choose whatever points number to win the game, as long as everyone agrees to it.
-												The game continues until a player has one card left. The moment a player has just one card 
-												they must yell “UNO!”. If they are caught not saying “Uno” by another player before the next 
-												player has taken their turn, that player must draw two new cards as a penalty. Assuming that 
-												the player is unable to play/discard their last card and needs to draw, but after drawing, 
-												is then able to play/discard that penultimate card, the player has to repeat the action of 
-												calling out “Uno”. The bottom line is – Announcing “Uno” needs to be repeated every time you 
-												are left with one card. Once a player has no cards remaining, the game round is over, points 
-												are scored, and the game begins over again. Normally, everyone tries to be the first one to 
-												achieve 500 points, but you can also choose whatever points number to win the game, 
-												as long as everyone agrees to it.
 												
 										</span>
 									<div class="moreButton">									
@@ -204,6 +173,7 @@
 							</div>
 
 							<div class="comment">
+								<%List<Comment> two_comments = commentdao.getTwoCommentsOfGame(game.getGame_id());%>
 								<div class="user-avatar">
 									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
@@ -211,9 +181,9 @@
 								<div class="comment-body">
 									<p>				
 										<div class="user">
-											johnsmith5
+											<%=userdao.searchUserByID(two_comments.get(0).getCommenting_user_id()).getUsername()%>
 										</div>
-										Comment text.
+										<%=two_comments.get(0).getComment_text()%>
 									</p>
 									
 								</div>
@@ -237,9 +207,9 @@
 								<div class="comment-body">
 									<p>				
 										<div class="user">
-											mary2003
+											<%=userdao.searchUserByID(two_comments.get(1).getCommenting_user_id()).getUsername()%>
 										</div>
-										Comment text.
+										<%=two_comments.get(1).getComment_text()%>
 									</p>
 								</div>
 								<!-- comments toolbar -->
