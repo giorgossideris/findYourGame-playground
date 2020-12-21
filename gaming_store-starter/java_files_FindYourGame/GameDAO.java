@@ -185,7 +185,50 @@ public class GameDAO {
 	} //End of getMostFavoriteGames
 
 
+    public Game searchGameByID(int game_id) throws Exception {
 
+		DB db = new DB();
+		Connection con = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String sqlQuery = "SELECT * FROM game WHERE game_id=?;";
+
+		try {
+
+			con = db.getConnection();
+			stmt = con.prepareStatement(sqlQuery);
+			stmt.setInt(1, game_id);
+
+			rs = stmt.executeQuery();
+
+			if (!rs.next()) {
+				throw new Exception("Game with id: " + game_id + " not found");
+			}
+
+            Game game = new Game(rs.getInt("game_id"),rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),rs.getInt("min_players"),rs.getInt("max_players"),
+            rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("game_long_description"),rs.getInt("number_of_ratings"),rs.getString("photo_path"),rs.getString("game_short_description"),rs.getInt("favorite_counter"));
+			rs.close();
+			stmt.close();
+			db.close();
+
+			return game;
+
+
+		} catch (Exception e) {
+
+            throw new Exception(e.getMessage());
+            
+		} finally {
+
+			try {
+				db.close();
+			} catch (Exception e) {
+
+			}
+
+		}
+
+	} //End of 
 
 
 }

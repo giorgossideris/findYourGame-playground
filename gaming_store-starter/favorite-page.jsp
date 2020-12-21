@@ -235,7 +235,7 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
 
                             <h4><%=comment.getComment_text()%></h4>
                             <div class="person_who_made_a_comment_color">	
-                                <p>by <%=userDAO.searchUserByID(comment.getCommening_user_id()).getUsername()%></p>
+                                <p>by <%=userDAO.searchUserByID(comment.getCommenting_user_id()).getUsername()%></p>
                             </div>
                         </div>
 

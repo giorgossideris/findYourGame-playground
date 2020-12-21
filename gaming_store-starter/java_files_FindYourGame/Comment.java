@@ -23,7 +23,7 @@ public class Comment {
         this.commented_game_id = commented_game_id;
     }
 
-    public int getCommening_user_id() {
+    public int getCommenting_user_id() {
         return commenting_user_id;
     }
     
@@ -35,7 +35,7 @@ public class Comment {
         return comment_text;
     }
     
-    public void setCommen_text(String comment_text) {
+    public void setComment_text(String comment_text) {
         this.comment_text = comment_text;
     }
     
