@@ -1,7 +1,9 @@
 <%@  page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@  page errorPage="app_error.jsp" %>
 <%@ page import="java_files_FindYourGame.*, java.util.List" %>
-<%   int game_id = Integer.parseInt(request.getParameter("game_id"));
+<%   
+
+int game_id = Integer.parseInt(request.getParameter("game_id"));
 GameDAO gamedao = new GameDAO();
 DurationDAO durationdao = new DurationDAO();
 CategoryDAO categorydao = new CategoryDAO();

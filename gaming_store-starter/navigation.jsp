@@ -46,11 +46,13 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
-						<%@ include file = "navMenu.jsp" %>
-                        <div id="whole-form" class=" example index_searchbar"  >
-							<input class="search-input" type="text" placeholder="Search Your Game.." name="search2">
-							<button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
-						</div>
+                        <%@ include file = "navMenu.jsp" %>
+                        <form action="search_Controller.jsp" method="GET">
+                            <div id="whole-form" class=" example index_searchbar"  >
+						        <input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
+						        <button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
+                            </div>
+                        </form>
                     </div>     
 				</div>
 			</div>	
@@ -58,82 +60,49 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
 	</div>
     <div class="br-back"><br></div>
     <div class="navigation-area hot-games-back">
-        <div class = "filter-area">
-            <div  class="form-group filter-form">
-                <div class="filter">
-                    <label   class="control-label filter-description">Players:</label>
-                    <input   type="text" class="form-control filter-input rounded-corners" placeholder= "<%= search_items.getPlayers() == 0 ? "" : search_items.getPlayers() %>" >
-                </div>
-                <div class="filter">
-                    <label  class="control-label filter-description">  Age:</label>
-                    <input  type="text" class="form-control filter-input rounded-corners" placeholder="<%= search_items.getAge() == 0 ? "" : search_items.getAge() %>" >
-                </div>
-            
-                <div class="filter">
-                    <label   class="control-label filter-description">Category:</label>
-                        <div class="options-area">
-                            <%
-                                String name;
-                                for (Category cat : categories) {
-                                    name = cat.getCategory_name();
-                            
-                            %>
-                                <div class="option">
-                                    <input type="checkbox" name="action" value="<%= name%>" <%= search_items.getCategory_id()==cat.getCategory_id() ? "checked" : "" %> >
-                                    <label for="<%= name%>"><%= name%></label>
-                                </div>
-                            <!-- <div class="option">
-                                <input type="checkbox" name="adventure" value="adventure">
-                                <label for="adventure">Adventure</label>  
-                            </div>
-                            <div class="option">
-                                <input type="checkbox" name="card_games" value="card_games">
-                                <label for="card_games">Card games</label>        
-                            </div>
-                            <div class="option">
-                                <input type="checkbox" name="memory" value="memory">
-                                <label for="memory">Memory</label>  
-                            </div>
-                            <div class="option">      
-                                <input type="checkbox" name="family" value="family">
-                                <label for="family">Family</label>
-                            </div> -->
-                            <%
-                        }
-                            %>
-                        </div>
-                </div>
-                <div class="filter">
-                    <label for="duration" class="control-label filter-description">Duration:</label>
-                    <div class="options-area">
-                        <%
-                            for (Duration dur : durations) {
-                                name = dur.getDuration_name();
-                        %>
-                            <div class="option">
-                                <input type="checkbox" name="<%= name%>" value="<%= name%>" <%= search_items.getDuration_id()==dur.getDuration_id() ? "checked" : "" %>>
-                                <label for="<%= name%>"><%= name%></label>
-                            </div>
-                        <!-- <div class="option">
-                            <input type="checkbox" name="mins_30" value="mins_30">
-                            <label for="mins_30">30'</label>  
-                        </div>
-                        <div class="option">
-                            <input type="checkbox" name="mins_45" value="mins_45">
-                            <label for="mins_45">45'</label>        
-                        </div>
-                        <div class="option">
-                            <input type="checkbox" name="mins_60_plus" value="mins_60_plus">
-                            <label for="mins_60_plus">60'+</label>  
-                        </div> -->
-                        <%
-                    }
-                        %>
+        <form action="search_Controller.jsp" method="GET">
+
+            <div class = "filter-area">
+                <div  class="form-group filter-form">
+                    <div class="filter">
+                        <label   class="control-label filter-description">Players:</label>
+                        <input   type="text" name="players" class="form-control filter-input rounded-corners" value= "<%= search_items.getPlayers() == 0 ? "" : search_items.getPlayers() %>" >
                     </div>
-                </div>				
-            </div>
-            <button type="button" class="apply-filters-button">Apply filters</button> 
-        </div>   
+                    <div class="filter">
+                        <label  class="control-label filter-description">  Age:</label>
+                        <input  type="text" name="age" class="form-control filter-input rounded-corners" value="<%= search_items.getAge() == 0 ? "" : search_items.getAge() %>" >
+                    </div>
+                
+                    <div class="filter">
+                        <label   class="control-label filter-description">Category:</label>
+                        <select class="form-control filter-input rounded-corners" name="category" id="duration">
+												
+                            <%	for (Category cat: categories) { %>
+                                <option value="<%=cat.getCategory_id()%>" <%= search_items.getCategory_id() == cat.getCategory_id() ? "selected" : "" %> ><%=cat.getCategory_name()%></option>
+                            <% } %>
+                        </select>
+
+                        
+                    </div>
+
+                    <div class="filter">
+                        <label for="duration" class="control-label filter-description">Duration:</label>
+						<select class="form-control filter-input rounded-corners" name="duration" id="duration">
+                            
+							<%	for ( Duration dur: durations ) { %>
+						    	<option value="<%=dur.getDuration_id()%>" <%= search_items.getDuration_id() == dur.getDuration_id() ? "selected" : "" %> ><%= dur.getDuration_name() %></option>
+							<% } %>
+
+						</select>
+                    </div>	
+                    <input class="search-input" type="hidden" placeholder="Search Your Game.." name="searchbar">
+			
+                </div>
+      
+                <button type="submit" class="apply-filters-button">Apply filters</button> 
+            </div>   
+
+        </form>
         <div class="games-to-navigate-area"> 	
             <div class="results-header">
                 <span id="results-title">

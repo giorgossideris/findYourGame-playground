@@ -124,7 +124,7 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
             <div class="results-header">
                 <span id="results-title">
                     <h2><%=auth_user.getUsername()%>'<%=auth_user.getUsername().toLowerCase().charAt(auth_user.getUsername().length() - 1)!="s".charAt(0) ? "s" : ""%> Favorite Games</h2>
-                    <p>(<%=favoriteGames.size()%> item<%=favoriteGames.size()!=1 ? "s" : ""%>)</p> 
+                    <span class="badge"><%=favoriteGames.size()%></span>
                 </span>
                 <span id="sorting-section">
                     <label for="sorting">Sort by:</label>
@@ -150,7 +150,7 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
-            <a class="game-name" href="game-view.jsp">
+            <a class="game-name" href="game-view.jsp?game_id=<%=game.getGame_id()%>">
                 <h4><%=game.getGamename()%></h4>
             </a>
 
