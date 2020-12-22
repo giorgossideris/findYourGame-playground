@@ -226,9 +226,56 @@ public class GameDAO {
 
 			}
 
+		}// end searchGameByID
+
+    }  public int getRatingUserForGame(int user_id, int game_id) throws Exception { // returns the rating of the user if they have rated the game, 
+                                                                                 // else -1
+
+		DB db = new DB();
+		Connection con = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String sqlQuery = "SELECT rating_value FROM rating WHERE registered_user_id = ? AND game_id = ?;";
+
+		try {
+
+			con = db.getConnection();
+			stmt = con.prepareStatement(sqlQuery);
+            stmt.setInt(1, user_id);
+            stmt.setInt(2, game_id);
+
+			rs = stmt.executeQuery();
+
+			if (!rs.next()) {
+                rs.close();
+                stmt.close();
+                db.close();
+				return -1;
+			}
+
+            int rating = rs.getInt("rating_value");
+			rs.close();
+			stmt.close();
+			db.close();
+
+			return rating;
+
+
+		} catch (Exception e) {
+
+            throw new Exception(e.getMessage());
+            
+		} finally {
+
+			try {
+				db.close();
+			} catch (Exception e) {
+
+			}
+
 		}
 
-	} //End of 
+	}
 
 
 }
