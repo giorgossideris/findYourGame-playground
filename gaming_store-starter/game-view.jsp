@@ -233,9 +233,10 @@ Game game = gamedao.searchGameByID(game_id);
 									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
 								<!-- the input field -->
-								<input type="text" placeholder="Join the conversation..">
-								<button class="hover-button submit" >Submit it!</button>
-
+								<form action="upload_comment.jsp" method="post">
+									<input type="text" name= "comment_text" placeholder="Join the conversation..">
+									<button type="submit" class="hover-button submit" >Submit it!</button>
+								</form>
 							</div>
 
 						</div>
