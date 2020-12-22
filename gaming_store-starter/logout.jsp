@@ -47,7 +47,7 @@
                             <div class="container login-border box">
                                 <h1 class="login-title text-white">LOG OUT</h1>
                                 <h2 class="logout-title text-orange">Logged out Succesfully </h2>
-                                <h3 class="logout-title text-orange">You are returning to the log in page </h3>
+                                <h3 class="logout-title text-orange">You are returning to the home page </h3>
                             </div>  
                         </div>                         
 					</div>

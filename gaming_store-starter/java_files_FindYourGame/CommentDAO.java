@@ -154,7 +154,7 @@ public class CommentDAO {
 
 		
 		
-	}//end of register
+	}//end of add_comment
 
 
 

@@ -8,11 +8,20 @@ CategoryDAO categorydao = new CategoryDAO();
 CommentDAO commentdao = new CommentDAO();
 UserDAO userdao = new UserDAO();
 Game game = gamedao.searchGameByID(game_id);
+
+boolean isUserRegistered = false;
+User auth_user = null;
+if (session.getAttribute("userObj") != null) {
+	auth_user = (User)session.getAttribute("userObj");
+	isUserRegistered = true;
+}
 %>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>" 
+				data-username = "<%= isUserRegistered ? userdao.searchUserByID(auth_user.getId()).getUsername() : "null"%>"
+				data-game-id = "<%=game_id%>">
 <head>
 
 	<title>Game details</title>
@@ -187,16 +196,6 @@ Game game = gamedao.searchGameByID(game_id);
 									</p>
 									
 								</div>
-								<!-- comments toolbar -->
-								<div class="comment-toolbar">
-								<!-- inc. date and time  -->
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 04/01/2020 
-											
-										</li>
-
-								</div>
 							</div>
 
 							<div class="comment">
@@ -212,16 +211,6 @@ Game game = gamedao.searchGameByID(game_id);
 										<%=two_comments.get(1).getComment_text()%>
 									</p>
 								</div>
-								<!-- comments toolbar -->
-								<div class="comment-toolbar">
-									<!-- inc. date and time  -->
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 26/01/2020 
-											
-										</li>
-
-								</div>
 							</div>
 							<div class="comment-br">
 								<br>
@@ -232,11 +221,9 @@ Game game = gamedao.searchGameByID(game_id);
 								<div class="user-avatar">
 									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
-								<!-- the input field -->
-								<form action="upload_comment.jsp" method="post">
-									<input type="text" name= "comment_text" placeholder="Join the conversation..">
-									<button type="submit" class="hover-button submit" >Submit it!</button>
-								</form>
+								<!-- the input field, not form as everything is handled in the comment.js -->
+								<input type="text" name= "comment_text"  id="new-comment" placeholder="Join the conversation..">
+								<button type="submit" class="hover-button submit" id="comment-button">Submit it!</button>
 							</div>
 
 						</div>
@@ -346,6 +333,7 @@ Game game = gamedao.searchGameByID(game_id);
 					buttonText.innerHTML = "Show Less"; 
 				} 
 			} 
-		</script> 	
+		</script>
+		<script src="js/comment.js"></script>		
 	</body>	
 </html>

@@ -27,7 +27,7 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
 %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>">
 <head>
 
     <title>Navigate through the results of the search</title>
@@ -184,7 +184,6 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                     <div class="heart-icon"  
                         data-is-favorite=<%= isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId()) ? "true" : "false"%>
                         data-game-id = "<%=game.getGame_id()%>"
-                        data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>"
                         <% if (isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId())){%>
                             style='background-image: url("./images/heart.svg");'
                         <% } %>

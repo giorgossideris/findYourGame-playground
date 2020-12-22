@@ -29,7 +29,7 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
 %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>">
 <head>
 
     <title>A user's favorite games</title>
@@ -170,7 +170,6 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
                     <div class="heart-icon"  
                         data-is-favorite=<%= isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId()) ? "true" : "false"%>
                         data-game-id = "<%=game.getGame_id()%>"
-                        data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>"
                         <% if (isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId())){%>
                             style='background-image: url("./images/heart.svg");'
                         <% } %>
@@ -354,6 +353,6 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
                 $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
             });
         });
-    </script> 
+    </script>
 </body>	
 </html>

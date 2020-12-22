@@ -58,6 +58,15 @@ Author URL: http://w3layouts.com
 <%
 								}
 %>
+								<% 
+									if(request.getParameter("message") != null) {
+								%>
+										<div class="alert alert-danger message-box" role="alert">
+											<%=request.getParameter("message")%>
+										</div>
+								<%
+									}
+								%>
                                     <div class="form-group login-form-group">
                                         <button type="submit" class="login-button rounded-corners text-white login-button-area">I finished!</button>
 									</div>
