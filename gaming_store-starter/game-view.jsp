@@ -121,7 +121,7 @@ if (session.getAttribute("userObj") != null) {
 							<ul class="categories">
 								<li class="left-up"> <span class="white"><i class="fa fa-quote-right fa-xs"></i> Category:</span> <%=categorydao.getCategoryByID(game.getCategory_id()).getCategory_name()%> </li>
 								<li class="right-up"> <span class="white"><i class="fa fa-user-friends fa-xs"></i> Players: </span> <%=game.getMin_players()%>-<%=game.getMax_players()%> </li>  
-								<li class="left-down"> <span class="white"><i class="fa fa-child fa-xs"></i> Age:</span> <%=game.getStart_age()%>+ </li>
+								<li class="left-down"> <span class="white"><i class="fa fa-child fa-xs"></i> Age:</span> <%=game.getStart_age()%>-<%=game.getEnd_age()%> </li>
 								<li class="right-down"> <span class="white"><i class="fa fa-clock fa-xs"></i> Duration:</span> <%=durationdao.getDurationByID(game.getDuration_id()).getDuration_name()%> </li>
 
 							</ul>
@@ -158,20 +158,23 @@ if (session.getAttribute("userObj") != null) {
 							<div class="br-headings">
 								<br>
 							</div>
-							
-							<div class="rate">
-								<input type="radio" id="star5" name="rate" value="5" />
-								<label for="star5" title="Excellent">5 stars</label>
-								<input type="radio" id="star4" name="rate" value="4" />
-								<label for="star4" title="Very good">4 stars</label>
-								<input type="radio" id="star3" name="rate" value="3" />
-								<label for="star3" title="Good">3 stars</label>
-								<input type="radio" id="star2" name="rate" value="2" />
-								<label for="star2" title="Not good">2 stars</label>
-								<input type="radio" id="star1" name="rate" value="1" />
-								<label for="star1" title="Not good at all">1 star</label>
+							<div class="add-rating">
+								<p>Add your rating:</p>
+								<div class="rate">
+									<input type="radio" id="star5" name="rate" value="5" />
+									<label for="star5" title="Excellent">5 stars</label>
+									<input type="radio" id="star4" name="rate" value="4" />
+									<label for="star4" title="Very good">4 stars</label>
+									<input type="radio" id="star3" name="rate" value="3" />
+									<label for="star3" title="Good">3 stars</label>
+									<input type="radio" id="star2" name="rate" value="2" />
+									<label for="star2" title="Not good">2 stars</label>
+									<input type="radio" id="star1" name="rate" value="1" />
+									<label for="star1" title="Not good at all">1 star</label>
+								</div>
 							</div>
 						</div>
+
 
 						<div class="comment-area" id="com">
 							<h2 class="comments-ratings-head">
@@ -222,7 +225,7 @@ if (session.getAttribute("userObj") != null) {
 									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
 								<!-- the input field, not form as everything is handled in the comment.js -->
-								<input type="text" name= "comment_text"  id="new-comment" placeholder="Join the conversation..">
+								<input type="text" name= "comment_text" placeholder="Join the conversation.." id="new-comment">
 								<button type="submit" class="hover-button submit" id="comment-button">Submit it!</button>
 							</div>
 

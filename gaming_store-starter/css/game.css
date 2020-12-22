@@ -202,12 +202,20 @@ body {
 
 /* rate area */
 .rate-area {
-    margin-top: 80px;
-    padding-bottom: 50px;
+    margin-top: 20px;
+}
+
+.add-rating {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.add-rating p {
+    margin-right: 10px;
 }
 /* Comment area css */
 .comment-area {
-    margin-top: 20px;
     margin-bottom: 40px;
 }
 .br-headings {
@@ -310,9 +318,6 @@ input::placeholder{
 .user:hover  {
     color: BLUE;
     text-decoration: underline;   
-}
-:hover {
-    cursor: pointer; 
 }
 
 @media(max-width:1400px) {
