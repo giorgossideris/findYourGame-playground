@@ -277,7 +277,109 @@ public class GameDAO {
 
 	}
 
+    public void addRating(int game_id, int registered_user_id, double rating_value) throws Exception{
+        
+        DB db = new DB();
+        Connection con = null;
+        PreparedStatement stmt = null;
 
+        try {
+            con = db.getConnection();
+            String sqlUpdate = "INSERT INTO rating (game_id, registered_user_id, rating_value) VALUES (?,?,?);";
+            stmt = con.prepareStatement(sqlUpdate);
+            stmt.setInt(1, game_id);
+            stmt.setInt(2, registered_user_id);
+            stmt.setDouble(3, rating_value);
+            stmt.executeUpdate();
+
+            stmt.close();
+            db.close();
+
+
+        }catch(Exception e) {
+
+            throw new Exception(e.getMessage());
+
+        }finally {
+
+            try {
+                db.close();
+            }catch (Exception e){
+
+            }
+            
+        }
+    }
+    public Game getCurrentRatingAndNumberOfRatingsOfGame(int game_id) throws Exception { // returns a Game object that has game_id, the rating value of the game and the number of ratings
+
+
+		DB db = new DB();
+		Connection con = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		String sqlQuery = "SELECT * FROM game WHERE game_id=?;";
+
+		try {
+
+			con = db.getConnection();
+            stmt = con.prepareStatement(sqlQuery);
+            stmt.setInt(1, game_id);
+			rs = stmt.executeQuery();
+            if (!rs.next()) {
+				throw new Exception("Game with id: " + game_id + " doesn't have any ratings");
+			}
+			
+            Game game = new Game(rs.getInt("game_id"),rs.getDouble("rating_value"),rs.getInt("number_of_ratings"));
+            
+            rs.close();
+			stmt.close();
+			db.close();
+			return game;
+
+		} catch (Exception e) {
+			throw new Exception(e.getMessage());
+		} finally {
+
+			try {
+				db.close();
+			} catch (Exception e) {
+
+			}
+
+		}
+    }
+    public void UpdateGameRating(int game_id, double updated_rating, int updated_number_of_ratings) throws Exception{
+        
+        DB db = new DB();
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            con = db.getConnection();
+            String sqlUpdate = "UPDATE game SET rating_value = ?, number_of_ratings=? WHERE game_id = ?;";
+            stmt = con.prepareStatement(sqlUpdate);
+            stmt.setDouble(1, updated_rating);
+            stmt.setInt(2, updated_number_of_ratings);
+            stmt.setInt(3, game_id);
+            stmt.executeUpdate();
+            stmt.close();
+            db.close();
+
+
+        }catch(Exception e) {
+
+            throw new Exception(e.getMessage());
+
+        }finally {
+
+            try {
+                db.close();
+            }catch (Exception e){
+
+            }
+            
+        }
+    } 
 }
 
 

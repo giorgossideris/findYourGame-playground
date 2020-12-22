@@ -59,6 +59,11 @@ public Game(int game_id, String gamename, String photo_path,double rating_value 
 	this.photo_path = photo_path;
 	this.rating_value = rating_value;
 }
+public Game(int game_id, double rating_value, int number_of_ratings) {
+	this.game_id = game_id;
+	this.rating_value = rating_value;
+	this.number_of_ratings = number_of_ratings;
+}
 /* Getters & Setters */
 
 
