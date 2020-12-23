@@ -28,6 +28,7 @@ function star_clicked() {
             let rating = this.dataset.starId, //starIds start from 1
                 gameId = document.getElementsByTagName("html")[0].dataset.gameId;
             document.getElementById("stars").dataset.isRated = "true";
+            document.getElementById("add-rating-label").innerText = "Your rating:";
             fill_stars(this);
             $.post("./ratingController.jsp", { game_id: gameId, user_id: userId, rating: rating});
         }
