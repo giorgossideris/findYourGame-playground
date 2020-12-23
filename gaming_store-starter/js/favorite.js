@@ -3,8 +3,7 @@ var heart_icons = document.querySelectorAll('.heart-icon');
         heart_icons[i].onclick = heart_pressed;
 }
 function heart_pressed() {
-    let heart_icon = this,
-        userId = document.getElementsByTagName("html")[0].dataset.userId;
+    let userId = document.getElementsByTagName("html")[0].dataset.userId;
     if (userId == "null"){
         location.href = "./login.jsp?message=Only registered users can add favorites! Please login.";
     }else if (this.dataset.isFavorite == "false"){  // if the game is not favorite make the heart pink
