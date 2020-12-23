@@ -228,7 +228,8 @@ public class GameDAO {
 
 		}// end searchGameByID
 
-    }  public int getRatingUserForGame(int user_id, int game_id) throws Exception { // returns the rating of the user if they have rated the game, 
+    }
+    public int getRatingUserForGame(int user_id, int game_id) throws Exception { // returns the rating of the user if they have rated the game, 
                                                                                  // else -1
 
 		DB db = new DB();

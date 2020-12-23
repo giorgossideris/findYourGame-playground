@@ -49,9 +49,19 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                         <%@ include file = "navMenu.jsp" %>
                         <form action="search_Controller.jsp" method="GET">
                             <div id="whole-form" class=" example index_searchbar"  >
-						        <input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
-						        <button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
+                                <input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
+                            
+   
+                                <button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
                             </div>
+                                <input   type="hidden" name="players" class="form-control filter-input rounded-corners" value= "" >
+                                <input  type="hidden" name="age" class="form-control filter-input rounded-corners" value="" >
+                                <select style="visibility: hidden;" class="form-control filter-input rounded-corners" name="category" id="duration">
+                                    <option value="-1" ></option>
+                                </select>
+                                <select style="visibility: hidden;" class="form-control filter-input rounded-corners" name="duration" id="duration">
+                                    <option value="-1"></option>
+                                </select> 
                         </form>
                     </div>     
 				</div>
@@ -76,7 +86,7 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                     <div class="filter">
                         <label   class="control-label filter-description">Category:</label>
                         <select class="form-control filter-input rounded-corners" name="category" id="duration">
-												
+                            <option class="correct-font" value="-1" style="font-size: 60%; padding-left: 0px; ">Choose Category</option>		
                             <%	for (Category cat: categories) { %>
                                 <option value="<%=cat.getCategory_id()%>" <%= search_items.getCategory_id() == cat.getCategory_id() ? "selected" : "" %> ><%=cat.getCategory_name()%></option>
                             <% } %>
@@ -88,7 +98,7 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                     <div class="filter">
                         <label for="duration" class="control-label filter-description">Duration:</label>
 						<select class="form-control filter-input rounded-corners" name="duration" id="duration">
-                            
+                            <option class="correct-font" value="-1" style="font-size: 60%; padding-left: 0px; ">Choose Duration</option>
 							<%	for ( Duration dur: durations ) { %>
 						    	<option value="<%=dur.getDuration_id()%>" <%= search_items.getDuration_id() == dur.getDuration_id() ? "selected" : "" %> ><%= dur.getDuration_name() %></option>
 							<% } %>
