@@ -143,7 +143,7 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
         <div class="game-layout">	
             <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 
-            <a class="game-name" href="game-view.jsp">
+            <a class="game-name" href="game-view.jsp?game_id=<%= game.getGame_id()%>">
                 <h4><%=game.getGamename()%></h4>
             </a>
 
