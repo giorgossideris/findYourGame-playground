@@ -20,14 +20,16 @@ function star_unhovered() {
 }
 
 function star_clicked() {
-    let user_id = document.getElementsByTagName("html")[0].dataset.userId;
-    if (user_id == "null"){
-        location.href = "./login.jsp?message=Only registered users can rate! Please login.";
-    } else {
-        if (document.getElementById("stars").dataset.isRated == "false"){
-            let rating = this.dataset.starId; //
+    if (document.getElementById("stars").dataset.isRated == "false"){
+        let userId = document.getElementsByTagName("html")[0].dataset.userId;
+        if (userId == "null"){
+            location.href = "./login.jsp?message=Only registered users can rate! Please login.";
+        } else {
+            let rating = this.dataset.starId, //starIds start from 1
+                gameId = document.getElementsByTagName("html")[0].dataset.gameId;
             document.getElementById("stars").dataset.isRated = "true";
             fill_stars(this);
+            $.post("./ratingController.jsp", { game_id: gameId, user_id: userId, rating: rating});
         }
     }
 }
