@@ -72,13 +72,13 @@ public class UserDAO {
                 throw new Exception(message);
             }
 
-            rs.close();
+			rs.close();
             String sqlUpdate = "INSERT INTO registered_user (username, password, email) VALUES (?,?,?);";
             stmt = con.prepareStatement(sqlUpdate);
             stmt.setString(1, username);
             stmt.setString(2, password);
             stmt.setString(3, email);
-            stmt.executeUpdate();
+			stmt.executeUpdate();
 
             stmt.close();
             db.close();
