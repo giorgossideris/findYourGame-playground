@@ -63,14 +63,6 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
                     <h2><%=auth_user.getUsername()%>'<%=auth_user.getUsername().toLowerCase().charAt(auth_user.getUsername().length() - 1)!="s".charAt(0) ? "s" : ""%> Favorite Games</h2>
                     <span class="badge"><%=favoriteGames.size()%></span>
                 </span>
-                <span id="sorting-section">
-                    <label for="sorting">Sort by:</label>
-                    <select name="sorting">
-                        <option value="default">Default</option>
-                        <option value="popularity">Popularity</option>
-                        <option value="rating">Rating</option>
-                    </select>
-                </span> 
             </div>
             <hr>
             <div class="agileits-title" id="gallery"> 
