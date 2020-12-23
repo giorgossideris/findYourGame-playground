@@ -76,11 +76,11 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                 <div  class="form-group filter-form">
                     <div class="filter">
                         <label   class="control-label filter-description">Players:</label>
-                        <input   type="text" name="players" class="form-control filter-input rounded-corners" value= "<%= search_items.getPlayers() == 0 ? "" : search_items.getPlayers() %>" >
+                        <input   type="text" name="players" class="form-control filter-input rounded-corners" value= "<%= search_items.getPlayers() == 0 || search_items.getPlayers() == -1 ? "" : search_items.getPlayers() %>" <%= search_items.getPlayers() == -1 ? "placeholder=3" : "" %>>
                     </div>
                     <div class="filter">
                         <label  class="control-label filter-description">  Age:</label>
-                        <input  type="text" name="age" class="form-control filter-input rounded-corners" value="<%= search_items.getAge() == 0 ? "" : search_items.getAge() %>" >
+                        <input  type="text" name="age" class="form-control filter-input rounded-corners" value="<%= search_items.getAge() == 0 || search_items.getAge() ==  -1 ? "" : search_items.getAge() %>" <%= search_items.getAge() == -1 ? "placeholder=12" : "" %>>
                     </div>
                 
                     <div class="filter">
