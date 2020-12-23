@@ -176,7 +176,7 @@ if (session.getAttribute("userObj") != null) {
 									fullStars = 0;
 									emptyStars = 5;
 								%>
-								<p>Add your rating:</p>
+								<p id="add-rating-label">Add your rating:</p>
 								<% } %>
 								<div id="stars" data-is-rated=<%=rating != -1 ? "true" : "false"%>>
 									<%

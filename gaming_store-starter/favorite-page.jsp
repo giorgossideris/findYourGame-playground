@@ -32,11 +32,12 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
 <html lang="en" data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>">
 <head>
 
-    <title>A user's favorite games</title>
+    <title>Favorites</title>
     <%@ include file = "header.jsp" %>
     <!-- custom css -->
     <link rel="stylesheet" href="css/custom_style.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/navigation_style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="css/favorite_style.css" type="text/css" media="all">
     <!-- //custom css -->
 
 </head>
@@ -49,10 +50,6 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
 				<div class="container">
 					<div class="header-top-info">
 						<%@ include file = "navMenu.jsp" %>
-                        <div id="whole-form" class=" example index_searchbar"  >
-							<input class="search-input" type="text" placeholder="Search Your Game.." name="search2">
-							<button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
-						</div>
                     </div>     
 				</div>
 			</div>	
@@ -60,66 +57,6 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
 	</div>
     <div class="br-back"><br></div>
     <div class="navigation-area hot-games-back">
-        <div class = "filter-area">
-            <div  class="form-group filter-form">
-                <div class="filter">
-                    <label   class="control-label filter-description">Players:</label>
-                    <input   type="text" class="form-control filter-input rounded-corners" placeholder="3">
-                </div>
-                <div class="filter">
-                    <label  class="control-label filter-description">  Age:</label>
-                    <input  type="text" class="form-control filter-input rounded-corners" placeholder="12">
-                </div>
-            
-                <div class="filter">
-                    <label   class="control-label filter-description">Category:</label>
-                        <div class="options-area">
-                            <div class="option">
-                                <input type="checkbox" name="action" value="action">
-                                <label for="action">Action</label>
-                            </div>
-                            <div class="option">
-                                <input type="checkbox" name="adventure" value="adventure">
-                                <label for="adventure">Adventure</label>  
-                            </div>
-                            <div class="option">
-                                <input type="checkbox" name="card_games" value="card_games">
-                                <label for="card_games">Card games</label>        
-                            </div>
-                            <div class="option">
-                                <input type="checkbox" name="memory" value="memory">
-                                <label for="memory">Memory</label>  
-                            </div>
-                            <div class="option">      
-                                <input type="checkbox" name="family" value="family">
-                                <label for="family">Family</label>
-                            </div>
-                        </div>
-                </div>
-                <div class="filter">
-                    <label for="duration" class="control-label filter-description">Duration:</label>
-                    <div class="options-area">
-                        <div class="option">
-                            <input type="checkbox" name="mins_20" value="mins_20">
-                            <label for="mins_20">20'</label>
-                        </div>
-                        <div class="option">
-                            <input type="checkbox" name="mins_30" value="mins_30">
-                            <label for="mins_30">30'</label>  
-                        </div>
-                        <div class="option">
-                            <input type="checkbox" name="mins_45" value="mins_45">
-                            <label for="mins_45">45'</label>        
-                        </div>
-                        <div class="option">
-                            <input type="checkbox" name="mins_60_plus" value="mins_60_plus">
-                            <label for="mins_60_plus">60'+</label>  
-                        </div>
-                    </div>
-                </div>				
-            </div>
-            <button type="button" class="apply-filters-button">Apply filters</button> 
-        </div>   
         <div class="games-to-navigate-area"> 	
             <div class="results-header">
                 <span id="results-title">
@@ -135,7 +72,6 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
                     </select>
                 </span> 
             </div>
-            <button id="show-filters-button">Show filters</button>
             <hr>
             <div class="agileits-title" id="gallery"> 
                 <br>
