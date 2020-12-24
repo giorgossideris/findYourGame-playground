@@ -62,11 +62,11 @@ public class UserDAO {
 
             if (rs.next()) {
                 String message = "";
-                if (rs.getString("username") == username) {
-                    message += "Username" + username + "already exists.";
+                if (rs.getString("username").equals(username)) {
+                    message += "Username " + username + " already exists.";
                 }
-                if (rs.getString("email") == email) {
-                    message += "Email" + email + "already exists.";
+                if (rs.getString("email").equals(email)) {
+                    message += "Email " + email + " already exists.";
                 }
 
                 throw new Exception(message);
