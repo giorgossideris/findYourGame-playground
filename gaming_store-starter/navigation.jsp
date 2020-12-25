@@ -122,9 +122,9 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                 <span id="sorting-section">
                     <label for="sorting">Sort by:</label>
                     <select name="sorting">
-                        <option value="default">Default</option>
-                        <option value="popularity">Popularity</option>
-                        <option value="rating">Rating</option>
+                        <option value="0">Default</option>
+                        <option value="1">Popularity</option>
+                        <option value="2">Rating</option>
                     </select>
                 </span> 
             </div>
