@@ -122,9 +122,9 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
                 <span id="sorting-section">
                     <label for="sorting">Sort by:</label>
                     <select name="sorting">
-                        <option value="0">Default</option>
-                        <option value="1">Popularity</option>
-                        <option value="2">Rating</option>
+                        <option class="sort-type" data-sort-value="0">Default</option>
+                        <option class="sort-type" data-sort-value="1">Popularity</option>
+                        <option class="sort-type" data-sort-value="2">Rating</option>
                     </select>
                 </span> 
             </div>
@@ -346,5 +346,6 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
             });
         });
     </script> 
+    <script src="js/sorting.js"></script>
 </body>	
 </html>
