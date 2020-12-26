@@ -211,9 +211,11 @@ if (session.getAttribute("userObj") != null) {
 							<div class="br-headings">
 								<br>
 							</div>
-
+							<%
+							List<Comment> all_comments = commentdao.getAllCommentsOfGame(game.getGame_id());
+							for (Comment comment: all_comments) {
+							%>
 							<div class="comment">
-								<%List<Comment> two_comments = commentdao.getTwoCommentsOfGame(game.getGame_id());%>
 								<div class="user-avatar">
 									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
 								</div>
@@ -221,32 +223,17 @@ if (session.getAttribute("userObj") != null) {
 								<div class="comment-body">
 									<p>				
 										<div class="user">
-											<%=userdao.searchUserByID(two_comments.get(0).getCommenting_user_id()).getUsername()%>
+											<%=userdao.searchUserByID(comment.getCommenting_user_id()).getUsername()%>
 										</div>
-										<%=two_comments.get(0).getComment_text()%>
+										<%=comment.getComment_text()%>
 									</p>
 									
 								</div>
 							</div>
-
-							<div class="comment">
-								<div class="user-avatar">
-									<img src="<%=request.getContextPath() %>/FindYourGame/images/user.png">
-								</div>
-								<!-- the comment body -->
-								<div class="comment-body">
-									<p>				
-										<div class="user">
-											<%=userdao.searchUserByID(two_comments.get(1).getCommenting_user_id()).getUsername()%>
-										</div>
-										<%=two_comments.get(1).getComment_text()%>
-									</p>
-								</div>
-							</div>
+							<% } %>
 							<div class="comment-br">
 								<br>
-							</div>
-						
+							</div>	
 							<div class="create-new-comment">
 								<!-- current {user} avatar -->
 								<div class="user-avatar">

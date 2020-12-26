@@ -1,7 +1,5 @@
 package java_files_FindYourGame;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EmailDAO {
     public void add_email(String email_value) throws Exception {

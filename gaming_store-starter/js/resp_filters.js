@@ -13,7 +13,7 @@ function filters_at_resize(){
     } 
 };
 
-let filter_button = document.getElementById(show-filters-button);
+let filter_button = document.getElementById("show-filters-button");
 filter_button.click(function() {
     let filter_area = document.querySelector('.filter-area'),
         style = window.getComputedStyle(filter_area),
