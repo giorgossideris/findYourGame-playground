@@ -62,23 +62,23 @@ public class UserDAO {
 
             if (rs.next()) {
                 String message = "";
-                if (rs.getString("username") == username) {
-                    message += "Username" + username + "already exists.";
+                if (rs.getString("username").equals(username)) {
+                    message += "Username " + username + " already exists.";
                 }
-                if (rs.getString("email") == email) {
-                    message += "Email" + email + "already exists.";
+                if (rs.getString("email").equals(email)) {
+                    message += "Email " + email + " already exists.";
                 }
 
                 throw new Exception(message);
             }
 
-            rs.close();
+			rs.close();
             String sqlUpdate = "INSERT INTO registered_user (username, password, email) VALUES (?,?,?);";
             stmt = con.prepareStatement(sqlUpdate);
             stmt.setString(1, username);
             stmt.setString(2, password);
             stmt.setString(3, email);
-            stmt.executeUpdate();
+			stmt.executeUpdate();
 
             stmt.close();
             db.close();

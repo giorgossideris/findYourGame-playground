@@ -57,9 +57,9 @@ if (flag) {
     
     
 
-    session.setAttribute("userObj", reg_user);
+
 %>
-    <jsp:forward page = "index.jsp"/>
+    <jsp:forward page = "login.jsp"/>
 <%
     }catch (Exception e) {
 

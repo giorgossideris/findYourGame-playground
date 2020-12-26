@@ -1,5 +1,6 @@
 package java_files_FindYourGame;
 
+import java.util.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -380,7 +381,21 @@ public class GameDAO {
             }
             
         }
-    } 
+    }
+    
+
+    public List<Game> ReturnGamesSorted(List<Game> unsorted_games,int eidos_sort) throws Exception{
+        if(eidos_sort==1){
+            unsorted_games.sort(Comparator.comparing(Game::getRating_value).reversed());
+            return unsorted_games;
+        
+        }else if(eidos_sort==2){
+            unsorted_games.sort(Comparator.comparing(Game::getFavorite_counter).reversed());
+            return unsorted_games;
+
+        }
+        return unsorted_games;
+    }
 }
 
 
