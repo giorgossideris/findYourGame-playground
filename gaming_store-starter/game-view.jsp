@@ -1,5 +1,7 @@
 <%@  page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java_files_FindYourGame.*, java.util.List" %>
+<%@ page errorPage="app_error.jsp" %>
+
 <%   
 
 int game_id = Integer.parseInt(request.getParameter("game_id"));

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java_files_FindYourGame.*" %>
+<%@ page errorPage="app_error.jsp" %>
 
 <%
     int gameId = -1, userId = -1;

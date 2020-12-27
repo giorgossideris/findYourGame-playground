@@ -30,7 +30,7 @@
 <% if(exception != null) { %>
 			<!-- Page Title -->
 			<div class="page-header">
-				<h1>Σφάλμα</h1>
+				<h1>Error</h1>
 			</div>		
 
 			<div class="alert alert-danger" role="alert">

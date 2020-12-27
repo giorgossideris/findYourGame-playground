@@ -53,6 +53,10 @@
     font-size: 90%;
 }
 
+#duration {
+    font-size: 60%;
+    padding-left: 0;
+}
 
 .apply-filters-button {
     margin:-10px -3px auto auto;
