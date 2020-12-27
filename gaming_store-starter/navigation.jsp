@@ -35,7 +35,7 @@ if(request.getAttribute("search_items")!=null){
     gamesToShow = (List<Game>)request.getAttribute("sorted_list");
     
 }
-session.setAttribute("games_list",gamesToShow);
+request.setAttribute("games_list",gamesToShow);
 %>
 
 <!DOCTYPE html>
@@ -132,22 +132,24 @@ session.setAttribute("games_list",gamesToShow);
                    
                 </span>
                 <span id="sorting-section">
-                    <label for="sorting">Sort by:</label>
-                    <select name="sorting">
-                        <%if( request.getParameter("eidos_sort") == null || Integer.parseInt(request.getParameter("eidos_sort")) == 0){%>
-                        <option class="sort-type" data-sort-value="0">Default</option>
-                        <option class="sort-type" data-sort-value="1">Popularity</option>
-                        <option class="sort-type" data-sort-value="2">Rating</option>
-                        <%}else if(Integer.parseInt(request.getParameter("eidos_sort"))==1){%>
-                        <option class="sort-type" data-sort-value="1">Popularity</option>
-                        <option class="sort-type" data-sort-value="0">Default</option>
-                        <option class="sort-type" data-sort-value="2">Rating</option>
-                        <%}else{%>
-                        <option class="sort-type" data-sort-value="2">Rating</option>
-                        <option class="sort-type" data-sort-value="0">Default</option>
-                        <option class="sort-type" data-sort-value="1">Popularity</option>
-                      <% }%>
-                    </select>
+                    <form action="sortingController.jsp" method="GET">
+                        <label for="sorting">Sort by:</label>
+                        <select name="eidos_sort" onchange="this.form.submit();">
+                            <%if( request.getParameter("eidos_sort") == null || Integer.parseInt(request.getParameter("eidos_sort")) == 0){%>
+                            <option class="sort-type" value="0">Default</option>
+                            <option class="sort-type" value="1">Popularity</option>
+                            <option class="sort-type" value="2">Rating</option>
+                            <%}else if(Integer.parseInt(request.getParameter("eidos_sort"))==1){%>
+                            <option class="sort-type" value="1">Popularity</option>
+                            <option class="sort-type" value="0">Default</option>
+                            <option class="sort-type" value="2">Rating</option>
+                            <%}else{%>
+                            <option class="sort-type" value="2">Rating</option>
+                            <option class="sort-type" value="0">Default</option>
+                            <option class="sort-type" value="1">Popularity</option>
+                        <% }%>
+                        </select>
+                    </form>
                 </span> 
             </div>
             <button id="show-filters-button">Show filters</button>
@@ -369,6 +371,5 @@ session.setAttribute("games_list",gamesToShow);
             });
         });
     </script> 
-    <script src="js/sorting.js"></script>
 </body>	
 </html>
