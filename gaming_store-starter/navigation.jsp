@@ -133,19 +133,19 @@ request.setAttribute("games_list",gamesToShow);
                 </span>
                 <span id="sorting-section">
                     <label for="sorting">Sort by:</label>
-                    <select name="eidos_sort">
+                    <select id="sort-dropdown" name="eidos_sort">
                         <%if( request.getParameter("eidos_sort") == null || Integer.parseInt(request.getParameter("eidos_sort")) == 0){%>
-                        <option class="sort-type" data-sort-value="0">Default</option>
-                        <option class="sort-type" data-sort-value="1">Popularity</option>
-                        <option class="sort-type" data-sort-value="2">Rating</option>
+                        <option class="sort-type" value="0">Default</option>
+                        <option class="sort-type" value="1">Popularity</option>
+                        <option class="sort-type" value="2">Rating</option>
                         <%}else if(Integer.parseInt(request.getParameter("eidos_sort"))==1){%>
-                        <option class="sort-type" data-sort-value="1">Popularity</option>
-                        <option class="sort-type" data-sort-value="0">Default</option>
-                        <option class="sort-type" data-sort-value="2">Rating</option>
+                        <option class="sort-type" value="1">Popularity</option>
+                        <option class="sort-type" value="0">Default</option>
+                        <option class="sort-type" value="2">Rating</option>
                         <%}else{%>
-                        <option class="sort-type" data-sort-value="2">Rating</option>
-                        <option class="sort-type" data-sort-value="0">Default</option>
-                        <option class="sort-type" data-sort-value="1">Popularity</option>
+                        <option class="sort-type" value="2">Rating</option>
+                        <option class="sort-type" value="0">Default</option>
+                        <option class="sort-type" value="1">Popularity</option>
                     <% }%>
                     </select>
                 </span> 

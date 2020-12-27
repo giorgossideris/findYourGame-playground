@@ -1,11 +1,9 @@
-let sort_types = document.getElementsByClassName("sort-type");
-for (let i=0; i<sort_types.length; i++){
-    sort_types[i].onclick = use_sort_type;
-}
+let sort_dropdown = document.getElementById("sort-dropdown");
+sort_dropdown.onchange = use_sort_type;
 
 function use_sort_type(){
     if (document.getElementsByClassName("game").length > 0){
-        sort_games(this.dataset.sortValue);
+        sort_games(this.value);
     }
 }
 
