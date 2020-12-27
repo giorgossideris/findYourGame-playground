@@ -32,7 +32,7 @@ List <Game> gamesToShow = new ArrayList<Game>();
 if(request.getAttribute("search_items")!=null){
     gamesToShow = gameDAO.getGames(search_items);
 }else if(request.getAttribute("sorted_list")!=null){ 
-    gamesToShow = (List<Game>)session.getAttribute("sorted_list");
+    gamesToShow = (List<Game>)request.getAttribute("sorted_list");
     
 }
 session.setAttribute("games_list",gamesToShow);

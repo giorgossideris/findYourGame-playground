@@ -75,7 +75,7 @@ public class GameDAO {
     private String createSearchQuery(boolean isNameSearched, boolean isPlNumberSearched, boolean isAgeSearched,
                                      boolean isCategorySearched, boolean isDurationSearched) throws Exception{
         String searchQuery = "SELECT game_id, category_id, gamename,start_age,end_age, min_players, max_players," +
-        " duration_id, rating_value, photo_path FROM game"; // basic sql query
+        " duration_id, rating_value, photo_path,favorite_counter FROM game"; // basic sql query
         String nameFilter = "locate(?, gamename) > 0",
                plNumberFilter = "min_players<= ? AND max_players>= ?",
                ageFilter = "start_age<=? and end_age>= ?",
