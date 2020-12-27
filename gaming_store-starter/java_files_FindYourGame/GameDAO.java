@@ -56,7 +56,7 @@ public class GameDAO {
 
             
             list_of_games.add( new Game(rs.getInt("game_id"), rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path")));        }
+            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"),rs.getInt("favorite_counter")));        }
         rs.close();
         stmt.close();
         db.close();
@@ -384,17 +384,20 @@ public class GameDAO {
     }
     
 
-    public List<Game> ReturnGamesSorted(List<Game> unsorted_games,int eidos_sort) throws Exception{
-        if(eidos_sort==1){
-            unsorted_games.sort(Comparator.comparing(Game::getRating_value).reversed());
-            return unsorted_games;
+    public List<Game> ReturnGamesSorted(List<Game> games_to_sort,int eidos_sort) throws Exception{
+        if(eidos_sort==2){
+            games_to_sort.sort(Comparator.comparing(Game::getRating_value).reversed());
+            return games_to_sort;
         
-        }else if(eidos_sort==2){
-            unsorted_games.sort(Comparator.comparing(Game::getFavorite_counter).reversed());
-            return unsorted_games;
+        }else if(eidos_sort==1){
+            games_to_sort.sort(Comparator.comparing(Game::getFavorite_counter).reversed());
+            return games_to_sort;
+
+        }else{
+            games_to_sort.sort(Comparator.comparing(Game::getGamename));
+            return games_to_sort;
 
         }
-        return unsorted_games;
     }
 }
 

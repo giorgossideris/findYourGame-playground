@@ -47,6 +47,20 @@ this.duration_id = duration_id;
 this.rating_value = rating_value;
 this.photo_path = photo_path;
 }
+public Game(int game_id, int category_id, String gamename, int start_age, int end_age, int min_players, int max_players,
+int duration_id, double rating_value, String photo_path, int favorite_counter) {
+this.game_id = game_id;
+this.category_id = category_id;
+this.gamename = gamename;
+this.start_age = start_age;
+this.end_age = end_age;
+this.min_players = min_players;
+this.max_players = max_players;
+this.duration_id = duration_id;
+this.rating_value = rating_value;
+this.photo_path = photo_path;
+this.favorite_counter = favorite_counter;
+}
 
 public Game(int game_id, String gamename, String photo_path) {
 	this.game_id = game_id;

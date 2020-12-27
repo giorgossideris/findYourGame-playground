@@ -22,6 +22,14 @@ public class Search_fields {
 		this.category_id = category_id;
 		this.duration_id = duration_id;
 	}
+
+	public Search_fields() {
+		this.search_bar = "";
+		this.players = -1;
+		this.age = -1;
+		this.category_id = -1;
+		this.duration_id = -1;
+	}
 	public String getSearch_bar() {
 		return search_bar;
 	}

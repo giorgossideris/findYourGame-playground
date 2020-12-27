@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java_files_FindYourGame.*, java.util.List" %>
-<%@ page errorPage="app_error.jsp" %>
+<%@ page import="java_files_FindYourGame.*, java.util.List,java.util.ArrayList" %>
+
 
 <%
 boolean isUserRegistered = false;
@@ -9,8 +9,10 @@ if (session.getAttribute("userObj") != null) {
 	auth_user = (User)session.getAttribute("userObj");
 	isUserRegistered = true;
 }
-
-Search_fields search_items = (Search_fields)request.getAttribute("search_items");
+Search_fields search_items = new Search_fields();
+if (request.getAttribute("search_items") != null){
+    search_items = (Search_fields)request.getAttribute("search_items");
+}
 
 
 CategoryDAO categoryDAO = new CategoryDAO();
@@ -23,7 +25,17 @@ List<Duration> durations = durationdao.getDurations();
 FavoriteDAO favoriteDAO = new FavoriteDAO();
 UserDAO userDAO = new UserDAO();
 
-List<Game> searchedGames = gameDAO.getGames(search_items);
+
+
+
+List <Game> gamesToShow = new ArrayList<Game>();
+if(request.getAttribute("search_items")!=null){
+    gamesToShow = gameDAO.getGames(search_items);
+}else if(request.getAttribute("sorted_list")!=null){ 
+    gamesToShow = (List<Game>)session.getAttribute("sorted_list");
+    
+}
+session.setAttribute("games_list",gamesToShow);
 %>
 
 <!DOCTYPE html>
@@ -116,7 +128,7 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
         <div class="games-to-navigate-area"> 	
             <div class="results-header">
                 <span id="results-title">
-                    <h2>Search Results</h2> <span class="badge"><%=searchedGames.size()%></span>
+                    <h2>Search Results</h2> <span class="badge"><%=gamesToShow.size()%></span>
                    
                 </span>
                 <span id="sorting-section">
@@ -133,12 +145,13 @@ List<Game> searchedGames = gameDAO.getGames(search_items);
             <div class="agileits-title" id="gallery"> 
                 <br>
             <%
-            if (searchedGames.size()==0){
+            if (gamesToShow.size()==0){
             %>
             <p class="no-games">No games found.</p>
             <%
             }else{
-                for (Game game : searchedGames){
+
+                for (Game game : gamesToShow){
             %>
                 <div class="game-layout">	
                     <img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java_files_FindYourGame.*" %>
-<%@ page errorPage="app_error.jsp" %>
 
 <%
     int user_id_who_rates = -1, game_id_to_be_rated = -1;
