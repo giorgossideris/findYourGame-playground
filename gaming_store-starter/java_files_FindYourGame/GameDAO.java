@@ -97,7 +97,7 @@ public class GameDAO {
 				searchQuery += filters.get(i);
 			} 
         }
-        searchQuery += ";";
+        searchQuery += " ORDER BY gamename;";
         return searchQuery;
     }
     
@@ -380,23 +380,6 @@ public class GameDAO {
 
             }
             
-        }
-    }
-    
-
-    public List<Game> ReturnGamesSorted(List<Game> games_to_sort,int eidos_sort) throws Exception{
-        if(eidos_sort==2){
-            games_to_sort.sort(Comparator.comparing(Game::getRating_value).reversed());
-            return games_to_sort;
-        
-        }else if(eidos_sort==1){
-            games_to_sort.sort(Comparator.comparing(Game::getFavorite_counter).reversed());
-            return games_to_sort;
-
-        }else{
-            games_to_sort.sort(Comparator.comparing(Game::getGamename));
-            return games_to_sort;
-
         }
     }
 }
