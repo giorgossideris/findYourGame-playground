@@ -149,3 +149,31 @@
 .support {
     background-color: #333;
 }
+
+@media (max-width: 480px){
+    .login-field-description {
+        line-height: 150%;
+        font-size: 18px;
+        margin-right: 0;
+    } 
+
+    .login-border{
+        width:90%;
+    }
+
+    .login-input{
+        width: 50%;
+    }
+}
+
+@media (max-width: 770px){
+    .login-field-description{
+        line-height: 120%;
+    }
+}
+
+@media (max-width: 300px){
+    .login-title{
+        font-size: 50px;
+    }
+}
