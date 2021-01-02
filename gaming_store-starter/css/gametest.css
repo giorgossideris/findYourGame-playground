@@ -1,0 +1,690 @@
+* {
+    font-family: 'Turret Road', cursive;
+}
+body {
+    background: url(../images/back-game2.jpg) fixed;
+    background-size: cover;
+}
+#allbody {
+    background: url(../images/dott.png)repeat 0px 0px; 
+    background-size: 2px;
+    -webkit-background-size: 2px;
+    -moz-background-size: 2px;
+    -o-background-size: 2px;
+    -ms-background-size: 2px;
+}
+/* banner layout */
+.agileinfo-dot {
+    background: none;
+    padding-top: 40px; 
+}
+.logo img {
+    height: 60px;
+    width: auto;
+    margin: -30px 0 0 5px;
+}
+.nav.navbar-nav {
+    margin-top: 0.4em;
+}
+#no-dot::after {
+    position: relative;
+}
+#orange > a {
+    color: #FF9800;
+    font-weight: bold;
+}
+
+/* game view css */
+.second-column{
+    margin-left:25px;
+}
+
+.section-content {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, auto);
+    position: relative;
+    background-color: rgba(252, 252, 252, 0.4);
+}
+
+.secimage{
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.secimage img{
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 19vw;
+    width: auto;
+}
+
+.game-title{
+    display: flex;
+    margin-top: 20px;
+    grid-row: 1/2;
+    grid-column: 2/5;
+    font-size: 1.5vw;
+}
+.game-title h2{
+    margin-bottom: 0;
+    padding-right: 15px;
+    color: white;
+    font-weight: bold;
+    margin:0px;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-size: 220%;
+
+}
+/* buttons on the right of game title */
+.right-buttons {
+    display: inline-flex;
+    position: sticky;
+
+}
+
+/* rating number */
+.rating {
+    grid-row: 1/2;
+    grid-column: 5/6;
+    text-align: center;
+    font-size: 2.3vw;
+    box-shadow: inset 0 0 0 1000px rgba(217, 142, 46, 0.29);
+    margin: 80px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.rate-num i {
+    font-size: 2vw;
+}
+.rate-num {
+    padding: 5px;
+    color: aliceblue;
+    /* border-bottom: 2px solid rgba(59, 57, 57, 0.712); */
+}
+.rate-num .rating-value{
+    font-size: larger; 
+}
+.rate-num .out-of {
+    font-size: smaller;
+    margin-right: 10px;
+}
+
+/* categories customization */
+.categories {
+    grid-row: 2/6;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    list-style-type: none;
+    font-size: 1.2vw;
+}
+.categories span {
+    font-weight: bold;
+}
+.categories li {
+    border-radius: 10px ;
+    padding: 5px 15px;
+    width: auto;
+    height: 40px;
+    margin-bottom: 10px;
+    border: 3px solid #777;
+    margin-top: 10px;
+}
+
+#short-description {
+    grid-row: 1/2;
+    grid-column: 2/5;
+    margin-top: 160px;
+}
+
+#long-description{
+    grid-row: 2/3;
+    grid-column: 2/6;
+}
+
+/* rate area */
+.rate-area {
+    grid-row: 3/4;
+    grid-column: 2/6;
+}
+
+.add-rating {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.add-rating p {
+    margin-right: 15px;
+    font-size: 130%;
+}
+
+#stars {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/* Comment area css */
+.comment-area {
+    grid-row: 4/5;
+    grid-column: 2/6;
+}
+.br-headings {
+    background-color: #48423c;
+    line-height: 2px;
+    margin-bottom: 20px;
+}
+.comments-ratings-head {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+}
+.comments-ratings-title {
+    display: block;
+    color: black;
+    font-weight: bold;
+}
+.comment {
+    display: grid;
+    grid-template-columns: 10% 90%;
+    width: 65vw;
+}
+.user-avatar {
+	width: 65px;
+	height: 65px;
+    vertical-align: middle;
+    grid-column-start: 1;
+}
+.user-avatar img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.user {
+    color: orange;
+}
+.comment-body {
+    grid-column-start: 2;
+    margin-bottom: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 75px);
+    min-height: 65px;
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: .9rem;
+    color: #555;
+    background-color: WHITE;
+}
+
+.comment-toolbar {
+    width: max-content;
+    padding-left: 25px;
+    margin-top: -20px;}
+.comment-toolbar ul {
+    list-style-type: none;
+    padding-left: 75px;
+    font-size: 0;
+}
+.comment-toolbar ul li {
+    padding: 5px;
+    font-size: .7rem;
+    color: lighten(GREY, 5%);
+}
+.comment-br {
+    width: calc(100% - 75px);
+    line-height: 1px;
+    background-color: #555;
+    margin-left: 15px;
+}
+/* Input new comment */
+
+.create-new-comment {
+    padding: 20px 0;
+    display: grid;
+    grid-template-columns: 10% 70% 20%;
+    width: 65vw;
+}
+.create-new-comment input {
+    grid-column: 2;
+    background-color: rgb(219, 219, 215);
+    height: 50px;
+    /* width: calc(100% - 100px); */
+    margin-left: 10px;
+}
+.submit {
+    grid-column: 3;
+    width: -moz-fit-content;
+    margin-left: 20px;
+    height: min-content;
+    margin-top: 3px;
+    background-color: rgb(61, 56, 50);
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    border-color: rgb(61, 56, 50);
+}
+input::placeholder{
+    text-align: center;
+}
+
+.ac-footer {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.heart {
+    text-align: left;
+    margin-bottom: 0;
+}
+.rating-commenting-button {
+    padding-top: 1.7vw;
+    margin-left: -0.5vw;
+}
+.rating-commenting-button a {
+    color: black;
+}
+.rating-commenting-button button {
+
+    border: 0;
+    background: none;
+}
+.scroll i {
+    font-size: larger;
+}
+.scroll:hover {
+    color: darkorange;
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); */
+}
+
+.star-rating-text a{
+    color: white;
+}
+
+/* description section */
+.desc-heading {
+    font-size: x-large;
+    margin-bottom: 15px;
+    color: white;
+    margin-bottom: 10px;
+}
+.game-description p{
+    background-color: #B6B6B6BD;
+    padding: 10px;
+}
+
+.white {
+    color: white;
+}
+/* the display-more section */
+
+#moreText {
+    display: none;
+}
+.moreButton {
+    margin-top: 5px;
+}
+#textButton {
+    background-color: rgb(61, 56, 50);
+    border-radius: 10px;
+    color: white;
+    padding: 10px ;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+#textButton:hover {
+    color: darkorange;
+}
+
+@media (max-width: 3000px){
+    .rating{
+        font-size: 2.3vw;
+        margin: 60px 30px;
+    }
+}
+
+@media (max-width: 1158px){
+    /* .rating{
+        grid-column: 1/2;
+        grid-row: 2/3;
+        margin: -30px 30px 160px 30px;
+        font-size: 2vw;
+    } */
+
+    /* .rate-num i{
+        font-size: 1.5vw;
+    } */
+
+    .secimage img{
+        margin-top:50px;
+    }
+
+    .categories{
+        grid-column: 2/5;
+        grid-row: 1/2;
+        margin-top:100px;
+        font-size:1.8vw;
+    }
+
+    #short-description{
+        grid-row: 2/3;
+        margin-top:0;
+    }
+
+    #long-description{
+        grid-row: 3/4;
+    }
+
+    .rate-area{
+        grid-row: 4/5;
+    }
+
+    .comment-area{
+        grid-row: 5/6;
+    }
+
+    .comment, .create-new-comment{
+        width: 100%;
+    }
+
+    .comment-body{
+        width: 95%;
+    }
+
+    .categories {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .categories li{
+        width:45%;
+        margin-right: 20px;
+    }
+
+    #short-description, #long-description, .rate-area, .comment-area{
+        grid-column: 1/6;
+    }
+
+}
+
+@media (max-width: 842px){
+    .section-content{
+        grid-template-columns: 170px repeat(3, auto) 110px;
+    }
+
+
+    .secimage img{
+        width:160px;
+        height: auto;
+    }
+
+    .rating{
+        grid-column: 1/2;
+        margin-top: 220px;
+        height: 70px;
+    }
+
+    .categories{
+        grid-column: 2/6;
+    }
+}
+
+@media (max-width: 610px){
+    .section-content{
+        grid-template-columns: 30% repeat(4, auto);
+        grid-template-rows: repeat(6,auto);
+    }
+
+
+    .secimage img{
+        width:100%;
+        height: auto;
+        margin-top:10px;
+    }
+
+    .game-title{
+        font-size: 4vw;
+        margin-top: 0px;
+    }
+
+    .rating-commenting-button{
+        display: none;
+    }
+
+    .rating{
+        grid-row:2/3;
+        grid-column: 1/6;
+        height: 30px;
+        margin: 10px 20%;
+    }
+
+    .categories{
+        grid-row: 2/3;
+        grid-column: 1/6;
+        margin: 20px auto 0 auto;
+        text-align: center;
+        font-size: 3.4vw;
+    }
+
+    .categories li{
+        width: 70%;
+        margin:inherit;
+    }
+
+    #short-description{
+        grid-row: 3/4;
+        margin-top:0;
+        margin-left: 10px;
+        margin-right:10px;
+    }
+
+    #long-description{
+        grid-row: 4/5;
+        margin-left: 10px;
+        margin-right:10px;;
+    }
+
+    .comments-ratings-title{
+        font-size: 80%;
+    }
+
+    .rate-area{
+        grid-row: 5/6;
+        margin-left: 10px;
+        margin-right:10px;
+    }
+
+    .comment-area{
+        grid-row: 6/7;
+        margin-left: 10px;
+        margin-right:10px;
+    }
+
+    .user-avatar{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .user-avatar img {
+        width: 50%;
+        height: 50%;
+        border-radius: 50%;
+    }
+
+    .create-new-comment{
+        grid-template-columns: 10% 90%;
+        grid-template-rows:auto auto ;
+    }
+
+    .submit {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        width: 96.5%;
+        margin-top: -15px;
+        border-radius: 0px;
+        margin-left: 12px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+}
+
+@media (max-width: 400px){
+    .categories li{
+        font-size: 80%;
+        width: 80%
+    }
+
+    #add-rating-label{
+        font-size: 110%;
+    }
+
+    .submit{
+        font-size: 10px;
+    }
+
+    .comment{
+        display: inline;
+    }
+    .user-avatar{
+        display: none;
+    }
+
+    #new-comment{
+        grid-column: 1/3;
+    }
+    .submit{
+        grid-column: 1/3;
+        margin-top: 0px;
+    }
+
+}
+
+
+
+/* @media(max-width:1400px) {
+
+    .secimage img {
+        height: 250px;
+    }
+}
+@media(max-width:1215px) {
+
+    .secimage img {
+        height: 200px;
+    }
+    .right-buttons {
+        padding-top: 15px;
+    }
+}
+@media (max-width:1000px) {
+    .secimage{
+        grid-column: 1/3;
+        text-align: center;
+    }
+    .secimage img {
+        width: 50%;
+        height: auto;
+    }
+    .right-buttons {
+        padding-top: 15px;
+    }
+    .categories {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        padding: 10px 20px;
+    }
+    .categories li {
+        width: 300px;
+    }
+    .left-up {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+    .right-up {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+    .left-down {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+    .right-down {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+    .submit {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+}
+@media(max-width:800px) {
+
+    .secimage img {
+        height: 100px;
+    }
+    .right-buttons {
+        padding-top: 15px;
+    }
+    .categories {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        padding: 0px 20px;
+    }
+    .categories li {
+        width: 150px;
+        height: 60px;
+    }
+    .game-description p{
+        padding-right: 20px;
+    }
+    .comment-body {
+        margin-left: 40px;
+        height: 45px;
+        margin-right: 15px;
+    }
+    .comments-head {
+        margin-right: 10px;
+    }
+    .create-new-comment input {
+        margin-left: 40px;
+        margin-right: 20px;
+    }
+    .submit {
+        font-size: 12px;
+    }
+}
+@media (max-width:600px) {
+    .comment-body {
+        margin-right: 15px;
+        width: 240px;
+    }
+    .create-new-comment input {
+        margin-right: 15px;
+        width: 165px;
+    }
+    .create-new-comment {
+        padding: 20px 0;
+        display: grid;
+        grid-template-columns: 10% 60% 30%;
+    }
+    .submit {
+        font-size: 12px;
+    }
+
+
+} */
+
