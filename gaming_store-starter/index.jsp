@@ -30,7 +30,6 @@ Author URL: http://w3layouts.com
 <!DOCTYPE html>
 <html lang="en" data-user-id = "<%= isUserRegistered ? auth_user.getId() : "null"%>">
 <head>
-	
 	<title>Home Page</title>
 	<%@ include file = "header.jsp" %>
 	<!-- custom css -->
@@ -44,7 +43,7 @@ Author URL: http://w3layouts.com
 		<div class="agileinfo-dot">
 			<div class="logo"> <img src="images/logo.png"></div>
 			<div class="agileits-logo">
-				<h1><a href="index.html">Find  <span>Your <a href="index.html">Game</span></a></h1>
+				<h1><a href="index.jsp">Find  <span>Your <a href="index.jsp">Game</span></a></h1>
 			</div>
 			<div class="header-top">
 				<div class="container">
@@ -84,7 +83,7 @@ Author URL: http://w3layouts.com
 
 											<select class="form-control filter-input rounded-corners" name="category" id="duration">
 												
-												<option class="correct-font" value="-1">Choose Category</option>
+												<option class="correct-font" value="-1">Category</option>
 												<%	for ( Category cat: categories) { %>
 													<option value="<%=cat.getCategory_id()%>"><%=cat.getCategory_name()%></option>
 												<%}%>
@@ -94,7 +93,7 @@ Author URL: http://w3layouts.com
 										<div class="filter col-sm-6">
 											<label for="duration" class="control-label filter-description">Duration:</label>
 											<select class="form-control filter-input rounded-corners" name="duration" id="duration">
-												<option class="correct-font" value="-1">Choose Duration</option>
+												<option class="correct-font" value="-1">Duration</option>
 												<%	for ( Duration dur: durations ) { %>
 													<option value="<%=dur.getDuration_id()%>"><%=(dur.getDuration_name())%></option>
 												<%}%>
@@ -145,7 +144,7 @@ for (Game game : topRatedGames){
 				<div class="game-layout">	
 					<img class="game-photo" src="<%=game.getPhoto_path()%>" alt="Photo of the game">
 					<a class="game-name" href="game-view.jsp?game_id=<%=game.getGame_id()%>">
-						<h4><%=game.getGamename()%></h4>
+							<h4 id="title-font-size"><%=game.getGamename()%></h4>
 					</a>    
 	
 					<div class="game-info">

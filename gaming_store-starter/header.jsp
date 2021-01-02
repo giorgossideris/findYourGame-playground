@@ -34,7 +34,9 @@
 <script src="<%=request.getContextPath() %>/FindYourGame/js/jquery-1.11.1.min.js"></script>
 <script src="<%=request.getContextPath() %>/FindYourGame/js/bootstrap.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-
+<head>
+<link rel="icon" type="image/png" href="images/favicon.png"/>
+</head>
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <![endif]-->

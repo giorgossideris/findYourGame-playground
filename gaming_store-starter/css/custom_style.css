@@ -4,7 +4,12 @@
     width:auto;
     margin:-30px 0 0 5px;
 }
+@media (max-width: 1450px) {
+#title-font-size{
+font-size: 25px;
+}
 
+}
 
 #duration > option {
     font-family: 'Turret Road', cursive;
@@ -231,6 +236,11 @@
     }
 }
 
+@media (max-width: 750px) {
+    #counter{
+        display: none;
+    }
+}
 
 /*Kanw epitopou rating*/
 .rate {
