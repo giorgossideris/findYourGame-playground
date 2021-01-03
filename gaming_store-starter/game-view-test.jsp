@@ -10,6 +10,7 @@ DurationDAO durationdao = new DurationDAO();
 CategoryDAO categorydao = new CategoryDAO();
 CommentDAO commentdao = new CommentDAO();
 UserDAO userdao = new UserDAO();
+FavoriteDAO favoriteDAO = new FavoriteDAO();
 Game game = gamedao.searchGameByID(game_id);
 
 boolean isUserRegistered = false;
@@ -29,11 +30,11 @@ if (session.getAttribute("userObj") != null) {
 
 	<title>Game details</title>
 	<%@ include file = "header.jsp" %>
-	<!-- css -->
+    <link href="<%=request.getContextPath() %>/FindYourGame/css/all.css" rel="stylesheet">
+    <link href="<%=request.getContextPath() %>/FindYourGame/css/custom_style.css" rel="stylesheet"> 
+    <!-- game-view css -->
 	<link rel="stylesheet" href="<%=request.getContextPath() %>/FindYourGame/css/gametest.css" type="text/css" media="all" />
-	<!--// css -->
-	<link href="<%=request.getContextPath() %>/FindYourGame/css/all.css" rel="stylesheet">
-	<link href="<%=request.getContextPath() %>/FindYourGame/css/custom_style.css" rel="stylesheet"> 
+	<!--// game-view css -->
 	<link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 	<link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
 	<!-- //font -->
@@ -82,30 +83,34 @@ if (session.getAttribute("userObj") != null) {
 					</div>
 
                     <div class="game-title second-column">
-                        <h2><%=game.getGamename()%></h2>						
-                        <div class="right-buttons">
-                            <div class="ac-footer">
-                                <div class="ac-footer-container ac-footer-brand" title="Add to favorite">
-                                    <span class="ac-icon ac-icon-love-dark"></span> 
+                        <h2>
+                            <%=game.getGamename()%>
+                        </h2>						
+                        <div class="heart-icon" title="Add to favorite!" 
+								data-is-favorite=<%= isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId()) ? "true" : "false"%>
+								data-game-id = "<%=game.getGame_id()%>"
+								<% if (isUserRegistered && favoriteDAO.isGameFavorite(game.getGame_id(), auth_user.getId())){%>
+									style='background-image: url("./images/heart.svg");'
+								<% } %>
+								>
+							</div>
+                            <div class="right-buttons">
+                                <div class="rating-commenting-button" style="margin-left: 0px;">
+                                        <button class="hover-button" title="Rate it!">
+                                            <a href="#rate" class="scroll">
+                                                <i class="far fa-star"></i>
+                                            </a>
+                                        </button>
+                                </div>
+    
+                                <div class="rating-commenting-button">
+                                        <button class="hover-button" title="Leave a comment!">
+                                            <a href="#rate" class="scroll">
+                                                <i class="far fa-comment"></i>
+                                            </a>
+                                        </button>
                                 </div>
                             </div>
-                            <div class="rating-commenting-button" style="margin-left: 0px;">
-                                    <button class="hover-button" title="Rate it!">
-                                        <a href="#rate" class="scroll">
-                                            <i class="far fa-star"></i>
-                                        </a>
-                                    </button>
-                            </div>
-
-                            <div class="rating-commenting-button">
-                                    <button class="hover-button" title="Leave a comment">
-                                        <a href="#rate" class="scroll">
-                                            <i class="far fa-comment"></i>
-                                        </a>
-                                    </button>
-                            </div>
-                        </div>
-
                     </div>
 
                     <div class="rating second-column">
@@ -347,6 +352,9 @@ if (session.getAttribute("userObj") != null) {
 			} 
 		</script>
 		<script src="js/comment.js"></script>
-		<script src="js/rating.js"></script>	
+        <script src="js/rating.js"></script>
+        <!-- script for clicking heart -->
+        <script src="js/favorite.js"></script>
+        <!-- end of script for clicking heart -->	
 	</body>	
 </html>
