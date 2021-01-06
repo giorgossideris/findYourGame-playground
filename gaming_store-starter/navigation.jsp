@@ -88,11 +88,11 @@ request.setAttribute("games_list",gamesToShow);
                 <div  class="form-group filter-form">
                     <div class="filter">
                         <label   class="control-label filter-description">Players:</label>
-                        <input   type="text" name="players" class="form-control filter-input rounded-corners" value= "<%= search_items.getPlayers() == 0 || search_items.getPlayers() == -1 ? "" : search_items.getPlayers() %>" <%= search_items.getPlayers() == -1 ? "placeholder=3" : "" %>>
+                        <input   type="text" name="players" class="form-control filter-input rounded-corners" value= "<%= search_items.getPlayers() == 0 || search_items.getPlayers() == -1 ? "" : search_items.getPlayers() %>" <%= search_items.getPlayers() == -1 ? "placeholder=-" : "" %>>
                     </div>
                     <div class="filter">
                         <label  class="control-label filter-description">  Age:</label>
-                        <input  type="text" name="age" class="form-control filter-input rounded-corners" value="<%= search_items.getAge() == 0 || search_items.getAge() ==  -1 ? "" : search_items.getAge() %>" <%= search_items.getAge() == -1 ? "placeholder=12" : "" %>>
+                        <input  type="text" name="age" class="form-control filter-input rounded-corners" value="<%= search_items.getAge() == 0 || search_items.getAge() ==  -1 ? "" : search_items.getAge() %>" <%= search_items.getAge() == -1 ? "placeholder=-" : "" %>>
                     </div>
                 
                     <div class="filter">
@@ -157,7 +157,7 @@ request.setAttribute("games_list",gamesToShow);
             <%
             if (gamesToShow.size()==0){
             %>
-            <p class="no-games">No games found.</p>
+            <p class="no-games" style="height: 50vw;">No games found.</p>
             <%
             }else{
             %>
