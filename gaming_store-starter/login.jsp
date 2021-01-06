@@ -68,6 +68,15 @@ Author URL: http://w3layouts.com
 								<%
 									}
 								%>
+								<% 
+									if(request.getParameter("successsign") != null) {
+								%>
+										<div class="alert alert-success message-box" role="alert">
+											Succesfully signed up! Please log in!
+										</div>
+								<%
+									}
+								%>
                                     <div class="form-group login-form-group">
                                         <button type="submit" class="login-button rounded-corners text-white login-button-area">I finished!</button>
 									</div>

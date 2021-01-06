@@ -351,7 +351,7 @@ if (session.getAttribute("userObj") != null) {
 				} 
 			} 
 		</script>
-		<script src="js/comment.js"></script>
+		<script src="js/comment.js" charset="utf-8"></script>
         <script src="js/rating.js"></script>
         <!-- script for clicking heart -->
         <script src="js/favorite.js"></script>

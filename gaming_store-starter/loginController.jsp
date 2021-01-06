@@ -12,6 +12,10 @@ if (request.getParameter("username") == null || request.getParameter("password")
 String username = request.getParameter("username");
 String password = request.getParameter("password");
 
+// convert from ISO-8859-1 (latin) to UTF-8 so as to support Greek characters
+username = new String(username.getBytes("ISO-8859-1"), "UTF-8");
+password = new String(password.getBytes("ISO-8859-1"), "UTF-8");
+
 UserDAO userdao = new UserDAO();
 
 try {

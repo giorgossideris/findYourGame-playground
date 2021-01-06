@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java_files_FindYourGame.*" %>
+<%@ page import="java.net.URLDecoder" %>
 <%@ page errorPage="app_error.jsp" %>
 
 <%
@@ -14,8 +15,10 @@
     } catch (NumberFormatException e) {  
         // το String δεν μπορεί να μετατραπεί σε int  
     }
-    String commentContent = request.getParameter("comment_content");
+    String commentContent = URLDecoder.decode(request.getParameter("comment_content"), "UTF-8"); // decoded because script encoded the comment in order to support greek characters
     
+
     CommentDAO commentDAO = new CommentDAO();
+    
     commentDAO.add_comment(commentContent, gameId, userId);
 %>

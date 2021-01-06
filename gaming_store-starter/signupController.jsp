@@ -16,6 +16,10 @@ String username = request.getParameter("username");
 String email = request.getParameter("email");
 String password = request.getParameter("password");
 
+// convert from ISO-8859-1 (latin) to UTF-8 so as to support Greek characters
+username = new String(username.getBytes("ISO-8859-1"), "UTF-8");
+password = new String(password.getBytes("ISO-8859-1"), "UTF-8");
+
 
 //validating inputs of the user
 String message = "<ol>";
@@ -59,7 +63,9 @@ if (flag) {
 
 
 %>
-    <jsp:forward page = "login.jsp"/>
+    <jsp:forward page="login.jsp">
+        <jsp:param name="successsign" value="true" ></jsp:param>
+    </jsp:forward>
 <%
     }catch (Exception e) {
 
