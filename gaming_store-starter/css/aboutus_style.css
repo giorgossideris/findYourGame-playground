@@ -1,0 +1,30 @@
+#aboutus-background {
+    background:url(../images/login_photo.jpg); /*photo from https://unsplash.com/photos/laNNTAth9vs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink*/
+    background-size: cover;
+}
+
+.team-caption {
+    height: 170px;
+}
+
+.team-caption ul li{
+    font-size: 22px;
+}
+
+@media (max-width: 767px){
+    .team-caption ul li{
+        display: inline-block;
+    }
+}
+
+@media (max-width: 600px){
+    .team-caption h4{
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 450px){
+    .team-caption h4{
+        font-size: 1.1em;
+    }
+}

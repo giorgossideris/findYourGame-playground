@@ -283,8 +283,10 @@ for (Game game : topRatedGames){
 										<%	CommentDAO commentdao = new CommentDAO();
 											List<Comment> game_1_comment = commentdao.getOneCommentOfGame(MostRatedGames.get(0).getGame_id());
 										%>													
-										<h5><%=MostRatedGames.get(0).getGamename()%><h5>
-										<h6><%= 	game_1_comment.get(0).getComment_text()%></h6>
+										<a class="game-name" href="game-view.jsp?game_id=<%=MostRatedGames.get(0).getGame_id()%>">
+											<h5><%=MostRatedGames.get(0).getGamename()%><h5>
+										</a> 
+										<h6><%= game_1_comment.get(0).getComment_text()%></h6>
 										<h6>Rating: <%=MostRatedGames.get(0).getRating_value()%></h6>
 									</div>
 								</li>
@@ -303,8 +305,10 @@ for (Game game : topRatedGames){
 									</div>
 									<div class="testimonial-img-info">
 									<%	List<Comment> game_2_comment = commentdao.getOneCommentOfGame(MostRatedGames.get(1).getGame_id());%>													
-											<h5><%=MostRatedGames.get(1).getGamename()%><h5>
-											<h6><%= 	game_2_comment.get(0).getComment_text()%></h6>
+											<a class="game-name" href="game-view.jsp?game_id=<%=MostRatedGames.get(1).getGame_id()%>">
+												<h5><%=MostRatedGames.get(1).getGamename()%><h5>
+											</a> 
+											<h6><%= game_2_comment.get(0).getComment_text()%></h6>
 											<h6>Rating: <%=MostRatedGames.get(1).getRating_value()%></h6>
 
 
@@ -325,9 +329,11 @@ for (Game game : topRatedGames){
 										<div class="clearfix"> </div>
 									</div>
 									<div class="testimonial-img-info">
-										<%	List<Comment> game_3_comment = commentdao.getOneCommentOfGame(MostRatedGames.get(2).getGame_id());%>													
-											<h5><%=MostRatedGames.get(2).getGamename()%><h5>
-											<h6><%= 	game_3_comment.get(0).getComment_text()%></h6>
+										<%	List<Comment> game_3_comment = commentdao.getOneCommentOfGame(MostRatedGames.get(2).getGame_id());%>
+											<a class="game-name" href="game-view.jsp?game_id=<%=MostRatedGames.get(2).getGame_id()%>">
+												<h5><%=MostRatedGames.get(2).getGamename()%><h5>
+											</a> 													
+											<h6><%= game_3_comment.get(0).getComment_text()%></h6>
 											<h6>Rating: <%=MostRatedGames.get(2).getRating_value()%></h6>
 
 									</div>

@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Some information about the developpers' team</title>
+	<title>About us</title>
 	<%@ include file = "header.jsp" %>
-	<!-- custom login css -->
-	<link rel="stylesheet" href="css/login_style.css" type="text/css" media="all">	
-	<!-- //custom login css -->
 	<link rel="stylesheet" href="css/custom_style.css" type="text/css" media="all">	
+	<!-- custom aboutus css -->
+	<link rel="stylesheet" href="css/aboutus_style.css" type="text/css" media="all">	
+	<!-- //custom aboutus css -->
 
 	<script type="text/javascript">
 		jQuery(document).ready(function($) {
@@ -23,7 +23,7 @@
 </head>
 <body>
 	<!-- banner -->
-	<div class="banner" id="login-background">
+	<div class="banner" id="aboutus-background">
 		<div class="agileinfo-dot">
 			<div class="logo"> <img src="images/logo.png"></div>
 			<div class="header-top">
