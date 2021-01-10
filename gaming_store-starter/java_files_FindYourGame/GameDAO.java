@@ -56,7 +56,8 @@ public class GameDAO {
 
             
             list_of_games.add( new Game(rs.getInt("game_id"), rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"),rs.getInt("favorite_counter")));        }
+            rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),Math.round(rs.getDouble("rating_value") * 10.0) / 10.0, // rating rounded to 1 decimal
+            rs.getString("photo_path"),rs.getInt("favorite_counter")));        }
         rs.close();
         stmt.close();
         db.close();
@@ -121,7 +122,8 @@ public class GameDAO {
 			while(rs.next()) {
 
 				topRatedGames.add(new Game(rs.getInt("game_id"),rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),
-                rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("photo_path"))); 
+                rs.getInt("min_players"),rs.getInt("max_players"),rs.getInt("duration_id"), Math.round(rs.getDouble("rating_value") * 10.0) / 10.0, // rating rounded to one decimal
+                rs.getString("photo_path"))); 
 			}
 
 			rs.close();
@@ -162,7 +164,7 @@ public class GameDAO {
 
 			while(rs.next()) {
 
-				mostFavoriteGames.add(new Game(rs.getInt("game_id"),rs.getString("gamename"),rs.getString("photo_path"),rs.getDouble("rating_value")  )); 
+				mostFavoriteGames.add(new Game(rs.getInt("game_id"),rs.getString("gamename"),rs.getString("photo_path"),Math.round(rs.getDouble("rating_value") * 10.0) / 10.0)); // rating rounded to one decimal
 			}
 
 			rs.close();
@@ -207,7 +209,8 @@ public class GameDAO {
 			}
 
             Game game = new Game(rs.getInt("game_id"),rs.getInt("category_id"),rs.getString("gamename"),rs.getInt("start_age"),rs.getInt("end_age"),rs.getInt("min_players"),rs.getInt("max_players"),
-            rs.getInt("duration_id"),rs.getDouble("rating_value"),rs.getString("game_long_description"),rs.getInt("number_of_ratings"),rs.getString("photo_path"),rs.getString("game_short_description"),rs.getInt("favorite_counter"));
+            rs.getInt("duration_id"),Math.round(rs.getDouble("rating_value") * 10.0) / 10.0,rs.getString("game_long_description"),rs.getInt("number_of_ratings"),rs.getString("photo_path"), // rating rounded to one decimal
+            rs.getString("game_short_description"),rs.getInt("favorite_counter"));
 			rs.close();
 			stmt.close();
 			db.close();

@@ -140,7 +140,7 @@ public class FavoriteDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM game WHERE game_id IN (SELECT game_id FROM favorite WHERE registered_user_id = ?);";
+		String sqlQuery = "SELECT * FROM game WHERE game_id IN (SELECT game_id FROM favorite WHERE registered_user_id = ?) ORDER BY gamename;";
 
 		try {
 
