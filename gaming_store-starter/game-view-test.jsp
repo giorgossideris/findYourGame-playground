@@ -53,12 +53,8 @@ if (session.getAttribute("userObj") != null) {
 		<div id="allbody">
 			<!-- banner -->
 			<div class="agileinfo-dot">
-				<div class="logo"> <img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png"></div>
+				<a class="logo" href="<%=request.getContextPath() %>/FindYourGame/index.jsp"> <img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png"></a>
 				
-				<!-- <div class="agileits-logo" id="smaller">
-					<h1><a href="index.html">Find  <span>Your <a href="index.html">Game</span></a></h1>
-				</div> -->
-	
 				<div class="header-top">
 					<div class="header-top-info">
 						<%@ include file = "navMenu.jsp" %>

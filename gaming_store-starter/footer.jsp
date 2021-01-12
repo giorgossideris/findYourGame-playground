@@ -42,7 +42,7 @@
 	<!-- copyright -->
 	<div class="copyright">
 		<div class="container">
-			<p class="footer-class">© 2020 Gaming App . All Rights Reserved | Design by  <a href="index.html" target="_blank"></a>FindYourGame </a></p>
+			<p class="footer-class">© 2020 Gaming App . All Rights Reserved | Design by  <a href="index.jsp" target="_blank"></a>FindYourGame </a></p>
 		</div>
 	</div>
 	<!-- //copyright -->

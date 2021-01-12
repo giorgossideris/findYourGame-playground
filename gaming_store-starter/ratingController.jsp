@@ -23,7 +23,7 @@
 
 GameDAO gamedao = new GameDAO(); 
 gamedao.addRating(game_id_to_be_rated,user_id_who_rates,new_rating_value);//vazw thn nea aksiologhsh
-Game game = gamedao.getCurrentRatingAndNumberOfRatingsOfGame(2);//pairnw thn aksiologhsh tou 2ou game kai to number_of_ratings
+Game game = gamedao.getCurrentRatingAndNumberOfRatingsOfGame(game_id_to_be_rated);
 double old_rating= game.getRating_value();
 int old_num_of_ratings = game.getNumber_of_ratings();
 double new_rating_of_game = (old_num_of_ratings*old_rating + new_rating_value)/(old_num_of_ratings + 1);

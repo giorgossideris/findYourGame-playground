@@ -41,7 +41,9 @@ Author URL: http://w3layouts.com
 	<!-- banner -->
 	<div class="banner1">
 		<div class="agileinfo-dot">
-			<div class="logo"> <img src="images/logo.png"></div>
+			<a class="logo" title="Home" href="<%=request.getContextPath() %>/FindYourGame/index.jsp">
+				<img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png">
+			</a>
 			<div class="agileits-logo">
 				<h1><a href="index.jsp">Find  <span>Your <a href="index.jsp">Game</span></a></h1>
 			</div>

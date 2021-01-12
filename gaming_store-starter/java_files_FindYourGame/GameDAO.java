@@ -322,7 +322,7 @@ public class GameDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT * FROM game WHERE game_id=?;";
+		String sqlQuery = "SELECT game_id, rating_value, number_of_ratings FROM game WHERE game_id=?;";
 
 		try {
 
@@ -331,7 +331,7 @@ public class GameDAO {
             stmt.setInt(1, game_id);
 			rs = stmt.executeQuery();
             if (!rs.next()) {
-				throw new Exception("Game with id: " + game_id + " doesn't have any ratings");
+				throw new Exception("Game with id: " + game_id + " not found.");
 			}
 			
             Game game = new Game(rs.getInt("game_id"),rs.getDouble("rating_value"),rs.getInt("number_of_ratings"));

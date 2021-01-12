@@ -47,7 +47,7 @@ if( !m.matches() ) {
 }	
 
 //validating password
-if (password.length() < 4) {
+if (password.length() < 8) {
      message += "<li>Password must be at least 8 characters</li>";
      flag = false;
 }

@@ -29,7 +29,9 @@ Author URL: http://w3layouts.com
 	<!-- banner -->
 	<div class="banner" id="signup-background">
 		<div class="agileinfo-dot">
-			<div class="logo"> <img src="images/logo.png"></div>
+			<a class="logo" title="Home" href="<%=request.getContextPath() %>/FindYourGame/index.jsp">
+				<img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png">
+			</a>
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
@@ -70,7 +72,7 @@ Author URL: http://w3layouts.com
                                         <button type="submit" class="login-button rounded-corners text-white login-button-area">I finished!</button>
 									</div>
 									<div class="signup-message login-form-group">
-										<p>Already have an account? Log in <a href="login.html">here</a>.</p>
+										<p>Already have an account? Log in <a href="login.jsp">here</a>.</p>
 									</div>
                                 </form>
                             </div>  

@@ -15,7 +15,7 @@ function addNewComment(){
             document.getElementById("new-comment").value = "";
             let userId = document.getElementsByTagName("html")[0].dataset.userId,
                 gameId = document.getElementsByTagName("html")[0].dataset.gameId;
-            $.post("./commentController.jsp", { game_id: gameId, user_id: userId, comment_content: encodeURIComponent(new_comment_content)}); // encode used in order to support greek characters
+            $.post("./commentController.jsp", { game_id: gameId, user_id: userId, comment_content: new_comment_content});
         }
         //else do nothing
     } 

@@ -15,8 +15,8 @@
     } catch (NumberFormatException e) {  
         // το String δεν μπορεί να μετατραπεί σε int  
     }
-    String commentContent = URLDecoder.decode(request.getParameter("comment_content"), "UTF-8"); // decoded because script encoded the comment in order to support greek characters
-    
+
+    String commentContent = request.getParameter("comment_content");
 
     CommentDAO commentDAO = new CommentDAO();
     

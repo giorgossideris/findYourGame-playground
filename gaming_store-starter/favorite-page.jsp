@@ -45,7 +45,9 @@ List<Game> favoriteGames = favoriteDAO.getFavoritesOfUser(auth_user.getId());
 	<!-- banner -->
 	<div class="banner1">
 		<div class="agileinfo-dot">
-            <div class="logo"> <img src="images/logo.png"></div>
+            <a class="logo" title="Home" href="<%=request.getContextPath() %>/FindYourGame/index.jsp">
+				<img src="<%=request.getContextPath() %>/FindYourGame/images/logo.png">
+			</a>
 			<div class="header-top">
 				<div class="container">
 					<div class="header-top-info">
