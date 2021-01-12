@@ -837,7 +837,7 @@ body a{
 	  color: #FFFFFF;
 	  font-size: 1.5em;
 	  margin: .5em 0 0 0;
-	  font-family: 'Turret Road', cursive;
+	  font-family: 'Turret Road', 'Courier New', cursive;
   }
   .team-caption p{
 	  color: #eaeaea;

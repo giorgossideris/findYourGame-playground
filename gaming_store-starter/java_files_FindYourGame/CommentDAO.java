@@ -54,7 +54,7 @@ public class CommentDAO {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sqlQuery = "SELECT registered_user_id, comment_text FROM comment WHERE game_id = ? LIMIT 2;";
+		String sqlQuery = "SELECT registered_user_id, comment_text FROM comment WHERE game_id = ? ORDER BY comment_id DESC LIMIT 2;";
 
 		try {
 

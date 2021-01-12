@@ -56,14 +56,12 @@ font-size: 25px;
 }
 
 .correct-font{
-    font-family: 'Turret Road', cursive;
+    font-family: 'Turret Road', 'Courier New', cursive;
 }
-
-
 
 *, .agileits-logo h1 a, .agileits-title h2,
  .agileits-title h3, .footer-title h3{
-    font-family: 'Turret Road', cursive;
+    font-family: 'Turret Road', 'Courier New', cursive;
 }
 
 

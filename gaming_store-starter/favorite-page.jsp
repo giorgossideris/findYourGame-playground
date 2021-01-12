@@ -10,7 +10,7 @@ if (session.getAttribute("userObj") != null) {
 	isUserRegistered = true;
 }else{
 %>
-<jsp:forward page="index.jsp"></jsp:forward>
+<jsp:forward page="index.jsp"/>
 <%
 return;
 }
