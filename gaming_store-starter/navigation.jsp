@@ -63,7 +63,7 @@ request.setAttribute("games_list",gamesToShow);
                         <%@ include file = "navMenu.jsp" %>
                         <form action="search_Controller.jsp" method="GET">
                             <div id="whole-form" class=" example index_searchbar"  >
-                                <input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
+                                <input class="search-input" type="text" name="searchbar" value= "<%= search_items.getSearch_bar().equals("") ? "" : search_items.getSearch_bar() %>" <%= search_items.getSearch_bar().equals("") ?  "placeholder=Search Your Game.." : "" %> >
                             
    
                                 <button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
@@ -119,12 +119,13 @@ request.setAttribute("games_list",gamesToShow);
 
 						</select>
                     </div>	
-                    <input class="search-input" type="hidden" placeholder="Search Your Game.." name="searchbar">
+                    <!-- <input class="search-input" type="hidden" placeholder="Search Your Game.." name="searchbar"> -->
 			
                 </div>
       
                 <button type="submit" class="apply-filters-button">Apply filters</button> 
             </div>   
+            <input type="hidden" class="search-input" name="searchbar" value= "<%= search_items.getSearch_bar().equals("") ? "" : search_items.getSearch_bar() %>" >
 
         </form>
         <div class="games-to-navigate-area"> 	
