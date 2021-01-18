@@ -70,10 +70,10 @@ request.setAttribute("games_list",gamesToShow);
                             </div>
                                 <input   type="hidden" name="players" class="form-control filter-input rounded-corners" value= "" >
                                 <input  type="hidden" name="age" class="form-control filter-input rounded-corners" value="" >
-                                <select style="visibility: hidden;" class="form-control filter-input rounded-corners" name="category" id="duration">
+                                <select style="visibility: hidden;" class="form-control filter-input rounded-corners" name="category" >
                                     <option value="-1" ></option>
                                 </select>
-                                <select style="visibility: hidden;" class="form-control filter-input rounded-corners" name="duration" id="duration">
+                                <select style="visibility: hidden;" class="form-control filter-input rounded-corners" name="duration">
                                     <option value="-1"></option>
                                 </select> 
                         </form>
@@ -99,8 +99,8 @@ request.setAttribute("games_list",gamesToShow);
                 
                     <div class="filter">
                         <label   class="control-label filter-description">Category:</label>
-                        <select class="form-control filter-input rounded-corners" name="category" id="duration">
-                            <option class="correct-font" value="-1" style="font-size: 60%; padding-left: 0px; ">Choose Category</option>		
+                        <select class="form-control filter-input rounded-corners" name="category">
+                            <option class="correct-font" value="-1" style="padding-left: 0px; ">Any</option>		
                             <%	for (Category cat: categories) { %>
                                 <option value="<%=cat.getCategory_id()%>" <%= search_items.getCategory_id() == cat.getCategory_id() ? "selected" : "" %> ><%=cat.getCategory_name()%></option>
                             <% } %>
@@ -111,8 +111,8 @@ request.setAttribute("games_list",gamesToShow);
 
                     <div class="filter">
                         <label for="duration" class="control-label filter-description">Duration:</label>
-						<select class="form-control filter-input rounded-corners" name="duration" id="duration">
-                            <option class="correct-font" value="-1" style="font-size: 60%; padding-left: 0px; ">Choose Duration</option>
+						<select class="form-control filter-input rounded-corners" name="duration">
+                            <option class="correct-font" value="-1" style="padding-left: 0px; ">Any</option>
 							<%	for ( Duration dur: durations ) { %>
 						    	<option value="<%=dur.getDuration_id()%>" <%= search_items.getDuration_id() == dur.getDuration_id() ? "selected" : "" %> ><%= dur.getDuration_name() %></option>
 							<% } %>
