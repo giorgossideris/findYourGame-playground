@@ -338,11 +338,34 @@
     cursor: pointer;
 }
 
+#nav-filter-hr{
+    border-color: orange;
+    background-color: orange;
+    color: orange;
+}
+#filter-form {
+    text-align: center;
+}
+
+
 /* SEARCHBAR CSS */
 
 .index_searchbar {
     width: 60%;
     margin: auto;
+}
+.basic-search-input {
+    border-radius: 10px;
+    float: none !important;
+}
+
+.basic-search-button {
+    border-radius: 10px;
+    background-color: #FF9800;
+    border-color: orange;
+    width: 150px;
+    height: 50px;
+    text-align: center;
 }
 
 .search-input{
@@ -356,7 +379,7 @@
 /* FILTERS CSS */
 
 .filter-area {
-    width: 80%;
+    width: 75%;
     margin:auto;
     float:none;
 }

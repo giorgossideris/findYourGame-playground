@@ -52,17 +52,15 @@ Author URL: http://w3layouts.com
 					<div class="header-top-info">
 						<%@ include file = "navMenu.jsp" %>
 						<br>
+						<hr id="nav-filter-hr">
 						<br>
-
-						<form action="search_Controller.jsp" method="GET">
-							<div id="whole-form" class=" example index_searchbar"  >
-								<input class="search-input" type="text" placeholder="Search Your Game.." name="searchbar">
-								<button class="search-button" type="submit"><i class="fa fa-search"></i></button> 
+						<form id="filter-form" action="search_Controller.jsp" method="GET">
+							<div id="whole-form" class=" example index_searchbar basic-whole-form"  >
+								<input class="basic-search-input" type="text" placeholder="Search Your Game.." name="searchbar"> 
 							</div>
 
 
 							<br><br>
-							
 								
 							<div class = "filter-area">
 								<div  class="form-group container filter-form">
@@ -106,6 +104,7 @@ Author URL: http://w3layouts.com
 									</div>					
 								</div>
 							</div>
+							<button class="basic-search-button" type="submit">Search <i class="fa fa-search"></i></button>
 						</form>
 					<%
 					if (request.getAttribute("message")!=null){
