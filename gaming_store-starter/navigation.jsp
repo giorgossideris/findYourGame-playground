@@ -31,9 +31,11 @@ UserDAO userDAO = new UserDAO();
 List <Game> gamesToShow = new ArrayList<Game>();
 if(request.getAttribute("search_items")!=null){
     gamesToShow = gameDAO.getGames(search_items);
-}else if(request.getAttribute("sorted_list")!=null){ 
-    gamesToShow = (List<Game>)request.getAttribute("sorted_list");
-    
+}else{
+%>
+    <jsp:forward page="index.jsp"/>
+<%
+    return;
 }
 request.setAttribute("games_list",gamesToShow);
 %>
