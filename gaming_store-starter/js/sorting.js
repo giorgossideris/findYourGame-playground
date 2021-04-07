@@ -24,8 +24,8 @@ function sort_games(sort_type){
         games.reverse();
     }else if (sort_type=="2"){
         games.sort(function(a, b){
-            if(parseInt(a.dataset.gameRating) < parseInt(b.dataset.gameRating)){ return -1; }
-            if(parseInt(a.dataset.gameRating) > parseInt(b.dataset.gameRating)){ return 1; }
+            if(parseDouble(a.dataset.gameRating) < parseDouble(b.dataset.gameRating)){ return -1; }
+            if(parseDouble(a.dataset.gameRating) > parseDouble(b.dataset.gameRating)){ return 1; }
             return 0;
         });
         games.reverse();
