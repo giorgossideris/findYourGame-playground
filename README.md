@@ -1,2 +1,2 @@
 # findYourGame-playground
-A playground for our project in Information Systems Implementation and Architecture
+The final version our project in Information Systems Implementation and Architecture, that includes the files of the findYourGame website.
