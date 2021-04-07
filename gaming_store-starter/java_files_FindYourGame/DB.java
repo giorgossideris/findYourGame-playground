@@ -7,12 +7,12 @@ import java.sql.SQLException;
 
 public class DB {
 
-	/* Database connection settings, change dbName, dbusername, dbpassword */
-	private final String dbServer = "195.251.249.131";
-	private final String dbServerPort = "3306";
-	private final String dbName = "ismgroup52";
-	private final String dbusername = "ismgroup52";
-	private final String dbpassword = "adk6wk";
+	/* Database connection settings, change dbServer, dbServerPort, dbName, dbusername, dbpassword */
+	private final String dbServer = "dbServer";
+	private final String dbServerPort = "dbServerPort";
+	private final String dbName = "dbName";
+	private final String dbusername = "dbusername";
+	private final String dbpassword = "dbpassword";
 
 	private Connection con = null;
 	
